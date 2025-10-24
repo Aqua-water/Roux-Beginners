@@ -1,0 +1,9 @@
+[book]
+authors = ["Aqua-water"]
+language = "zh"
+multilingual = false
+src = "src"
+title = "桥式教程"
+
+[output.html]
+mathjax-support = true
