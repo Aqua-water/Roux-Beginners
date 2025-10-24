@@ -1,0 +1,465 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>记号 - 桥式教程</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">桥式教程</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <script type="text/javascript" src="/twistysim.js"></script>
+<style type="text/css" rel="stylesheet">
+/* modifies the opacity of the cube wireframe */
+.ttk-shp-poly {
+    stroke-opacity: 0.3;
+}
+</style>
+<h1 id="记号"><a class="header" href="#记号">记号</a></h1>
+<blockquote>
+<p>使用 <a href="https://cubedb.net/">cubedb.net</a>，可以为你指定的转动序列生成最终的状态。</p>
+</blockquote>
+<h2 id="位置记号"><a class="header" href="#位置记号">位置记号</a></h2>
+<p>一般来说，我们在复原中会选一个面对准自己。一旦视野中面积最大的面（称为“前“面）选定，并且魔方姿态正直，那么魔方的朝向也就确定了。视野中至多只能同时看见“前“面周围的两个面。</p>
+<p>按照视野中各个面的不同朝向，采用以下记号来标记它们：</p>
+<ol>
+<li><code>顶</code>，或<code>U</code>（Up），有时也称为<code>上</code></li>
+<li><code>前</code>，或<code>F</code>（Front）</li>
+<li><code>右</code>，或<code>R</code>（Right）</li>
+<li><code>底</code>，或<code>D</code>（Down，与<code>U</code>相对）</li>
+<li><code>左</code>，或<code>L</code>（Left，与<code>R</code>相对）</li>
+<li><code>后</code>，或<code>B</code>（Back，与<code>F</code>相对）</li>
+</ol>
+<p>在下图中的朝向中，中心块黄、红、绿、白、蓝、橙所对应的面，与上面介绍的各个朝向依次对应。</p>
+<div id="faces">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('ttttwttttttttgttttttttrttttttttyttttttttbttttttttotttt')
+    ('#faces');
+</script>
+<p>由于棱块存在于两个面的交界处，因此使用两个面的记号也可以唯一表示棱块的位置。<code>UR位</code>指的是U面与R面交界的位置，在下图中为橙绿棱块。字母之间的顺序是随意的。</p>
+<div id="edge-faces">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('ttttttttttttttttgtttttttttttttttottttttttttttttttttttt')
+    ('#edge-faces');
+</script>
+<p>处于同一位置的棱块，有两种不同的朝向可能。</p>
+<div id="orientation">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('ttttttttttttttttotttttttttttttttgttttttttttttttttttttt')
+    ('#orientation');
+</script>
+<p>角块的位置也可同理表示。下图中的黄红绿棱块位于<code>URF位</code>。</p>
+<div id="corner-faces">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('tttttttttttttttrttttttttttyttgttttttttttttttttttttttt')
+    ('#corner-faces');
+</script>
+<h2 id="转动记号"><a class="header" href="#转动记号">转动记号</a></h2>
+<p>试着转动魔方。魔方的所有6个面都可以转动，且每次转动都有一个面唯一对应。因此，转动记号可以沿用上节中的关于面的位置记号。</p>
+<p>根据效果的不同，用三种记号来表示同一个面的转动：</p>
+<ol>
+<li>大写字母  （顺时针转动90°）</li>
+<li>大写字母 + <code>'</code>  （逆时针转动90°）</li>
+<li>大写字母 + <code>2</code>  （旋转180°）</li>
+</ol>
+<p>例如，<code>U</code>不仅表示顶面，也表示顶面按照顺时针旋转90°。<code>U'</code>则表示将顶面按照逆时针旋转90°。<code>U2</code>和<code>U’2</code>的效果相同，都是将顶面旋转180°。</p>
+<p>使用下面的动画，点击中间的运行按键来熟悉每个转动记号，并且同时试着与你手中魔方的转动联系起来。</p>
+<h3 id="u-转动"><a class="header" href="#u-转动">U 转动</a></h3>
+<div id="U">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
+    .movePeriod(1000)
+    .alg(`U U' U2`)
+    ('#U');
+</script>
+<h3 id="l-转动"><a class="header" href="#l-转动">L 转动</a></h3>
+<div id="L">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
+    .movePeriod(1000)
+    .alg(`L L' L2`)
+    ('#L');
+</script>
+<h3 id="f-转动"><a class="header" href="#f-转动">F 转动</a></h3>
+<div id="F">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
+    .movePeriod(1000)
+    .alg(`F F' F2`)
+    ('#F');
+</script>
+<h3 id="r-转动"><a class="header" href="#r-转动">R 转动</a></h3>
+<div id="R">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
+    .movePeriod(1000)
+    .alg(`R R' R2`)
+    ('#R');
+</script>
+<h3 id="b-转动"><a class="header" href="#b-转动">B 转动</a></h3>
+<div id="B">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
+    .movePeriod(1000)
+    .alg(`B B' B2`)
+    ('#B');
+</script>
+<h3 id="d-转动"><a class="header" href="#d-转动">D 转动</a></h3>
+<div id="D">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
+    .movePeriod(1000)
+    .alg(`D D' D2`)
+    ('#D');
+</script>
+<h3 id="转动序列"><a class="header" href="#转动序列">转动序列</a></h3>
+<p>形如<code>R U R’ U’</code>的转动记号组合，代表依次进行对应的转动操作。</p>
+<div id="RUR’U’">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
+    .movePeriod(1000)
+    .alg(`R U R' U'`)
+    ('#RUR’U’');
+</script>
+<blockquote>
+<p><code>B</code>层、<code>D</code>层和<code>L</code>层的转动方向也许有些特殊。注意所谓的顺逆时针，都是假定直接面向这个面的来观察的，而不是从你的视角的位置。例如，<code>D’</code>表示你从魔方底部向上看时，底层向逆时针旋转90°。<code>U’</code>和<code>D’</code>都代表逆时针旋转，但从你的角度来看，它们的转动方向是相反的。</p>
+</blockquote>
+<blockquote>
+<p>注意转动记号取决于魔方当前的朝向，而不是对应中心块的颜色。如果红色中心块不在F面（前面），那么此时转动红色中心块所在面的记号就不再是<code>F</code>，而是由视野中它所在的面的朝向决定。它若在左边，那转动记号就是<code>L</code>。</p>
+</blockquote>
+<blockquote>
+<p>应当逐步熟悉所有6类转动的手法，而不要依赖于先把要转动的面移动到自己面前，再去转这个面。即使这个面在视野之外（如转动<code>B’</code>），也不要改变魔方的朝向。</p>
+</blockquote>
+<h2 id="转体记号"><a class="header" href="#转体记号">转体记号</a></h2>
+<p>转体就是魔方的整体转动。魔方可以通过三个基本的维度进行转体，因此使用所围绕的坐标轴来表示不同的转体。注意下面的<code>y</code>与<code>z</code>转动，与右手坐标系的y、z轴是相反的。</p>
+<p>更简单的记忆方法是记住对应的面： <code>x</code>, <code>y</code>和 <code>z</code> 分别对应 <code>R</code>, <code>U</code>和 <code>F</code> 的方向。  例如，转体<code>x'</code> 和转动 <code>R'</code>类似，但是是所有的层都做相应转动，而不是只有R层转动。</p>
+<h3 id="x-转体"><a class="header" href="#x-转体">x 转体</a></h3>
+<div id="x">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
+    .movePeriod(1000)
+    .alg(`x x' x2`)
+    ('#x');
+</script>
+<h3 id="y-转体"><a class="header" href="#y-转体">y 转体</a></h3>
+<div id="y">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
+    .movePeriod(1000)
+    .alg(`y y' y2`)
+    ('#y');
+</script>
+<h3 id="z-转体"><a class="header" href="#z-转体">z 转体</a></h3>
+<div id="z">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
+    .movePeriod(1000)
+    .alg(`z z' z2`)
+    ('#z');
+</script>
+<p>桥式解法将极少用到转体。</p>
+<h2 id="其他对桥式学习有用的记号"><a class="header" href="#其他对桥式学习有用的记号">其他对桥式学习有用的记号</a></h2>
+<p>使用转动和转体记号的组合，就足以表示所有的转动了。但也有一些组合转动，在桥式解法中会非常有用：<code>M</code>、<code>r</code>(或<code>Rw</code>）。<code>E</code>、<code>S</code>在特定情形下也许也会用到。</p>
+<h3 id="m转动"><a class="header" href="#m转动">M转动</a></h3>
+<p><code>M</code>层指的是L、R层中间的夹层，而<code>M</code>指的是将M层转动，而保持两边的层不动。<code>M</code>层转动非常能代表桥式解法的特色。<code>M</code>层转动对于顺逆时针的方向判断与<code>L</code>一致，较为反直觉，需要花时间适应。</p>
+<blockquote>
+<p>应当逐步练习一次性完成对<code>M</code>或<code>M’</code>的转动，不能用两次转动来代替。（为了<code>M</code>层转动的顺畅，建议使用一个好一些的魔方！）</p>
+</blockquote>
+<div id="M">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
+    .movePeriod(1000)
+    .alg(`M M' M2`)
+    ('#M');
+</script>
+<h3 id="r转动"><a class="header" href="#r转动">r转动</a></h3>
+<p><code>r</code>转动指的是在转动R层时，连带将M层转动。因此其顺逆时针的方向判断与<code>R</code>一致，但采用小写表示双层转动。注意<code>r</code>等价于转动<code>L</code>和转体<code>x</code>的叠加，不要混淆<code>r</code>与<code>L</code>。</p>
+<div id="Rw">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
+    .movePeriod(1000)
+    .alg(`r r' r2`)
+    ('#Rw');
+</script>
+<blockquote>
+<p><code>Rw</code>记号通常用于高阶，但在三阶魔方中等价于<code>r</code>。<code>Rw</code>中的 <code>w</code> 代表的是 'wide'（宽）。如果在其他教程中遇到，知道它们是一回事就好。</p>
+</blockquote>
+<h3 id="不确定的转动"><a class="header" href="#不确定的转动">不确定的转动</a></h3>
+<p>在本教程中，有时只能确定旋转哪一层，而具体旋转的效果要视情况而定。为了解决这类情况下表示的困难，约定采用"字母+<code>x</code>"来表示这类转动的集合。例如，用<code>Ux</code>来表示U层的所有可能转动，它可能是<code>U</code>、<code>U2</code>、<code>U’</code>，甚至<code>U0</code>（不转动）。同理有<code>Rx</code>、<code>Mx</code>、<code>rx</code>等。</p>
+<h2 id="较冷门的记号"><a class="header" href="#较冷门的记号">较冷门的记号</a></h2>
+<h3 id="e转动"><a class="header" href="#e转动">E转动</a></h3>
+<p><code>E</code>层指的是U、D层中间的夹层，对应的转动为<code>E</code>转动。在桥式解法的最后一步中，有的玩家会使用双手<code>E</code>转动，处理一种称为“四心换”的情形。</p>
+<div id="E">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
+    .movePeriod(1000)
+    .alg(`E E' E2`)
+    ('#E');
+</script>
+<h3 id="s转动"><a class="header" href="#s转动">S转动</a></h3>
+<p><code>S</code>层指的是F、B层中间的夹层，对应的转动为<code>S</code>转动。在单手处理“四心换”情形时，有的玩家会使用<code>S</code>转动代替<code>E</code>转动。</p>
+<div id="S">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
+    .movePeriod(1000)
+    .alg(`S S' S2`)
+    ('#S');
+</script>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../入门/入门.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../入门/左桥.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../入门/入门.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../入门/左桥.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>
