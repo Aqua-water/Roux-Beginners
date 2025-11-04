@@ -335,7 +335,7 @@
     .fc('ttttwttttttttgttttttttrttttttttyttttttttbttttttttotttt')
     ('#faces');
 </script>
-<p>由于棱块存在于两个面的交界处，因此使用两个面的记号也可以唯一表示棱块的位置。<code>UR位</code>指的是U面与R面交界的位置，在下图中为橙绿棱块。字母之间的顺序是随意的。</p>
+<p>由于棱块存在于两个面的交界处，因此使用两个面的记号也可以唯一表示棱块的位置。<code>UR位</code>指的是U面与R面交界的位置，在下图中为橙绿棱块。这里只表示块的位置而不表示朝向，因此字母之间的顺序是随意的。</p>
 <div id="edge-faces">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
@@ -484,9 +484,9 @@
 </script>
 <p>桥式解法将极少用到转体。</p>
 <h2 id="其他对桥式学习有用的记号"><a class="header" href="#其他对桥式学习有用的记号">其他对桥式学习有用的记号</a></h2>
-<p>使用转动和转体记号的组合，就足以表示所有的转动了。但也有一些组合转动，在桥式解法中会非常有用：<code>M</code>、<code>r</code>(或<code>Rw</code>）。<code>E</code>、<code>S</code>在特定情形下也许也会用到。</p>
+<p>使用转动和转体记号的组合，就足以表示所有的转动了。但也有一些组合转动，在桥式解法中会非常有用：<code>M</code>、<code>r</code>。<code>E</code>、<code>S</code>在特定情形下也许也会用到。</p>
 <h3 id="m转动"><a class="header" href="#m转动">M转动</a></h3>
-<p><code>M</code>层指的是L、R层中间的夹层，而<code>M</code>指的是将M层转动，而保持两边的层不动。<code>M</code>层转动非常能代表桥式解法的特色。<code>M</code>层转动对于顺逆时针的方向判断与<code>L</code>一致，较为反直觉，需要花时间适应。</p>
+<p><code>M</code>层指的是L、R层中间的夹层，而<code>M</code>指的是将M层转动，而保持两边的层不动。<code>M</code>层转动非常能代表桥式解法的特色。<code>M</code>层的顺逆时针的方向判断与<code>L</code>一致，较为反直觉。你也可以这样记忆：<code>M</code>字母中间的“V”指向下，这就是<code>M</code>转动的顺时针方向。</p>
 <blockquote>
 <p>应当逐步练习一次性完成对<code>M</code>或<code>M’</code>的转动，不能用两次转动来代替。（为了<code>M</code>层转动的顺畅，建议使用一个好一些的魔方！）</p>
 </blockquote>
@@ -517,7 +517,7 @@
 <p>在本教程中，有时只能确定旋转哪一层，而具体旋转的效果要视情况而定。为了解决这类情况下表示的困难，约定采用"字母+<code>x</code>"来表示这类转动的集合。例如，用<code>Ux</code>来表示U层的所有可能转动，它可能是<code>U</code>、<code>U2</code>、<code>U’</code>，甚至<code>U0</code>（不转动）。同理有<code>Rx</code>、<code>Mx</code>、<code>rx</code>等。</p>
 <h2 id="较冷门的记号"><a class="header" href="#较冷门的记号">较冷门的记号</a></h2>
 <h3 id="e转动"><a class="header" href="#e转动">E转动</a></h3>
-<p><code>E</code>层指的是U、D层中间的夹层，对应的转动为<code>E</code>转动。在桥式解法的最后一步中，有的玩家会使用双手<code>E</code>转动，处理一种称为“四心换”的情形。</p>
+<p><code>E</code>层指的是U、D层中间的夹层，对应的转动为<code>E</code>转动，其顺时针转动方向与<code>U</code>一致（也和字母“E”的开口方向一致）。在桥式解法的最后一步中，有的玩家会使用双手<code>E</code>转动，处理一种称为“四心换”的情形。</p>
 <div id="E">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
@@ -528,7 +528,7 @@
     ('#E');
 </script>
 <h3 id="s转动"><a class="header" href="#s转动">S转动</a></h3>
-<p><code>S</code>层指的是F、B层中间的夹层，对应的转动为<code>S</code>转动。在单手处理“四心换”情形时，有的玩家会使用<code>S</code>转动代替<code>E</code>转动。</p>
+<p><code>S</code>层指的是F、B层中间的夹层，对应的转动为<code>S</code>转动，其顺时针转动方向与<code>F</code>一致。在单手处理“四心换”情形时，有的玩家会使用<code>S</code>转动代替<code>E</code>转动。</p>
 <div id="S">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
