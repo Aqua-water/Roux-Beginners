@@ -816,7 +816,261 @@
 <p>左桥中的<code>1x2x2</code> 方块有前后两种选取方式。我们在复原第一个方块时，选择了位置靠前的方块，为此先复原了前棱角对（蓝红）。当然也可以先复原后棱角对，组好后面的方块。</p>
 <p>一个<code>1x2x2</code> 方块有两组棱角对。我们先复原了蓝白棱块，再复原蓝红棱角对。如果先复原蓝橙棱块，再复原相应的蓝白棱角对，当然也可行。但这样就提前选定了方块（假设不更改左桥的底色），在组第一个方块时，棱角对的选取只有一种。</p>
 <p>更进一步，左桥不必一定按照“一个方块+一对棱角对”的顺序来复原。例如，“三三桥”将左桥分为两个<code>1x1x3</code>的条并分别还原。“S桥”先复原两侧的棱角对，再通过<code>S</code>操作将中心块与蓝白棱块归位。</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="右桥-1"><a class="header" href="#右桥-1">右桥</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><script type="text/javascript" src="/twistysim.js"></script>
+<style type="text/css" rel="stylesheet">
+/* modifies the opacity of the cube wireframe */
+.ttk-shp-poly {
+    stroke-opacity: 0.3;
+}
+</style>
+<h1 id="右桥-1"><a class="header" href="#右桥-1">右桥</a></h1>
+<h2 id="目标-1"><a class="header" href="#目标-1">目标</a></h2>
+<p>右桥也是一个1×2×3的块，与左桥相同，而位置与左桥相对。其底色与左桥相同，桥色相反，因此需要完成一个<strong>白底绿色桥</strong>。</p>
+<p>你可以通过下面的已经完成好的右桥，观察它与上节复原的左桥的联系。</p>
+<div id="inf1">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wtwwtwwtwggggggtttrtrrtrttttttttttttbbbbbbtttotootottt')
+    ('#inf1');
+</script>
+<h2 id="1-复原底层棱块"><a class="header" href="#1-复原底层棱块">1 复原底层棱块</a></h2>
+<p>第一步是将将绿色中心块与绿白棱块合并、归位，并且不能破坏已经做好的左桥。</p>
+<div id="DR">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wttwtwwtttgttgttttrttrttttttttttttttbbbbbbtttttottottt')
+    ('#DR');
+</script>
+<p>如果绿白棱块已经和绿色中心块对齐，或绿白棱块在顶层且白色面朝上，通过 <code>Ux Rx</code>直接归位。</p>
+<h4 id="例1-直接归位的情形"><a class="header" href="#例1-直接归位的情形">例1: 直接归位的情形</a></h4>
+<div id="DR1">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wttwttwttttttgttttrttrttttttttttttwtbbbbbbtttttottotgt')
+    .alg('U R2')
+    ('#DR1');
+</script>
+<p>如果不能通过上面的方法归位，就将绿白棱块转动到M层，并使棱块的白色面朝上，然后再做上述操作。</p>
+<h4 id="例2-棱块在m层"><a class="header" href="#例2-棱块在m层">例2: 棱块在M层</a></h4>
+<p>转动<code>rx</code>或<code>Mx</code>即可。</p>
+<div id="DR2">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wttwttwgtttttgttttrwtrttttttttttttttbbbbbbtttttottottt')
+    .alg(`M' U' R2`)
+    ('#DR2');
+</script>
+<h4 id="例3棱块不在m层"><a class="header" href="#例3棱块不在m层">例3：棱块不在M层</a></h4>
+<p>转动<code>Rx Ux</code>，将绿白棱块转动到M层；再做<code>rx</code>，使棱块的白色面朝上。</p>
+ <div id="DR3">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wttwttwtttttwgttttrttrtgttttttttttttbbbbbbtttttottottt')
+    .alg(`R U r U R2`)
+    ('#DR3');
+</script>
+<h2 id="2-复原第一个方块-1x2x2"><a class="header" href="#2-复原第一个方块-1x2x2">2 复原第一个方块 (1x2x2)</a></h2>
+<p>接下来要完成右桥中的一个 <code>1x2x2</code> 方块。可以使用<code>绿红-白</code>或<code>绿橙-白</code>棱角对，与已有的部分组合起来。</p>
+<p>我们选择复原由<code>绿红-白</code>棱角对组成的方块，如图所示。</p>
+<div id="SS">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wttwtwwtwggtggttttrtrrtrttttttttttttbbbbbbtttttottottt')
+    ('#SS');
+</script>
+<p>我们介绍两类<strong>基本操作</strong>，以完成和右桥棱角对位置有关的块的处理：</p>
+<h4 id="基本操作一"><a class="header" href="#基本操作一">基本操作一</a></h4>
+<p><code>R U R'</code>或<code>R U' R'</code></p>
+<p>作用是将F、R层交界位置的两个块（灰色）移动到顶层。同时，它们的位置也会被原本在顶层的两个块（黑色）替代。</p>
+ <div id="base1">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('ttttttttllttlttnttttlttlttnttnttttntttttttttttttttttnt')
+    .alg(`R U R'`)
+    ('#base1');
+</script>
+ <div id="base1-2">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('ttttttttllttltttttttlttlnntnntttttttttttttttnttttttttt')
+    .alg(`R U' R'`)
+    ('#base1-2');
+</script>
+<h4 id="基本操作二"><a class="header" href="#基本操作二"><strong>基本操作二</strong></a></h4>
+<p><code>R' U R</code>或<code>R' U' R</code></p>
+<p>作用是将B、R层交界的两个块移动到顶层。</p>
+ <div id="base2">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('ttlttttttttlttlttttttttttttttttttnntttttttnttlttltttnn')
+    .alg(`R' U R`)
+    ('#base2');
+</script>
+ <div id="base2-2">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('ttlttttttttlttlttntttttttnttnttttttntttttttttlttlttntt')
+    .alg(`R' U' R`)
+    ('#base2-2');
+</script>
+<p>为了组好<code>绿红-白</code>棱角对并归位，我们采用以下步骤：</p>
+<h3 id="2-1-将棱块放至起始位"><a class="header" href="#2-1-将棱块放至起始位">2-1 将棱块放至起始位</a></h3>
+<p>这一步的目标是将绿红棱块放在<a href="%E5%85%A5%E9%97%A8/./%E5%B7%A6%E6%A1%A5.html#3-1-%E5%B0%86%E6%A3%B1%E5%9D%97%E6%94%BE%E8%87%B3%E8%B5%B7%E5%A7%8B%E4%BD%8D">起始位</a>，不关心其朝向。和左桥相同，我们选择DF位作为起始位。</p>
+<p>通过<code>Ux</code>将绿红棱块放在M层，然后做<code>Mx</code>，将棱块放入起始位。</p>
+<div id="DF">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wttwtwwtttgttgttgtrttrttttttttttrtttbbbbbbtttttottottt')
+    .alg(`U M`)
+    ('#DF');
+</script>
+<h4 id="特例棱块在右桥的位置上"><a class="header" href="#特例棱块在右桥的位置上">特例：棱块在右桥的位置上</a></h4>
+<p>如果棱块位于RF位或RB位，使用上面介绍的基本操作，将棱块移动到顶层，此时便位于M层了。</p>
+<p>对于RB位，选择基本操作二。（为什么？）</p>
+<div id="DF2">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wttwtwwtttgttgrtttrttrttttttttttttttbbbbbbtttttogtottt')
+    .alg(`R' U R M`)
+    ('#DF2');
+</script>
+<blockquote>
+<p>在左桥中，我们曾能够用<code>Fx</code>或<code>Bx</code>调整，将棱块移动到顶层。在右桥中不再适用。</p>
+</blockquote>
+<h3 id="2-2-调整角块色向"><a class="header" href="#2-2-调整角块色向">2-2 调整角块色向</a></h3>
+<p>这一步的目标是调整绿红白角块的位置。目标是将绿红白角块放在顶层，并让白色面不朝上。</p>
+<p>首先，将绿红白角块放在顶层。如果它不在顶层，那么一定在右桥位置上（RFD位或RBD位）。此时做一次基本操作即可。在基本操作中，适当地选择转<code>U</code>或<code>U’</code>，可以避免做完后角块的白色面朝上的情况，从而一步到位。</p>
+<div id="DRF-1">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wttwtwwrgwgttgttttrgrrttttttttttttttbbbbbbtttttottottt')
+    .alg(`R U R'`)
+    ('#DRF-1');
+</script>
+<p>同样的情形下，如果选择<code>U'</code>，将导致白色面朝上，需要额外做翻转。</p>
+<div id="DRF-2">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wttwtwwrgwgttgttttrgrrttttttttttttttbbbbbbtttttottottt')
+    .alg(`R U' R'`)
+    ('#DRF-2');
+</script>
+<p>如果绿红白角块已经在顶层，且白色面不朝上，那么需要调整角块的朝向。首先，转<code>Ux</code>将角块放在某个<a href="%E5%85%A5%E9%97%A8/./%E5%B7%A6%E6%A1%A5.html#%E7%89%B9%E4%BE%8B2%E8%A7%92%E5%9D%97%E4%BD%8D%E4%BA%8Elfu%E4%BD%8D%E4%B8%94%E7%99%BD%E8%89%B2%E9%9D%A2%E6%9C%9D%E4%B8%8A">翻转位</a>上。</p>
+<p>如果在翻转位UFR位，做基本操作一中的<code>R U' R'</code>。</p>
+<div id="DRF-3">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wttwtwwrttgttgttttrgtrttrttwttttttttbbbbbbttgttottottt')
+    .alg(`U' R U' R'`)
+    ('#DRF-3');
+</script>
+<p>如果在翻转位UBR位，做基本操作二中的<code>R' U R</code>。</p>
+<div id="DRF-4">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wttwtwwrttgttgttttrgtrttrttwttttttttbbbbbbttgttottottt')
+    .alg(`U2 R' U R`)
+    ('#DRF-4');
+</script>
+<h3 id="2-3-棱角对归位"><a class="header" href="#2-3-棱角对归位">2-3 棱角对归位</a></h3>
+<p>这一步的目标是组好棱角对，并和已有的部分合并成方块。</p>
+<p>首先做<code>Ux</code>，使白色面移到侧面（L面或R面），具体哪面视绿红棱块的朝向而定。其次做<code>Mx</code>，将棱角对正确合并。</p>
+<div id="pair">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wttwtwwrttgttgttttrgtrttgttrttttttttbbbbbbttwttottottt')
+    .alg(`U2 M2`)
+    ('#pair');
+</script>
+<blockquote>
+<p>在左桥中，我们曾用<code>rx</code>或<code>Rx</code>，让角块移动。在右桥中，我们反过来让棱块移动，以迎合角块。</p>
+</blockquote>
+<p>合并后有四种可能的情形。</p>
+<h4 id="例1-基本操作一"><a class="header" href="#例1-基本操作一">例1 基本操作一</a></h4>
+<div id="pair1">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wttwtwwtttgttgttttrttrttggtrrtttttttbbbbbbttwttottottt')
+    .alg(`R U' R'`)
+    ('#pair1');
+</script>
+<h4 id="例2-类基本操作一"><a class="header" href="#例2-类基本操作一">例2 类基本操作一</a></h4>
+<div id="pair2">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wttwtwwtttgttgtwttrttrtttrrtggttttttbbbbbbtttttottottt')
+    .alg(`r U r'`)
+    ('#pair2');
+</script>
+<h4 id="例3-转化"><a class="header" href="#例3-转化">例3 转化</a></h4>
+<p><code>U2</code>转化为例1。另有一种情形同理转化为例2，不再列举。</p>
+<div id="pair3">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wttwtwwtttgttgtttwrttrttttttttttttrrbbbbbbtttttottoggt')
+    .alg(`U2'`)
+    ('#pair3');
+</script>
+<h2 id="3-复原剩余棱角对"><a class="header" href="#3-复原剩余棱角对">3 复原剩余棱角对</a></h2>
+<p>接下来将复原剩余一对棱角对，完成右桥构建。在这里，我们需要复原<code>绿橙-白</code>棱角对。</p>
+<p>和左桥一样，这步可以套用第一组棱角对的做法。</p>
+<h3 id="3-1-将棱块放至起始位-1"><a class="header" href="#3-1-将棱块放至起始位-1">3-1 将棱块放至起始位</a></h3>
+<p>将绿橙棱块放在起始位，即<code>DF位</code>。</p>
+<div id="DF3">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wttwtwwtwggtgggttgrtrrtrtttttttttttobbbbbbtttttootowtt')
+    .alg(`R' U R M`)
+    ('#DF3');
+</script>
+<h3 id="3-2-调整角块色向-1"><a class="header" href="#3-2-调整角块色向-1">3-2 调整角块色向</a></h3>
+<p>将绿橙白角块放在顶层，并让白色面不朝上。仍然使用了“翻转位”的方法。</p>
+<blockquote>
+<p>与复原第一组棱角对不同的是，此时前棱角对已归位，那么应该避免选择基本操作一，因为它会破坏这组棱角对的位置。因此这时翻转位只能选择UBR位，并做基本操作一中的<code>R U' R'</code>。同理，如果是先复原后面那组棱角对，那么要避免做基本操作二。</p>
+</blockquote>
+<div id="DRF-5">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wttwtwwgwggtggttttrorrtrgttwttttttttbbbbbbttottottottt')
+    .alg(`U2 R' U R`)
+    ('#DRF-5');
+</script>
+<h3 id="3-3-棱角对归位-1"><a class="header" href="#3-3-棱角对归位-1">3-3 棱角对归位</a></h3>
+<p>组好棱角对并归位。</p>
+<div id="DRF-6">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wttwtwwgwggtggttttrorrtrottgttttttttbbbbbbttwttottottt')
+    .alg(`U2 M2 r' U' r`)
+    ('#DRF-6');
+</script>
+<blockquote>
+<p>棱角对正确合并后，这里出现的情形和<a href="%E5%85%A5%E9%97%A8/%E5%8F%B3%E6%A1%A5.html#%E4%BE%8B2-%E7%B1%BB%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E4%B8%80">类基本操作一</a>互为镜像，因此解法也是镜像的：<code>r</code>与<code>r'</code>对称，<code>U</code>与<code>U'</code>对称。</p>
+</blockquote>
+<p>更多的情形请自行尝试。</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="cmll-1"><a class="header" href="#cmll-1">CMLL</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="后六棱-1"><a class="header" href="#后六棱-1">后六棱</a></h1>
 
