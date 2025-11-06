@@ -1,0 +1,408 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>四角色向 - 桥式教程</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">桥式教程</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                         <script type="text/javascript" src="/twistysim.js"></script>
+<style type="text/css" rel="stylesheet">
+/* modifies the opacity of the cube wireframe */
+.ttk-shp-poly {
+    stroke-opacity: 0.3;
+}
+</style>
+<h1 id="四角色向"><a class="header" href="#四角色向">四角色向</a></h1>
+<p>这步要将顶层的四个角块在顶层上的颜色还原正确，也就是黄色一致朝上。</p>
+ <div id="CMLL-o">
+ <script type="text/javascript">
+   TTk.AlgorithmPuzzle(3)
+     .size({width:300, height:300})
+     .fc('wtwwtwwtwggggggltlrtrrtrltlytytttytybbbbbbltlotootoltl')
+     ('#CMLL-o');
+ </script>
+ </div>
+<p>共有7种未还原的情形。根据顶层四角的位置上已还原的黄色面的数量，将其分为3类：</p>
+<h2 id="1-一个黄色面已还原"><a class="header" href="#1-一个黄色面已还原">1 一个黄色面已还原</a></h2>
+<h3 id="1-1-as"><a class="header" href="#1-1-as">1-1 As</a></h3>
+<p>   <img src="./images/cmll-as.png" width = "200" height = "200"/></p>
+<p>上图为As形态的俯视图，特点是3个未复原的黄色面都在顶层侧面的左边。换句话说，将角块逆时针旋转120°，可以把黄色面移动到顶层。通过<code>Ux</code>将已复原的黄色面放在俯视图的左上角位置，然后完成公式：</p>
+<p><strong>公式一</strong> <code>R' U' R U' R' U2 R</code></p>
+ <div id="sune">
+ <script type="text/javascript">
+   TTk.AlgorithmPuzzle(3)
+     .size({width:300, height:300})
+     .fc('wtwwtwwtwggggggltlrtrrtrltlytytttytybbbbbbltlotootoltl')
+     .case(`R' U' R U' R' U2 R`)
+     ('#sune');
+ </script>
+ </div>
+<p>这个公式的组成为：<code>(基本操作二) U' (基本操作二)</code>。可以看出，它先将右桥的后棱角对移动到顶层，再换一种方式重新插入。</p>
+<p>如果你只想为整个CMLL步骤记忆一条公式，那么记忆下面的公式：</p>
+<p><strong>公式〇</strong> <code>R' U L U' R U L'</code></p>
+ <div id="cmll-as">
+ <script type="text/javascript">
+   TTk.AlgorithmPuzzle(3)
+     .size({width:300, height:300})
+     .fc('wtwwtwwtwggggggltlrtrrtrltlytytttytybbbbbbltlotootoltl')
+     .case(`R' U L U' R U L'`)
+     ('#cmll-as');
+ </script>
+ </div>
+<h3 id="1-2-s"><a class="header" href="#1-2-s">1-2 S</a></h3>
+<p>   <img src="./images/cmll-s.png" width = "200" height = "200"/></p>
+<p>S形态的特点是3个未复原的黄色面都在顶层侧面的右边。通过<code>U</code>转动将已复原的黄色面放在俯视图的左下角位置。</p>
+<p><strong>公式二</strong> <code>R U R' U R U2 R'</code></p>
+ <div id="cmll-s">
+ <script type="text/javascript">
+   TTk.AlgorithmPuzzle(3)
+     .size({width:300, height:300})
+     .fc('wtwwtwwtwggggggltlrtrrtrltlytytttytybbbbbbltlotootoltl')
+     .case(`R U R' U R U2 R'`)
+     ('#cmll-s');
+ </script>
+ </div>
+<p>这个公式的组成为：<code>(基本操作一) U (基本操作一)</code>。它对右桥的前棱角对完成重新插入。</p>
+<p>如果只使用公式〇解决S形态，将已复原的黄色面放在俯视图的左上角位置，再完成：</p>
+<p><code>(公式〇) U' (公式〇)</code></p>
+ <div id="cmll-s2">
+ <script type="text/javascript">
+   TTk.AlgorithmPuzzle(3)
+     .size({width:300, height:300})
+     .fc('wtwwtwwtwggggggltlrtrrtrltlytytttytybbbbbbltlotootoltl')
+     .case(`R' U L U' R U L' U' R' U L U' R U L'`)
+     ('#cmll-s2');
+ </script>
+ </div>
+<h3 id="叠加公式"><a class="header" href="#叠加公式">叠加公式</a></h3>
+<p>除As与S以外的所有形态，都能通过执行一次公式一转化为As或S形态，因此总能通过叠加前面的公式来解决: <code>Ux (公式一) Ux (公式一/公式二）</code>。<code>Ux</code>用于调整朝向。</p>
+<p>当然也可以只使用公式〇解决。在上面的<code>Ux (公式一) Ux (公式一/公式二）</code>叠加方案中，将公式一替换为公式〇、公式二替换为<code>(公式〇) U' (公式〇)</code>即可。注意用于调整朝向的<code>Ux</code>会有一些变化。</p>
+<h2 id="2-两个黄色面已还原"><a class="header" href="#2-两个黄色面已还原">2 两个黄色面已还原</a></h2>
+<p>恰好两个黄色面已还原的情形有3种。其叠加法如下：无论哪种情形，保证俯视图中左上角的角块是黄色朝上的:</p>
+<p>   <img src="./images/cmll-2.png" width = "200" height = "200"/></p>
+<p>然后使用公式一（或公式〇），就一定转为S形态，从而能够通过公式二（或叠加公式〇）解决。</p>
+<h3 id="2-1-t"><a class="header" href="#2-1-t">2-1 T</a></h3>
+<p>T形态中，两个未还原的角块相邻，黄色面方向相对。</p>
+<p>   <img src="./images/cmll-t.png" width = "200" height = "200"/></p>
+<p>我们为叠加法给出一个具体例子。以T形态为例，首先保证俯视图中左上角的角块黄色朝上，上图已满足要求。</p>
+<p>然后，执行公式一。调整朝向后再做公式二即可。</p>
+ <div id="cmll-t2">
+ <script type="text/javascript">
+   TTk.AlgorithmPuzzle(3)
+     .size({width:300, height:300})
+     .fc('wtwwtwwtwggggggltlrtrrtrltlytytttytybbbbbbltlotootoltl')
+     .case(`R' U' R U' R' U2 R U2 R U R' U R U2 R'`)
+     ('#cmll-t2');
+ </script>
+ </div>
+<p>T形态的一步复原公式为：</p>
+<p><strong>进阶公式一</strong> <code>R U R' U' R' F R F'</code></p>
+ <div id="cmll-t">
+ <script type="text/javascript">
+   TTk.AlgorithmPuzzle(3)
+     .size({width:300, height:300})
+     .fc('wtwwtwwtwggggggltlrtrrtrltlytytttytybbbbbbltlotootoltl')
+     .case(`R U R' U' R' F R F'`)
+     ('#cmll-t');
+ </script>
+ </div>
+<h3 id="2-2-u"><a class="header" href="#2-2-u">2-2 U</a></h3>
+<p>U形态中，两个未还原的角块也相邻，但黄色面方向相同。</p>
+<p>   <img src="./images/cmll-u.png" width = "200" height = "200"/></p>
+<p>采用<a href="#2-%E4%B8%A4%E4%B8%AA%E9%BB%84%E8%89%B2%E9%9D%A2%E5%B7%B2%E8%BF%98%E5%8E%9F">叠加法</a>时，上图的朝向满足起手要求。</p>
+<p>U形态的一步复原公式为：</p>
+<p><strong>进阶公式二</strong> <code>F R U R' U' F'</code></p>
+ <div id="cmll-u">
+ <script type="text/javascript">
+   TTk.AlgorithmPuzzle(3)
+     .size({width:300, height:300})
+     .fc('wtwwtwwtwggggggltlrtrrtrltlytytttytybbbbbbltlotootoltl')
+     .case(`U' F R U R' U' F'`)
+     ('#cmll-u');
+ </script>
+ </div>
+<p>注意这里改变了初始朝向，使得两个黄色面朝左。</p>
+<h3 id="2-3-l"><a class="header" href="#2-3-l">2-3 L</a></h3>
+<p>L形态中，两个未还原的角块相对。</p>
+<p>   <img src="./images/cmll-l.png" width = "200" height = "200"/></p>
+<p>采用<a href="#2-%E4%B8%A4%E4%B8%AA%E9%BB%84%E8%89%B2%E9%9D%A2%E5%B7%B2%E8%BF%98%E5%8E%9F">叠加法</a>时，上图的朝向满足起手要求。</p>
+<p>L形态的一步复原公式为：</p>
+<p><strong>进阶公式三</strong> <code>F R' F' R U R U' R'</code></p>
+ <div id="cmll-l">
+ <script type="text/javascript">
+   TTk.AlgorithmPuzzle(3)
+     .size({width:300, height:300})
+     .fc('wtwwtwwtwggggggltlrtrrtrltlytytttytybbbbbbltlotootoltl')
+     .case(`U F R' F' R U R U' R'`)
+     ('#cmll-l');
+ </script>
+ </div>
+<p>注意这里改变了初始朝向，使得俯视图中左下角的黄色面朝前。</p>
+<h2 id="3-零个黄色面已还原"><a class="header" href="#3-零个黄色面已还原">3 零个黄色面已还原</a></h2>
+<p>恰好没有黄色面已还原的情形有2种。其<a href="#%E5%8F%A0%E5%8A%A0%E5%85%AC%E5%BC%8F">叠加法</a>如下：无论哪种情形，保证俯视图中左侧的两个角块是黄色朝左的:</p>
+<p>   <img src="./images/cmll-0.png" width = "200" height = "200"/></p>
+<p>然后使用公式一（或公式〇），就一定转为As形态，从而能够再做一次公式一（或公式〇）解决。</p>
+<h3 id="3-1-h"><a class="header" href="#3-1-h">3-1 H</a></h3>
+<p>H形态中，四个未还原黄色面朝向两个方向。</p>
+<p>   <img src="./images/cmll-h.png" width = "200" height = "200"/></p>
+<p>对于叠加法，首先保证俯视图中左上角的角块黄色朝上，上图已满足要求。</p>
+<p>然后，执行两次公式一。这里，中途不需要转动U层调整朝向。</p>
+ <div id="cmll-h2">
+ <script type="text/javascript">
+   TTk.AlgorithmPuzzle(3)
+     .size({width:300, height:300})
+     .fc('wtwwtwwtwggggggltlrtrrtrltlytytttytybbbbbbltlotootoltl')
+     .case(`R' U' R U' R' U2 R R' U' R U' R' U2 R`)
+     ('#cmll-h2');
+ </script>
+ </div>
+<p>消步后即为H形态的一步复原公式：</p>
+<p><strong>进阶公式四</strong> <code>R' U' R U' R' U R U' R' U2 R</code></p>
+ <div id="cmll-h">
+ <script type="text/javascript">
+   TTk.AlgorithmPuzzle(3)
+     .size({width:300, height:300})
+     .fc('wtwwtwwtwggggggltlrtrrtrltlytytttytybbbbbbltlotootoltl')
+     .case(`R' U' R U' R' U R U' R' U2 R`)
+     ('#cmll-h');
+ </script>
+ </div>
+<h3 id="3-2-pi"><a class="header" href="#3-2-pi">3-2 Pi</a></h3>
+<p>Pi形态中，四个未还原黄色面朝向三个方向。</p>
+<p>   <img src="./images/cmll-pi.png" width = "200" height = "200"/></p>
+<p>采用<a href="#3-%E9%9B%B6%E4%B8%AA%E9%BB%84%E8%89%B2%E9%9D%A2%E5%B7%B2%E8%BF%98%E5%8E%9F">叠加法</a>时，上图的朝向满足起手要求。</p>
+<p>Pi形态的一步复原公式为：</p>
+<p><strong>进阶公式五</strong> <code>F R U R' U' R U R' U' F'</code></p>
+ <div id="cmll-pi">
+ <script type="text/javascript">
+   TTk.AlgorithmPuzzle(3)
+     .size({width:300, height:300})
+     .fc('wtwwtwwtwggggggltlrtrrtrltlytytttytybbbbbbltlotootoltl')
+     .case(`F R U R' U' R U R' U' F'`)
+     ('#cmll-pi');
+ </script>
+ </div>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../入门/cmll/cmll.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../入门/cmll/四角相对位置.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../入门/cmll/cmll.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../入门/cmll/四角相对位置.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>
