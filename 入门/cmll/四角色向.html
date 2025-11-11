@@ -209,7 +209,7 @@
      ('#sune');
  </script>
  </div>
-<p>这个公式的组成为：<code>(基本操作二) U' (基本操作二)</code>。可以看出，它先将右桥的后棱角对移动到顶层，再换一种方式重新插入。</p>
+<p>这个公式的组成为：<code>(基本操作二) U' (基本操作二)</code>。（见<a href="./../%E5%8F%B3%E6%A1%A5.html#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E4%BA%8Cr-ux-r">基本操作二</a>）可以看出，它先将右桥的后棱角对移动到顶层，再换一种方式重新插入。</p>
 <p>如果你只想为整个CMLL步骤记忆一条公式，那么记忆下面的公式：</p>
 <p><strong>公式〇</strong> <code>R' U L U' R U L'</code></p>
  <div id="cmll-as">
@@ -234,7 +234,7 @@
      ('#cmll-s');
  </script>
  </div>
-<p>这个公式的组成为：<code>(基本操作一) U (基本操作一)</code>。它对右桥的前棱角对完成重新插入。</p>
+<p>这个公式的组成为：<code>(基本操作一) U (基本操作一)</code>。（见<a href="./../%E5%8F%B3%E6%A1%A5.html#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E4%B8%80r-ux-r">基本操作一</a>）它对右桥的前棱角对完成重新插入。</p>
 <p>如果只使用公式〇解决S形态，将已复原的黄色面放在俯视图的左上角位置，再完成：</p>
 <p><code>(公式〇) U' (公式〇)</code></p>
  <div id="cmll-s2">
@@ -247,8 +247,8 @@
  </script>
  </div>
 <h3 id="叠加公式"><a class="header" href="#叠加公式">叠加公式</a></h3>
-<p>除As与S以外的所有形态，都能通过执行一次公式一转化为As或S形态，因此总能通过叠加前面的公式来解决: <code>Ux (公式一) Ux (公式一/公式二）</code>。<code>Ux</code>用于调整朝向。</p>
-<p>当然也可以只使用公式〇解决。在上面的<code>Ux (公式一) Ux (公式一/公式二）</code>叠加方案中，将公式一替换为公式〇、公式二替换为<code>(公式〇) U' (公式〇)</code>即可。注意用于调整朝向的<code>Ux</code>会有一些变化。</p>
+<p>除As与S以外的所有形态，都能通过执行一次公式一转化为As或S形态，因此总能通过叠加前面的公式来解决: <code>Ux (公式一) Ux (公式一/公式二)</code>。<code>Ux</code>用于调整朝向。</p>
+<p>当然也可以只使用公式〇解决。在上面的<code>Ux (公式一) Ux (公式一/公式二)</code>叠加方案中，将公式一替换为公式〇、公式二替换为<code>(公式〇) U' (公式〇)</code>即可。注意用于调整朝向的<code>Ux</code>会有一些变化。</p>
 <h2 id="2-两个黄色面已还原"><a class="header" href="#2-两个黄色面已还原">2 两个黄色面已还原</a></h2>
 <p>恰好两个黄色面已还原的情形有3种。其叠加法如下：无论哪种情形，保证俯视图中左上角的角块是黄色朝上的:</p>
 <p>   <img src="./images/cmll-2.png" width = "200" height = "200"/></p>
@@ -311,7 +311,7 @@
  </div>
 <p>注意这里改变了初始朝向，使得俯视图中左下角的黄色面朝前。</p>
 <h2 id="3-零个黄色面已还原"><a class="header" href="#3-零个黄色面已还原">3 零个黄色面已还原</a></h2>
-<p>恰好没有黄色面已还原的情形有2种。其<a href="#%E5%8F%A0%E5%8A%A0%E5%85%AC%E5%BC%8F">叠加法</a>如下：无论哪种情形，保证俯视图中左侧的两个角块是黄色朝左的:</p>
+<p>没有任何黄色面已还原的情形有2种。其<a href="#%E5%8F%A0%E5%8A%A0%E5%85%AC%E5%BC%8F">叠加法</a>如下：无论哪种情形，保证俯视图中左侧的两个角块是黄色朝左的:</p>
 <p>   <img src="./images/cmll-0.png" width = "200" height = "200"/></p>
 <p>然后使用公式一（或公式〇），就一定转为As形态，从而能够再做一次公式一（或公式〇）解决。</p>
 <h3 id="3-1-h"><a class="header" href="#3-1-h">3-1 H</a></h3>
@@ -354,6 +354,15 @@
      ('#cmll-pi');
  </script>
  </div>
+<h2 id="选读叠加法的原理"><a class="header" href="#选读叠加法的原理">（选读）叠加法的原理</a></h2>
+<p>所有的情形都能通过执行一次As的复原公式（公式一），转化为As或S，也就是恰有一个黄色面已还原的情形。但我们对初始的朝向做了要求，并不是随便做一次公式一就一定能转化。那么，为什么我们提供的朝向就能奏效呢？</p>
+<p>以T形态为例。它属于两个黄色面已还原的情形，我们要求俯视图中左上角的角块黄色朝上，然后执行公式一，完成转化。</p>
+<p>   <img src="./images/cmll-t.png" width = "200" height = "200"/></p>
+<p>对于As形态，我们要求俯视图的左上角的角块黄色面已复原，然后执行公式一，完成复原。</p>
+<p>   <img src="./images/cmll-as.png" width = "200" height = "200"/></p>
+<p>比较这两个俯视图，可以发现除了左下角的角块黄色面都朝下外，其他三个角块的形态都不同。因此同样执行公式一后，也会有三个角块的形态不同。既然执行结束后，As形态的四个黄色面都复原，那么T形态一定转化为恰有一个黄色面已还原，即As或S。你可以对其他形态所要求的朝向做验证，它们一定恰好有一个角块的形态与As相同。</p>
+<p>As形态执行公式一后，不会改变左上角的角块的状态（但会改变位置）。因此T形态执行公式一后，左上角的角块的状态也不会改变，其状态与S形态的三个未复原的角块一致，因此推断出转化为S形态。同理，所有的两个黄色面已还原的情形，都将转化为S形态。</p>
+
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
@@ -362,7 +371,7 @@
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../../入门/cmll/四角相对位置.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../../入门/cmll/四角归位.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -376,7 +385,7 @@
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../../入门/cmll/四角相对位置.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../../入门/cmll/四角归位.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

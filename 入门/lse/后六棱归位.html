@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>CMLL - 桥式教程</title>
+        <title>后六棱归位 - 桥式教程</title>
 
 
         <!-- Custom HTML head -->
@@ -184,46 +184,162 @@
     stroke-opacity: 0.3;
 }
 </style>
-<h1 id="cmll"><a class="header" href="#cmll">CMLL</a></h1>
+<h1 id="后六棱归位"><a class="header" href="#后六棱归位">后六棱归位</a></h1>
 <h2 id="目标"><a class="header" href="#目标">目标</a></h2>
-<p>这步要还原顶层的四个角块的朝向和相对位置，如图所示。CMLL的含义是：复原最后一层的角块，而不关心M层的情况(<strong>C</strong>orners (regardless of <strong>M</strong> slice) of <strong>L</strong>ast <strong>L</strong>ayer)。</p>
-<p>完成后，顶层可以自由旋转，角块不必一定和左右桥对齐。</p>
-<div id="CMLL">
+<p>这步要<strong>在色向还原的基础上</strong>，将剩下的6个棱块彻底复原，从而完成整个魔方的复原。分为两个阶段：</p>
+<p>先将左右面位于顶层的2个棱块复原，并将M层的中心块对齐，剩下最后M层的4个棱块。</p>
+<div id="l4e">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
-    .fc('wtwwtwwtwgggggggtgrtrrtrrtrytytttytybbbbbbbtbotootooto')
-    ('#CMLL');
+    .fc('wlwwwwwlwgggggggggrlrrrrrlrylyyyyylybbbbbbbbbolooooolo')
+    ('#l4e');
 </script>
 </div>
-<p>我们将CMLL分为两个步骤：</p>
-<h2 id="复原四角色向"><a class="header" href="#复原四角色向">复原四角色向</a></h2>
-<p>这步要将顶层的四个角块在顶层上的颜色还原正确，也就是黄色一致朝上。</p>
-<div id="CMLL-o">
+<p>再复原最后4个棱块。</p>
+<h2 id="1-左右棱"><a class="header" href="#1-左右棱">1 左右棱</a></h2>
+<h3 id="左右棱置底"><a class="header" href="#左右棱置底">左右棱置底</a></h3>
+<p>为了复原左右面位于顶层的2个棱块(ULUR)，我们先将要归位的黄蓝、黄绿棱块都放到底层。</p>
+<p>以下是一个具体例子。你可以拖动魔方，主要查看底层的状态：</p>
+<div id="ulur">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
-    .fc('wtwwtwwtwggggggltlrtrrtrltlytytttytybbbbbbltlotootoltl')
-    ('#CMLL-o');
+    .fc('wywwwwwywggggggglgrbrrrrrlrylylylylybbbbbbblbogooooolo')
+    ('#ulur');
 </script>
 </div>
-<h2 id="复原角块相对位置"><a class="header" href="#复原角块相对位置">复原角块相对位置</a></h2>
-<p>这步将彻底完成CMLL步骤，也就是将顶层的四个角块的相对位置也还原正确。</p>
-<h2 id="公式"><a class="header" href="#公式">公式</a></h2>
-<p>这两个步骤的具体内容将在以下两节介绍。我们将引入<strong>公式</strong>（在本教程中，指的是4步以上的转动序列）。</p>
-<p>你可以选择最少的记忆量（1条公式：公式〇），但会多很多转动步数，并且需要理解如何叠加公式。</p>
-<p>你也可以记忆全部9条公式（公式一~三、进阶公式一~六），避免叠加造成多余步数。</p>
-<p>我们将主要介绍折中的方案（3条公式：公式一~三），并顺带提及前面两种方案。然而，当你对桥式复原法较为熟练之后，建议将9条公式全部掌握。</p>
+<p>还原方法如下：</p>
+<p>如果恰好有一个黄蓝或黄绿棱块在顶层：</p>
+<p>先<code>Ux</code>将该棱块放在M层，并且保证其下方不是黄蓝或黄绿棱块。再做<a href="./eo.html#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E4%BA%94-m-u2-m">基本操作五</a>或<a href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%85%AD-m-u2-m">六</a>，完成上下棱块的交换，将其放在底层。</p>
+<p>这个例子通过基本操作六，将黄绿棱块移到DB位。</p>
+<div id="ulur-1">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wywwwwwywggggggglgrbrrrrrlrylylylylybbbbbbblbogooooolo')
+    .case(`U' M U2 M'`)
+    ('#ulur-1');
+</script>
+</div>
+<p>如果黄蓝、黄绿棱块都在顶层：</p>
+<p>通过<code>Ux</code>将其中一个棱块放在M层，再<code>M2</code>将其放在底层。这样，至多有一个棱块仍然留在顶层，转化为上一种情形。</p>
+<p>这个例子将黄绿棱块移到DB位，然后再通过基本操作五，将黄蓝棱块移到DF位。</p>
+<div id="ulur-2">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wlwwwwwlwgggggggbgrlrrrrrgryyylyyylybbbbbbblbolooooolo')
+    .alg(`M2 U M' U2 M`)
+    ('#ulur-2');
+</script>
+</div>
+<p>这样就将两个棱块都放在底层了，两个棱块谁在前并不重要，但色向必须正确。</p>
+<h3 id="左右棱归位"><a class="header" href="#左右棱归位">左右棱归位</a></h3>
+<p>左右棱都放到底层后，做<code>Ux</code>调整顶层角块的姿态，然后做<code>M2</code>，将黄蓝、黄绿棱块分别与对应的角块合并。</p>
+<div id="ulur-3">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wywwwwwywggggggglgrbrrrrrlrylylylylybbbbbbblbogooooolo')
+    .alg(`U M2`)
+    ('#ulur-3');
+</script>
+</div>
+<p>最后做<code>Ux Mx</code>，将左右棱块与M层中心块彻底归位。</p>
+<div id="ulur-4">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wlwwywwlwggggggolorlrrorgggyyylwlyyybbbbbbrlroloorobbb')
+    .alg(`U' M2`)
+    ('#ulur-4');
+</script>
+</div>
+<h2 id="后四棱"><a class="header" href="#后四棱">后四棱</a></h2>
+<p>这步完成最后4个棱块的复原（L4E）。</p>
+<p>完成左右面的复原后，魔方的形态变得更加对称了。你可以自由地做一些<a href="./../%E8%AE%B0%E5%8F%B7.html#x-%E8%BD%AC%E4%BD%93">x转体</a>，也可以自由尝试一些M层操作与<code>U2</code>的组合。</p>
+<p>下面介绍一些简单的4步操作，来完成魔方最终的复原。</p>
+<h3 id="三棱换"><a class="header" href="#三棱换">三棱换</a></h3>
+<p>这种情况下，对齐中心块后，恰好有3个棱块未复原，而1个M层棱块已经复原。</p>
+<p>首先做x转体，使复原的棱块位于DF位上。</p>
+<p>下图中，我们将已复原的黄红棱块转到DF位上。</p>
+<div id="L4E">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wywwwwwwwgggggggggrorrrrrrryyyyyyywybbbbbbbbboooooooro')
+    .alg(`x'`)
+    ('#L4E');
+</script>
+</div>
+<p>进一步观察：</p>
+<p>如果UF位的棱块颜色与两侧中心块的颜色都相反，做<code>U2 M U2 M'</code>（即<code>U2</code>+ 基本操作六）。</p>
+<p>如图，UF位的白红棱块，两侧的中心块分别为黄、橙，满足要求。</p>
+<div id="L4E-2">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('rrrrrrrrrgggggggggyyyyyyyyyooooooooobbbbbbbbbwwwwwwwww')
+    .case(`U2 M U2 M'`)
+    ('#L4E-2');
+</script>
+</div>
+<p>如果UF位的棱块颜色仅与前面中心块的颜色相反，做<code>M U2 M' U2</code>（即基本操作六+<code>U2</code>）。</p>
+<div id="L4E-3">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('rrrrrrrrrgggggggggyyyyyyyyyooooooooobbbbbbbbbwwwwwwwww')
+    .case(`M U2 M' U2`)
+    ('#L4E-3');
+</script>
+</div>
+<p>你也可以尝试：如何不依赖转体，仅使用<code>U2</code>和M层操作的组合来复原。</p>
+<h3 id="h"><a class="header" href="#h">"H"</a></h3>
+<p>这种情况下，对齐中心块后，四个面已经复原，而剩余两个相对的面呈“H”型。将一个H型的面放在F面，做<code>U2 M2 U2 M2</code>。</p>
+<div id="L4E-4">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('rrrrrrrrrgggggggggyyyyyyyyyooooooooobbbbbbbbbwwwwwwwww')
+    .case(`x' U2 M2 U2 M2`)
+    ('#L4E-4');
+</script>
+</div>
+<h3 id="四心换"><a class="header" href="#四心换">四心换</a></h3>
+<p>这种情况下，对齐中心块后，有四个面呈“H”型。做<code>E2 M' E2 M'</code>。</p>
+<div id="L4E-5">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
+    .case(`E2 M' E2 M'`)
+    ('#L4E-5');
+</script>
+</div>
+<p>之所以笼统地称这类情况为“四心换”，是因为如果做<code>M2</code>，那么除了4个中心块外的所有块都已复原。</p>
+<div id="L4E-6">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wwwwywwwwgggggggggrrrrorrrryyyywyyyybbbbbbbbbooooroooo')
+    .case(`M2`)
+    ('#L4E-6');
+</script>
+</div>
+<p>至此，魔方的六面都已经复原，大功告成！</p>
+<p>你可以反复练习，直到能够不依赖教程而独立复原。</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../../入门/右桥.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../../入门/lse/eo.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../../入门/cmll/四角色向.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../../入门/关于本教程.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -233,11 +349,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../../入门/右桥.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../../入门/lse/eo.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../../入门/cmll/四角色向.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../../入门/关于本教程.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

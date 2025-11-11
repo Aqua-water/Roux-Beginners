@@ -321,9 +321,6 @@
 }
 </style>
 <h1 id="记号"><a class="header" href="#记号">记号</a></h1>
-<blockquote>
-<p>使用 <a href="https://cubedb.net/">cubedb.net</a>，可以为你指定的转动序列生成最终的状态。</p>
-</blockquote>
 <h2 id="位置记号"><a class="header" href="#位置记号">位置记号</a></h2>
 <p>一般来说，我们在复原中会选一个面对准自己。一旦视野中面积最大的面（称为“前“面）选定，并且魔方姿态正直，那么魔方的朝向也就确定了。视野中至多只能同时看见“前“面周围的两个面。</p>
 <p>按照视野中各个面的不同朝向，采用以下记号来标记它们：</p>
@@ -636,7 +633,7 @@
     .case(`x F' D'`)
     ('#DLflip');
 </script>
-<p><code>或</code></p>
+<p>或：</p>
 <div id="DLflip2">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
@@ -1124,6 +1121,7 @@
 }
 </style>
 <h1 id="cmll-1"><a class="header" href="#cmll-1">CMLL</a></h1>
+<h2 id="目标-2"><a class="header" href="#目标-2">目标</a></h2>
 <p>这步要还原顶层的四个角块的朝向和相对位置，如图所示。CMLL的含义是：复原最后一层的角块，而不关心M层的情况(<strong>C</strong>orners (regardless of <strong>M</strong> slice) of <strong>L</strong>ast <strong>L</strong>ayer)。</p>
 <p>完成后，顶层可以自由旋转，角块不必一定和左右桥对齐。</p>
 <div id="CMLL">
@@ -1184,7 +1182,7 @@
      ('#sune');
  </script>
  </div>
-<p>这个公式的组成为：<code>(基本操作二) U' (基本操作二)</code>。可以看出，它先将右桥的后棱角对移动到顶层，再换一种方式重新插入。</p>
+<p>这个公式的组成为：<code>(基本操作二) U' (基本操作二)</code>。（见<a href="%E5%85%A5%E9%97%A8/cmll/./../%E5%8F%B3%E6%A1%A5.html#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E4%BA%8Cr-ux-r">基本操作二</a>）可以看出，它先将右桥的后棱角对移动到顶层，再换一种方式重新插入。</p>
 <p>如果你只想为整个CMLL步骤记忆一条公式，那么记忆下面的公式：</p>
 <p><strong>公式〇</strong> <code>R' U L U' R U L'</code></p>
  <div id="cmll-as">
@@ -1209,7 +1207,7 @@
      ('#cmll-s');
  </script>
  </div>
-<p>这个公式的组成为：<code>(基本操作一) U (基本操作一)</code>。它对右桥的前棱角对完成重新插入。</p>
+<p>这个公式的组成为：<code>(基本操作一) U (基本操作一)</code>。（见<a href="%E5%85%A5%E9%97%A8/cmll/./../%E5%8F%B3%E6%A1%A5.html#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E4%B8%80r-ux-r">基本操作一</a>）它对右桥的前棱角对完成重新插入。</p>
 <p>如果只使用公式〇解决S形态，将已复原的黄色面放在俯视图的左上角位置，再完成：</p>
 <p><code>(公式〇) U' (公式〇)</code></p>
  <div id="cmll-s2">
@@ -1222,8 +1220,8 @@
  </script>
  </div>
 <h3 id="叠加公式"><a class="header" href="#叠加公式">叠加公式</a></h3>
-<p>除As与S以外的所有形态，都能通过执行一次公式一转化为As或S形态，因此总能通过叠加前面的公式来解决: <code>Ux (公式一) Ux (公式一/公式二）</code>。<code>Ux</code>用于调整朝向。</p>
-<p>当然也可以只使用公式〇解决。在上面的<code>Ux (公式一) Ux (公式一/公式二）</code>叠加方案中，将公式一替换为公式〇、公式二替换为<code>(公式〇) U' (公式〇)</code>即可。注意用于调整朝向的<code>Ux</code>会有一些变化。</p>
+<p>除As与S以外的所有形态，都能通过执行一次公式一转化为As或S形态，因此总能通过叠加前面的公式来解决: <code>Ux (公式一) Ux (公式一/公式二)</code>。<code>Ux</code>用于调整朝向。</p>
+<p>当然也可以只使用公式〇解决。在上面的<code>Ux (公式一) Ux (公式一/公式二)</code>叠加方案中，将公式一替换为公式〇、公式二替换为<code>(公式〇) U' (公式〇)</code>即可。注意用于调整朝向的<code>Ux</code>会有一些变化。</p>
 <h2 id="2-两个黄色面已还原"><a class="header" href="#2-两个黄色面已还原">2 两个黄色面已还原</a></h2>
 <p>恰好两个黄色面已还原的情形有3种。其叠加法如下：无论哪种情形，保证俯视图中左上角的角块是黄色朝上的:</p>
 <p>   <img src="入门/cmll/./images/cmll-2.png" width = "200" height = "200"/></p>
@@ -1286,7 +1284,7 @@
  </div>
 <p>注意这里改变了初始朝向，使得俯视图中左下角的黄色面朝前。</p>
 <h2 id="3-零个黄色面已还原"><a class="header" href="#3-零个黄色面已还原">3 零个黄色面已还原</a></h2>
-<p>恰好没有黄色面已还原的情形有2种。其<a href="%E5%85%A5%E9%97%A8/cmll/%E5%9B%9B%E8%A7%92%E8%89%B2%E5%90%91.html#%E5%8F%A0%E5%8A%A0%E5%85%AC%E5%BC%8F">叠加法</a>如下：无论哪种情形，保证俯视图中左侧的两个角块是黄色朝左的:</p>
+<p>没有任何黄色面已还原的情形有2种。其<a href="%E5%85%A5%E9%97%A8/cmll/%E5%9B%9B%E8%A7%92%E8%89%B2%E5%90%91.html#%E5%8F%A0%E5%8A%A0%E5%85%AC%E5%BC%8F">叠加法</a>如下：无论哪种情形，保证俯视图中左侧的两个角块是黄色朝左的:</p>
 <p>   <img src="入门/cmll/./images/cmll-0.png" width = "200" height = "200"/></p>
 <p>然后使用公式一（或公式〇），就一定转为As形态，从而能够再做一次公式一（或公式〇）解决。</p>
 <h3 id="3-1-h"><a class="header" href="#3-1-h">3-1 H</a></h3>
@@ -1328,14 +1326,23 @@
      .case(`F R U R' U' R U R' U' F'`)
      ('#cmll-pi');
  </script>
- </div><div style="break-before: page; page-break-before: always;"></div>  <script type="text/javascript" src="/twistysim.js"></script>
+ </div>
+<h2 id="选读叠加法的原理"><a class="header" href="#选读叠加法的原理">（选读）叠加法的原理</a></h2>
+<p>所有的情形都能通过执行一次As的复原公式（公式一），转化为As或S，也就是恰有一个黄色面已还原的情形。但我们对初始的朝向做了要求，并不是随便做一次公式一就一定能转化。那么，为什么我们提供的朝向就能奏效呢？</p>
+<p>以T形态为例。它属于两个黄色面已还原的情形，我们要求俯视图中左上角的角块黄色朝上，然后执行公式一，完成转化。</p>
+<p>   <img src="入门/cmll/./images/cmll-t.png" width = "200" height = "200"/></p>
+<p>对于As形态，我们要求俯视图的左上角的角块黄色面已复原，然后执行公式一，完成复原。</p>
+<p>   <img src="入门/cmll/./images/cmll-as.png" width = "200" height = "200"/></p>
+<p>比较这两个俯视图，可以发现除了左下角的角块黄色面都朝下外，其他三个角块的形态都不同。因此同样执行公式一后，也会有三个角块的形态不同。既然执行结束后，As形态的四个黄色面都复原，那么T形态一定转化为恰有一个黄色面已还原，即As或S。你可以对其他形态所要求的朝向做验证，它们一定恰好有一个角块的形态与As相同。</p>
+<p>As形态执行公式一后，不会改变左上角的角块的状态（但会改变位置）。因此T形态执行公式一后，左上角的角块的状态也不会改变，其状态与S形态的三个未复原的角块一致，因此推断出转化为S形态。同理，所有的两个黄色面已还原的情形，都将转化为S形态。</p>
+<div style="break-before: page; page-break-before: always;"></div>  <script type="text/javascript" src="/twistysim.js"></script>
 <style type="text/css" rel="stylesheet">
 /* modifies the opacity of the cube wireframe */
 .ttk-shp-poly {
     stroke-opacity: 0.3;
 }
 </style>
-<h1 id="四角相对位置"><a class="header" href="#四角相对位置">四角相对位置</a></h1>
+<h1 id="四角归位"><a class="header" href="#四角归位">四角归位</a></h1>
 <p>这步将顶层的四个角块的相对位置也还原正确。</p>
 <div id="CMLL">
 <script type="text/javascript">
@@ -1361,8 +1368,8 @@
     ('#cmll-o1-1');
 </script>
 </div>
-<p>如果你在上一节只记忆了公式〇，并不打算记新的公式，那么<code>Ux</code>将角块颜色相同的侧面转向后侧，然后完成：</p>
-<p><code>L F （公式〇） U' F' L'</code></p>
+<p>如果你在上一节只记忆了公式〇（<code>R' U L U' R U L'</code>），并不打算记新的公式，那么<code>Ux</code>将角块颜色相同的侧面转向后侧，然后完成：</p>
+<p><code>L F (公式〇) U' F' L'</code></p>
   <div id="cmll-o1-2">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
@@ -1376,7 +1383,7 @@
 <h2 id="2-每侧的角块颜色不同"><a class="header" href="#2-每侧的角块颜色不同">2 每侧的角块颜色不同</a></h2>
 <p>   <img src="入门/cmll/./images/cmll-o2.png" width = "200" height = "200"/></p>
 <p>如图所示，任何一侧的角块颜色都不同。此时每一侧都是等价的，因此无需做方向调整。</p>
-<p>可以叠加公式三解决：执行一次公式三（或是<code>L F （公式〇） U' F' L'</code>），使之变为上一种情形。</p>
+<p>可以叠加公式三解决：执行一次公式三（或是<code>L F (公式〇) U' F' L'</code>），使之变为上一种情形。</p>
    <div id="cmll-o2-1">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
@@ -1398,7 +1405,535 @@
     .alg(`F R U' R' U' R U R' F' R U R' U' R' F R F'`)
     ('#cmll-o2-2');
 </script>
-</div><div style="break-before: page; page-break-before: always;"></div><h1 id="后六棱-1"><a class="header" href="#后六棱-1">后六棱</a></h1>
+</div><div style="break-before: page; page-break-before: always;"></div><script type="text/javascript" src="/twistysim.js"></script>
+<style type="text/css" rel="stylesheet">
+/* modifies the opacity of the cube wireframe */
+.ttk-shp-poly {
+    stroke-opacity: 0.3;
+}
+</style>
+<h1 id="后六棱-1"><a class="header" href="#后六棱-1">后六棱</a></h1>
+<h2 id="目标-3"><a class="header" href="#目标-3">目标</a></h2>
+<p>这步的目标是将剩下的6个棱块（以灰色标出）复原，从而复原整个魔方。后六棱又叫做LSE(Last Six Edges)、L6E。</p>
+<div id="lse">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wlwwwwwlwggggggglgrlrrrrrlrylylylylybbbbbbblbolooooolo')
+    ('#lse');
+</script>
+</div>
+<p>与CMLL类似，我们将后六棱分为两个步骤：</p>
+<h2 id="后六棱色向"><a class="header" href="#后六棱色向">后六棱色向</a></h2>
+<p>这步要将顶层和底层上剩余的块的色向还原正确，也就是白色和黄色一致朝上或朝下。下面是一个色向还原的例子。</p>
+<div id="eo">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wwwwywwywggggggolorlrrrrglgyyywwyyyybbbbbbrlrolooooblb')
+    ('#eo');
+</script>
+</div>
+<h2 id="后六棱归位"><a class="header" href="#后六棱归位">后六棱归位</a></h2>
+<p>这步要在色向还原的基础上，将剩下的6个棱块彻底复原，从而完成整个魔方的复原。</p>
+<div id="done">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
+    ('#done');
+</script>
+</div>
+<p>这两个步骤的具体内容将在以下两节介绍。</p>
+<div style="break-before: page; page-break-before: always;"></div><script type="text/javascript" src="/twistysim.js"></script>
+<style type="text/css" rel="stylesheet">
+/* modifies the opacity of the cube wireframe */
+.ttk-shp-poly {
+    stroke-opacity: 0.3;
+}
+</style>
+<h1 id="后六棱色向-1"><a class="header" href="#后六棱色向-1">后六棱色向</a></h1>
+<blockquote>
+<p>这一步骤是桥式解法中最为困难的部分。如果你感觉理解起来很吃力，可以在学习完“箭头”情形后，直接阅读<a href="%E5%85%A5%E9%97%A8/lse/eo.html#%E5%A4%8D%E5%8E%9F%E6%B5%81%E7%A8%8B%E5%9B%BE">复原流程图</a>：了解具体的流程之后，再理解基本操作三~六的思想。</p>
+</blockquote>
+<h2 id="目标-4"><a class="header" href="#目标-4">目标</a></h2>
+<p>这步要将顶层和底层上剩余的块的色向还原正确，主要解决的是剩下6个棱块的色向。这步又叫做EO (Edges Oriented)。</p>
+<p>“色向”这个词在CMLL中已经提及过。所谓块的色向(orientation)，在这里指的是块沿着上下方向的朝向。例如，某个块含有黄色面，在其朝向正确时，黄色面是向上的。而在它色向正确时，黄色面不仅可以朝上，还可以朝下。</p>
+<p>以下是一个色向还原正确的具体例子。你可以拖动魔方，查看底层的状态：</p>
+<div id="eo-eg">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wwwwywwywggggggolorlrrrrglgyyywwyyyybbbbbbrlrolooooblb')
+    ('#eo-eg');
+</script>
+</div>
+<p>在下图中，色向错误的棱块数量为4。</p>
+<div id="eo-eg2">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wowwywwowgggggggbgryrrorryryryywyyrybbbbbbbgbowooroowo')
+    ('#eo-eg2');
+</script>
+</div>
+<p>为了直观，我们只使用红色标出上下两层中，色向错误的棱块面的位置。注意它不代表真正的红色面。</p>
+<div id="eo-eg3">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('trtttttrttttttttttttttttttttrtttttrttttttttttttttttttt')
+    ('#eo-eg3');
+</script>
+</div>
+<p>中心块的色向通过一步<code>Mx</code>就能解决，我们先还原它们，再处理剩下6个棱块的色向。</p>
+<div id="eo-c">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wlwwywwlwgggggglllrlrrlrlllylylwlylybbbbbbllloloololll')
+    .case(`M'`)
+    ('#eo-c');
+</script>
+</div>
+<blockquote>
+<p>在这里，黄色中心块在顶层并不比在底层更好。</p>
+</blockquote>
+<p>下面的介绍中，通过<code>Ux</code>能够相互转换的情形视为同一种情形。</p>
+<h2 id="恰有4个色向错误的棱块的复原"><a class="header" href="#恰有4个色向错误的棱块的复原">恰有4个色向错误的棱块的复原</a></h2>
+<h3 id="箭头arrow或3-1"><a class="header" href="#箭头arrow或3-1">箭头(Arrow,或3-1)</a></h3>
+<p>箭头的顶层有3个色向错误的棱块，底层有1个。通过做<code>Ux</code>可调整其形态如下：</p>
+<p>箭头一：</p>
+<div id="arrow1">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('tttttttrttttttttttttttttttttrtrtrttttttttttttttttttttt')
+    ('#arrow1');
+</script>
+</div>
+<p>箭头二：</p>
+<div id="arrow2">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('trttttttttttttttttttttttttttttrtrtrttttttttttttttttttt')
+    ('#arrow2');
+</script>
+</div>
+<p>不管哪种箭头，上面的朝向使得4个色向错误的棱块分为两对：一对左右相对，一对上下相对。</p>
+<p>为了解决箭头的情形，我们引入两类基本操作：</p>
+<h4 id="基本操作三-m-ux-mx"><a class="header" href="#基本操作三-m-ux-mx">基本操作三：	<code>M' Ux Mx</code></a></h4>
+<p>这里，<code>Ux</code>被限制为<code>U</code>或<code>U'</code>，<code>Mx</code>也被限制为<code>M'</code>或<code>M</code>，因此共有4种组合。其作用是改变箭头一中标红位置的棱块的色向，例如：</p>
+<div id="base3">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('tttttttrttttttttttttttttttttrtrtrttttttttttttttttttttt')
+    .alg(`M' U M'`)
+    ('#base3');
+</script>
+</div>
+<p>或者：</p>
+<div id="base3-2">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('tttttttrttttttttttttttttttttrtrtrttttttttttttttttttttt')
+    .alg(`M' U' M`)
+    ('#base3-2');
+</script>
+</div>
+<p>等等。可以看到执行完基本操作三后，4个红色面都移向了侧面，意味着其对应棱块的色向已改变。剩余两个棱块虽然没有标出，但它们的移动效果和<code>M0</code>或<code>M2</code>是一样的，因此色向不会变化。</p>
+<h4 id="基本操作四-m-ux-mx"><a class="header" href="#基本操作四-m-ux-mx">基本操作四：	<code>M Ux Mx</code></a></h4>
+<p>与基本操作三相比，其第一步换成了<code>M</code>，而<code>Ux</code>与<code>Mx</code>同样被限制为90°转动。其作用是改变箭头二中标红位置的棱块的色向，例如：</p>
+<div id="base4">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('trttttttttttttttttttttttttttttrtrtrttttttttttttttttttt')
+    .alg(`M U M'`)
+    ('#base4');
+</script>
+</div>
+<p>因此，基本操作三和基本操作四能够改变特定的四个棱块的色向，并能直接解决箭头的情形。</p>
+<p>“箭头”是最简单的情形。后续所有的情形，都将先转化为“箭头”情形，然后复原。</p>
+<h3 id="2a-2"><a class="header" href="#2a-2">2a-2</a></h3>
+<p>2a-2情形的含义为："2a"代表顶层有2个色向错误的棱块，并且位置相邻(adjoin)；"-2"代表底层有2个色向错误的棱块。后边情形的命名方式都与此类似。</p>
+<div id="case2a-2">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('trtttttrttttttttttttttttttttttrtttrttttttttttttttttttt')
+    ('#case2a-2');
+</script>
+</div>
+<p>和“箭头”相比，2a-2的顶层少了一个色向错误的棱块，而底层多了一个。</p>
+<p>顶层上位于M层的两个棱块中，恰有一个色向错误。如果做<code>M2</code>，将改变M层的四个棱块的上下位置。这样，色向错误的棱块数不变（4个），而底层将恰有一个色向错误的棱块，因此转化为“箭头”情形。</p>
+<div id="case2a-2-1">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('trtttttrttttttttttttttttttttttrtttrttttttttttttttttttt')
+    .alg(`M2`)
+    ('#case2a-2-1');
+</script>
+</div>
+<p>进而可以得出一种完整的复原过程：</p>
+<div id="case2a-2-2">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('trtttttrttttttttttttttttttttttrtttrttttttttttttttttttt')
+    .alg(`M2 U' M' U M'`)
+    ('#case2a-2-2');
+</script>
+</div>
+<h3 id="2o-2"><a class="header" href="#2o-2">2o-2</a></h3>
+<p>2o-2情形下，"2o"代表顶层有2个色向错误的棱块，并且位置相对(opposite)；"-2"代表底层有2个色向错误的棱块。</p>
+<div id="case2o-2">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('trtttttrttttttttttttttttttttttrtrttttttttttttttttttttt')
+    ('#case2o-2');
+</script>
+</div>
+<p>与2a-2情形一样，2o-2中色向错误的棱块数也是4个。对于2a-2，我们使用<code>M2</code>让顶层和底层的四个棱块两两互换，从而将顶层色向错误的棱块数改变为3，转化为“箭头”。这里用同样的办法就不能奏效了。</p>
+<p>我们再引入两类基本操作，以完成上下两个棱块的单独互换，并且不改变所有棱块的色向：</p>
+<h4 id="基本操作五-m-u2-m"><a class="header" href="#基本操作五-m-u2-m">基本操作五：	<code>M' U2 M</code></a></h4>
+<p>将M层与F层（前面）交界的两个棱块（UF位、DF位）位置互换。</p>
+<div id="base5">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('tttttttrtttttttttttttttttrtttttttttttttttttttttttttttt')
+    .alg(`M' U2 M`)
+    ('#base5');
+</script>
+</div>
+<p>可以发现,交换位置的两个棱块的色向都没有改变，即一个正确、一个错误。</p>
+<h4 id="基本操作六-m-u2-m"><a class="header" href="#基本操作六-m-u2-m">基本操作六：	<code>M U2 M'</code></a></h4>
+<p>将M层与B层（后面）交界的两个棱块（UB位、DB位）位置互换。</p>
+<div id="base6">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('trttttttttttttttttttttttttttttttttttttttttttttttttttrt')
+    .alg(`M U2 M'`)
+    ('#base6');
+</script>
+</div>
+<p>因此，当两个互相交换的棱块有不同的色向时，这两类基本操作能将顶层色向错误的棱块数增加或减少一个，同时保证色向错误的棱块总数不变。</p>
+<p>对于2o-2情形，可以做基本操作五：</p>
+<div id="case2o-2-1">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('trtttttrttttttttttttttttttttttrtrttttttttttttttttttttt')
+    .alg(`M' U2 M`)
+    ('#case2o-2-1');
+</script>
+</div>
+<p>在F面上，一个底层色向错误的棱块与一个顶层色向正确的棱块交换，便转化为“箭头”。</p>
+<p>基本操作六同样可行：</p>
+<div id="case2o-2-2">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('trtttttrttttttttttttttttttttttrtrttttttttttttttttttttt')
+    .alg(`M U2 M'`)
+    ('#case2o-2-2');
+</script>
+</div>
+<h3 id="4-0"><a class="header" href="#4-0">4-0</a></h3>
+<p>4-0情形下，顶层有4个色向错误的棱块，而底层没有。</p>
+<div id="case4-0">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('ttttttttttttttttttttttttttttrtrtrtrttttttttttttttttttt')
+    ('#case4-0');
+</script>
+</div>
+<p>可以想象，<code>M2</code>就能将4-0转为2o-2的情形，然后再做<code>M U2 M'</code>转化为“箭头”，因此合并为<code>M' U2 M'</code>：</p>
+<div id="case4-0-1">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('ttttttttttttttttttttttttttttrtrtrtrttttttttttttttttttt')
+    .alg(`M' U2 M'`)
+    ('#case4-0-1');
+</script>
+</div>
+<h2 id="其他情形的复原"><a class="header" href="#其他情形的复原">其他情形的复原</a></h2>
+<p>我们已经展示了恰有4个色向错误的棱块的情形，转化为“箭头”情形的办法。</p>
+<p>色向错误的棱块数不为4的情形，共有5类：</p>
+<h3 id="4-2"><a class="header" href="#4-2">4-2</a></h3>
+<div id="case4-2">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('trtttttrttttttttttttttttttttrtrtrtrttttttttttttttttttt')
+    ('#case4-2');
+</script>
+</div>
+<h3 id="1-1"><a class="header" href="#1-1">1-1</a></h3>
+<div id="case1-1-1">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('trttttttttttttttttttttttttttrttttttttttttttttttttttttt')
+    ('#case1-1-1');
+</script>
+</div>
+<p>或：</p>
+<div id="case1-1-2">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('tttttttrttttttttttttttttttttttttttrttttttttttttttttttt')
+    ('#case1-1-2');
+</script>
+</div>
+<h3 id="2a-0"><a class="header" href="#2a-0">2a-0</a></h3>
+<div id="case2a-0">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('ttttttttttttttttttttttttttttttrtttrttttttttttttttttttt')
+    ('#case2a-0');
+</script>
+</div>
+<h3 id="2o-0"><a class="header" href="#2o-0">2o-0</a></h3>
+<div id="case2o-0">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('ttttttttttttttttttttttttttttrtttttrttttttttttttttttttt')
+    ('#case2o-0');
+</script>
+</div>
+<h3 id="0-2"><a class="header" href="#0-2">0-2</a></h3>
+<div id="case0-2">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('trtttttrtttttttttttttttttttttttttttttttttttttttttttttt')
+    ('#case0-2');
+</script>
+</div>
+<p>其统一的复原步骤如下：</p>
+<ol>
+<li>
+<p>通过至多两次<a href="%E5%85%A5%E9%97%A8/lse/eo.html#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E4%B8%89-m-ux-mx">基本操作三</a>、<a href="%E5%85%A5%E9%97%A8/lse/eo.html#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%9B%9B-m-ux-mx">四</a>，将色向错误的棱块总数转为4个。此时可以直接转为“箭头”情况，而不必使用基本操作五、六再做转换。</p>
+</li>
+<li>
+<p>通过基本操作三或四，解决“箭头”情况，完成色向复原。</p>
+</li>
+</ol>
+<blockquote>
+<p>基本操作三或四能够同时改变4个棱块的色向。除非这四个位置恰好有两个色相错误的棱块，否则基本操作三、四一定会改变色向错误的棱块总数。</p>
+</blockquote>
+<h3 id="复原流程图"><a class="header" href="#复原流程图">复原流程图</a></h3>
+<p>直观的复原流程图（作者：甘浩東/Anto Kam）如下，其中也包括了上一节的情形：</p>
+<img src="入门/lse/./EO_flowchart.png">
+<p>在这张图中，红色棱块代表色向错误的棱块。图中无法看到DB位置棱块的色向，但请记住：色向错误的棱块总数一定为偶数。因此从图中就能足够推断它的色向情况。</p>
+<p>不要去硬记每种情形的完整转换公式。应当将复原流程与基本操作三~六的功能联系起来，理解<a href="%E5%85%A5%E9%97%A8/lse/eo.html#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E4%B8%89-m-ux-mx">基本操作三</a>、<a href="%E5%85%A5%E9%97%A8/lse/eo.html#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%9B%9B-m-ux-mx">四</a>是如何改变色向错误的棱块总数，<a href="%E5%85%A5%E9%97%A8/lse/eo.html#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E4%BA%94-m-u2-m">基本操作五</a>、<a href="%E5%85%A5%E9%97%A8/lse/eo.html#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%85%AD-m-u2-m">六</a>是如何改变色向错误的棱块的分布的。</p>
+<p>注意每次转换完成后，还需要通过<code>Ux</code>，调整为图中相应的朝向。</p>
+<div style="break-before: page; page-break-before: always;"></div><script type="text/javascript" src="/twistysim.js"></script>
+<style type="text/css" rel="stylesheet">
+/* modifies the opacity of the cube wireframe */
+.ttk-shp-poly {
+    stroke-opacity: 0.3;
+}
+</style>
+<h1 id="后六棱归位-1"><a class="header" href="#后六棱归位-1">后六棱归位</a></h1>
+<h2 id="目标-5"><a class="header" href="#目标-5">目标</a></h2>
+<p>这步要<strong>在色向还原的基础上</strong>，将剩下的6个棱块彻底复原，从而完成整个魔方的复原。分为两个阶段：</p>
+<p>先将左右面位于顶层的2个棱块复原，并将M层的中心块对齐，剩下最后M层的4个棱块。</p>
+<div id="l4e">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wlwwwwwlwgggggggggrlrrrrrlrylyyyyylybbbbbbbbbolooooolo')
+    ('#l4e');
+</script>
+</div>
+<p>再复原最后4个棱块。</p>
+<h2 id="1-左右棱"><a class="header" href="#1-左右棱">1 左右棱</a></h2>
+<h3 id="左右棱置底"><a class="header" href="#左右棱置底">左右棱置底</a></h3>
+<p>为了复原左右面位于顶层的2个棱块(ULUR)，我们先将要归位的黄蓝、黄绿棱块都放到底层。</p>
+<p>以下是一个具体例子。你可以拖动魔方，主要查看底层的状态：</p>
+<div id="ulur">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wywwwwwywggggggglgrbrrrrrlrylylylylybbbbbbblbogooooolo')
+    ('#ulur');
+</script>
+</div>
+<p>还原方法如下：</p>
+<p>如果恰好有一个黄蓝或黄绿棱块在顶层：</p>
+<p>先<code>Ux</code>将该棱块放在M层，并且保证其下方不是黄蓝或黄绿棱块。再做<a href="%E5%85%A5%E9%97%A8/lse/./eo.html#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E4%BA%94-m-u2-m">基本操作五</a>或<a href="%E5%85%A5%E9%97%A8/lse/%E5%90%8E%E5%85%AD%E6%A3%B1%E5%BD%92%E4%BD%8D.html#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%85%AD-m-u2-m">六</a>，完成上下棱块的交换，将其放在底层。</p>
+<p>这个例子通过基本操作六，将黄绿棱块移到DB位。</p>
+<div id="ulur-1">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wywwwwwywggggggglgrbrrrrrlrylylylylybbbbbbblbogooooolo')
+    .case(`U' M U2 M'`)
+    ('#ulur-1');
+</script>
+</div>
+<p>如果黄蓝、黄绿棱块都在顶层：</p>
+<p>通过<code>Ux</code>将其中一个棱块放在M层，再<code>M2</code>将其放在底层。这样，至多有一个棱块仍然留在顶层，转化为上一种情形。</p>
+<p>这个例子将黄绿棱块移到DB位，然后再通过基本操作五，将黄蓝棱块移到DF位。</p>
+<div id="ulur-2">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wlwwwwwlwgggggggbgrlrrrrrgryyylyyylybbbbbbblbolooooolo')
+    .alg(`M2 U M' U2 M`)
+    ('#ulur-2');
+</script>
+</div>
+<p>这样就将两个棱块都放在底层了，两个棱块谁在前并不重要，但色向必须正确。</p>
+<h3 id="左右棱归位"><a class="header" href="#左右棱归位">左右棱归位</a></h3>
+<p>左右棱都放到底层后，做<code>Ux</code>调整顶层角块的姿态，然后做<code>M2</code>，将黄蓝、黄绿棱块分别与对应的角块合并。</p>
+<div id="ulur-3">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wywwwwwywggggggglgrbrrrrrlrylylylylybbbbbbblbogooooolo')
+    .alg(`U M2`)
+    ('#ulur-3');
+</script>
+</div>
+<p>最后做<code>Ux Mx</code>，将左右棱块与M层中心块彻底归位。</p>
+<div id="ulur-4">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wlwwywwlwggggggolorlrrorgggyyylwlyyybbbbbbrlroloorobbb')
+    .alg(`U' M2`)
+    ('#ulur-4');
+</script>
+</div>
+<h2 id="后四棱"><a class="header" href="#后四棱">后四棱</a></h2>
+<p>这步完成最后4个棱块的复原（L4E）。</p>
+<p>完成左右面的复原后，魔方的形态变得更加对称了。你可以自由地做一些<a href="%E5%85%A5%E9%97%A8/lse/./../%E8%AE%B0%E5%8F%B7.html#x-%E8%BD%AC%E4%BD%93">x转体</a>，也可以自由尝试一些M层操作与<code>U2</code>的组合。</p>
+<p>下面介绍一些简单的4步操作，来完成魔方最终的复原。</p>
+<h3 id="三棱换"><a class="header" href="#三棱换">三棱换</a></h3>
+<p>这种情况下，对齐中心块后，恰好有3个棱块未复原，而1个M层棱块已经复原。</p>
+<p>首先做x转体，使复原的棱块位于DF位上。</p>
+<p>下图中，我们将已复原的黄红棱块转到DF位上。</p>
+<div id="L4E">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wywwwwwwwgggggggggrorrrrrrryyyyyyywybbbbbbbbboooooooro')
+    .alg(`x'`)
+    ('#L4E');
+</script>
+</div>
+<p>进一步观察：</p>
+<p>如果UF位的棱块颜色与两侧中心块的颜色都相反，做<code>U2 M U2 M'</code>（即<code>U2</code>+ 基本操作六）。</p>
+<p>如图，UF位的白红棱块，两侧的中心块分别为黄、橙，满足要求。</p>
+<div id="L4E-2">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('rrrrrrrrrgggggggggyyyyyyyyyooooooooobbbbbbbbbwwwwwwwww')
+    .case(`U2 M U2 M'`)
+    ('#L4E-2');
+</script>
+</div>
+<p>如果UF位的棱块颜色仅与前面中心块的颜色相反，做<code>M U2 M' U2</code>（即基本操作六+<code>U2</code>）。</p>
+<div id="L4E-3">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('rrrrrrrrrgggggggggyyyyyyyyyooooooooobbbbbbbbbwwwwwwwww')
+    .case(`M U2 M' U2`)
+    ('#L4E-3');
+</script>
+</div>
+<p>你也可以尝试：如何不依赖转体，仅使用<code>U2</code>和M层操作的组合来复原。</p>
+<h3 id="h"><a class="header" href="#h">"H"</a></h3>
+<p>这种情况下，对齐中心块后，四个面已经复原，而剩余两个相对的面呈“H”型。将一个H型的面放在F面，做<code>U2 M2 U2 M2</code>。</p>
+<div id="L4E-4">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('rrrrrrrrrgggggggggyyyyyyyyyooooooooobbbbbbbbbwwwwwwwww')
+    .case(`x' U2 M2 U2 M2`)
+    ('#L4E-4');
+</script>
+</div>
+<h3 id="四心换"><a class="header" href="#四心换">四心换</a></h3>
+<p>这种情况下，对齐中心块后，有四个面呈“H”型。做<code>E2 M' E2 M'</code>。</p>
+<div id="L4E-5">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
+    .case(`E2 M' E2 M'`)
+    ('#L4E-5');
+</script>
+</div>
+<p>之所以笼统地称这类情况为“四心换”，是因为如果做<code>M2</code>，那么除了4个中心块外的所有块都已复原。</p>
+<div id="L4E-6">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wwwwywwwwgggggggggrrrrorrrryyyywyyyybbbbbbbbbooooroooo')
+    .case(`M2`)
+    ('#L4E-6');
+</script>
+</div>
+<p>至此，魔方的六面都已经复原，大功告成！</p>
+<p>你可以反复练习，直到能够不依赖教程而独立复原。</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="关于本教程"><a class="header" href="#关于本教程">关于本教程</a></h1>
+<h2 id="作者"><a class="header" href="#作者">作者</a></h2>
+<ul>
+<li><a href="https://github.com/Aqua-water">Aqua-water</a></li>
+</ul>
+<h2 id="参考工作"><a class="header" href="#参考工作">参考工作</a></h2>
+<p>本教程参考了许多工作：</p>
+<ul>
+<li>
+<p><a href="https://book.rouxers.com/intro.html">The Roux Reader by Anto Kam</a></p>
+</li>
+<li>
+<p><a href="https://tutorial.rouxers.com/">Roux Tutorial by onionhoney, Anto Kam, etc.</a></p>
+</li>
+<li>
+<p><a href="https://visualcube.roudai.net/">VisualCube Editor 2.0</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/playlist?list=PLBHocHmPzgIjnAbNLHDycgaCP5IqiwnU9">Kian's Tutorial</a></p>
+</li>
+<li>
+<p><a href="https://www.bilibili.com/video/BV1At411n7ec/?spm_id_from=333.337.search-card.all.click&amp;vd_source=fb895e67af7851b9802f3e610083cd44">桥式入门教程-随风又见面了</a></p>
+</li>
+<li>
+<p><a href="http://bbs.mf8-china.com/forum.php?mod=viewthread&amp;tid=31908">用一个公式还原魔方-时富军</a></p>
+</li>
+</ul>
+<p>非常感谢前辈们的付出。</p>
+<h2 id="让教程变得更好"><a class="header" href="#让教程变得更好">让教程变得更好</a></h2>
+<ul>
+<li>
+<p>你可以在<a href="https://github.com/Aqua-water/Roux-Beginners/issues/new">Github</a>上提出任何的改进建议！</p>
+</li>
+<li>
+<p>成为作者：如果你想成为源项目的开发者，为这份教程增加新的内容，可以参考这份简单的<a href="https://github.com/Aqua-water/Roux-Beginners/blob/main/README.md">指引</a>，并在<a href="https://github.com/Aqua-water/Roux-Beginners/pulls">Github</a>上提交请求。</p>
+</li>
+<li>
+<p>也可以通过邮件联系原作者：t152826615@gmail.com</p>
+</li>
+</ul>
 
                     </main>
 

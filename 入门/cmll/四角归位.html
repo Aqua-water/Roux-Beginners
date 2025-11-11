@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>CMLL - 桥式教程</title>
+        <title>四角归位 - 桥式教程</title>
 
 
         <!-- Custom HTML head -->
@@ -177,17 +177,15 @@
 
                 <div id="content" class="content">
                     <main>
-                        <script type="text/javascript" src="/twistysim.js"></script>
+                          <script type="text/javascript" src="/twistysim.js"></script>
 <style type="text/css" rel="stylesheet">
 /* modifies the opacity of the cube wireframe */
 .ttk-shp-poly {
     stroke-opacity: 0.3;
 }
 </style>
-<h1 id="cmll"><a class="header" href="#cmll">CMLL</a></h1>
-<h2 id="目标"><a class="header" href="#目标">目标</a></h2>
-<p>这步要还原顶层的四个角块的朝向和相对位置，如图所示。CMLL的含义是：复原最后一层的角块，而不关心M层的情况(<strong>C</strong>orners (regardless of <strong>M</strong> slice) of <strong>L</strong>ast <strong>L</strong>ayer)。</p>
-<p>完成后，顶层可以自由旋转，角块不必一定和左右桥对齐。</p>
+<h1 id="四角归位"><a class="header" href="#四角归位">四角归位</a></h1>
+<p>这步将顶层的四个角块的相对位置也还原正确。</p>
 <div id="CMLL">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
@@ -196,34 +194,69 @@
     ('#CMLL');
 </script>
 </div>
-<p>我们将CMLL分为两个步骤：</p>
-<h2 id="复原四角色向"><a class="header" href="#复原四角色向">复原四角色向</a></h2>
-<p>这步要将顶层的四个角块在顶层上的颜色还原正确，也就是黄色一致朝上。</p>
-<div id="CMLL-o">
+<p>观察顶面的四个侧面，有两种可能的情况：</p>
+<h2 id="1-恰有一侧的角块颜色相同"><a class="header" href="#1-恰有一侧的角块颜色相同">1 恰有一侧的角块颜色相同</a></h2>
+<p>   <img src="./images/cmll-o1.png" width = "200" height = "200"/></p>
+<p>如图所示，一个侧面的角块颜色相同，其余三个侧面的颜色不同。这里画出的是橙色相同。</p>
+<p><code>Ux</code>将角块颜色相同的侧面转向左侧，然后完成公式：</p>
+<p><strong>公式三</strong> <code>R U R' U' R' F R2 U' R' U' R U R' F'</code></p>
+ <div id="cmll-o1-1">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
-    .fc('wtwwtwwtwggggggltlrtrrtrltlytytttytybbbbbbltlotootoltl')
-    ('#CMLL-o');
+    .fc('wtwwtwwtwgggggggtgrtrrtrrtrytytttytybbbbbbbtbotootooto')
+    .case(`R U R' U' R' F R2 U' R' U' R U R' F' U`)
+    .alg(`R U R' U' R' F R2 U' R' U' R U R' F'`)
+    ('#cmll-o1-1');
 </script>
 </div>
-<h2 id="复原角块相对位置"><a class="header" href="#复原角块相对位置">复原角块相对位置</a></h2>
-<p>这步将彻底完成CMLL步骤，也就是将顶层的四个角块的相对位置也还原正确。</p>
-<h2 id="公式"><a class="header" href="#公式">公式</a></h2>
-<p>这两个步骤的具体内容将在以下两节介绍。我们将引入<strong>公式</strong>（在本教程中，指的是4步以上的转动序列）。</p>
-<p>你可以选择最少的记忆量（1条公式：公式〇），但会多很多转动步数，并且需要理解如何叠加公式。</p>
-<p>你也可以记忆全部9条公式（公式一~三、进阶公式一~六），避免叠加造成多余步数。</p>
-<p>我们将主要介绍折中的方案（3条公式：公式一~三），并顺带提及前面两种方案。然而，当你对桥式复原法较为熟练之后，建议将9条公式全部掌握。</p>
-
+<p>如果你在上一节只记忆了公式〇（<code>R' U L U' R U L'</code>），并不打算记新的公式，那么<code>Ux</code>将角块颜色相同的侧面转向后侧，然后完成：</p>
+<p><code>L F (公式〇) U' F' L'</code></p>
+  <div id="cmll-o1-2">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wtwwtwwtwgggggggtgrtrrtrrtrytytttytybbbbbbbtbotootooto')
+    .case(`L F R' U L U' R U L' U' F' L' U`)
+    .alg(`L F R' U L U' R U L' U' F' L'`)
+    ('#cmll-o1-2');
+</script>
+</div>
+<h2 id="2-每侧的角块颜色不同"><a class="header" href="#2-每侧的角块颜色不同">2 每侧的角块颜色不同</a></h2>
+<p>   <img src="./images/cmll-o2.png" width = "200" height = "200"/></p>
+<p>如图所示，任何一侧的角块颜色都不同。此时每一侧都是等价的，因此无需做方向调整。</p>
+<p>可以叠加公式三解决：执行一次公式三（或是<code>L F (公式〇) U' F' L'</code>），使之变为上一种情形。</p>
+   <div id="cmll-o2-1">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wtwwtwwtwgggggggtgrtrrtrrtrytytttytybbbbbbbtbotootooto')
+    .case(`F R U' R' U' R U R' F' R U R' U' R' F R F'`)
+    .alg(`R U R' U' R' F R2 U' R' U' R U R' F'`)
+    ('#cmll-o2-1');
+</script>
+</div>
+<p>一步复原公式为：</p>
+<p><strong>进阶公式六</strong> <code>F R U' R' U' R U R' F' R U R' U' R' F R F'</code></p>
+   <div id="cmll-o2-2">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wtwwtwwtwgggggggtgrtrrtrrtrytytttytybbbbbbbtbotootooto')
+    .case(`F R U' R' U' R U R' F' R U R' U' R' F R F' U2`)
+    .alg(`F R U' R' U' R U R' F' R U R' U' R' F R F'`)
+    ('#cmll-o2-2');
+</script>
+</div>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../../入门/右桥.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../../入门/cmll/四角色向.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../../入门/cmll/四角色向.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../../入门/lse/lse.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -233,11 +266,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../../入门/右桥.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../../入门/cmll/四角色向.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../../入门/cmll/四角色向.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../../入门/lse/lse.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

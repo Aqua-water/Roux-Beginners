@@ -1,0 +1,528 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>后六棱色向 - 桥式教程</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">桥式教程</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <script type="text/javascript" src="/twistysim.js"></script>
+<style type="text/css" rel="stylesheet">
+/* modifies the opacity of the cube wireframe */
+.ttk-shp-poly {
+    stroke-opacity: 0.3;
+}
+</style>
+<h1 id="后六棱色向"><a class="header" href="#后六棱色向">后六棱色向</a></h1>
+<blockquote>
+<p>这一步骤是桥式解法中最为困难的部分。如果你感觉理解起来很吃力，可以在学习完“箭头”情形后，直接阅读<a href="#%E5%A4%8D%E5%8E%9F%E6%B5%81%E7%A8%8B%E5%9B%BE">复原流程图</a>：了解具体的流程之后，再理解基本操作三~六的思想。</p>
+</blockquote>
+<h2 id="目标"><a class="header" href="#目标">目标</a></h2>
+<p>这步要将顶层和底层上剩余的块的色向还原正确，主要解决的是剩下6个棱块的色向。这步又叫做EO (Edges Oriented)。</p>
+<p>“色向”这个词在CMLL中已经提及过。所谓块的色向(orientation)，在这里指的是块沿着上下方向的朝向。例如，某个块含有黄色面，在其朝向正确时，黄色面是向上的。而在它色向正确时，黄色面不仅可以朝上，还可以朝下。</p>
+<p>以下是一个色向还原正确的具体例子。你可以拖动魔方，查看底层的状态：</p>
+<div id="eo-eg">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wwwwywwywggggggolorlrrrrglgyyywwyyyybbbbbbrlrolooooblb')
+    ('#eo-eg');
+</script>
+</div>
+<p>在下图中，色向错误的棱块数量为4。</p>
+<div id="eo-eg2">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wowwywwowgggggggbgryrrorryryryywyyrybbbbbbbgbowooroowo')
+    ('#eo-eg2');
+</script>
+</div>
+<p>为了直观，我们只使用红色标出上下两层中，色向错误的棱块面的位置。注意它不代表真正的红色面。</p>
+<div id="eo-eg3">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('trtttttrttttttttttttttttttttrtttttrttttttttttttttttttt')
+    ('#eo-eg3');
+</script>
+</div>
+<p>中心块的色向通过一步<code>Mx</code>就能解决，我们先还原它们，再处理剩下6个棱块的色向。</p>
+<div id="eo-c">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wlwwywwlwgggggglllrlrrlrlllylylwlylybbbbbbllloloololll')
+    .case(`M'`)
+    ('#eo-c');
+</script>
+</div>
+<blockquote>
+<p>在这里，黄色中心块在顶层并不比在底层更好。</p>
+</blockquote>
+<p>下面的介绍中，通过<code>Ux</code>能够相互转换的情形视为同一种情形。</p>
+<h2 id="恰有4个色向错误的棱块的复原"><a class="header" href="#恰有4个色向错误的棱块的复原">恰有4个色向错误的棱块的复原</a></h2>
+<h3 id="箭头arrow或3-1"><a class="header" href="#箭头arrow或3-1">箭头(Arrow,或3-1)</a></h3>
+<p>箭头的顶层有3个色向错误的棱块，底层有1个。通过做<code>Ux</code>可调整其形态如下：</p>
+<p>箭头一：</p>
+<div id="arrow1">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('tttttttrttttttttttttttttttttrtrtrttttttttttttttttttttt')
+    ('#arrow1');
+</script>
+</div>
+<p>箭头二：</p>
+<div id="arrow2">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('trttttttttttttttttttttttttttttrtrtrttttttttttttttttttt')
+    ('#arrow2');
+</script>
+</div>
+<p>不管哪种箭头，上面的朝向使得4个色向错误的棱块分为两对：一对左右相对，一对上下相对。</p>
+<p>为了解决箭头的情形，我们引入两类基本操作：</p>
+<h4 id="基本操作三-m-ux-mx"><a class="header" href="#基本操作三-m-ux-mx">基本操作三：	<code>M' Ux Mx</code></a></h4>
+<p>这里，<code>Ux</code>被限制为<code>U</code>或<code>U'</code>，<code>Mx</code>也被限制为<code>M'</code>或<code>M</code>，因此共有4种组合。其作用是改变箭头一中标红位置的棱块的色向，例如：</p>
+<div id="base3">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('tttttttrttttttttttttttttttttrtrtrttttttttttttttttttttt')
+    .alg(`M' U M'`)
+    ('#base3');
+</script>
+</div>
+<p>或者：</p>
+<div id="base3-2">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('tttttttrttttttttttttttttttttrtrtrttttttttttttttttttttt')
+    .alg(`M' U' M`)
+    ('#base3-2');
+</script>
+</div>
+<p>等等。可以看到执行完基本操作三后，4个红色面都移向了侧面，意味着其对应棱块的色向已改变。剩余两个棱块虽然没有标出，但它们的移动效果和<code>M0</code>或<code>M2</code>是一样的，因此色向不会变化。</p>
+<h4 id="基本操作四-m-ux-mx"><a class="header" href="#基本操作四-m-ux-mx">基本操作四：	<code>M Ux Mx</code></a></h4>
+<p>与基本操作三相比，其第一步换成了<code>M</code>，而<code>Ux</code>与<code>Mx</code>同样被限制为90°转动。其作用是改变箭头二中标红位置的棱块的色向，例如：</p>
+<div id="base4">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('trttttttttttttttttttttttttttttrtrtrttttttttttttttttttt')
+    .alg(`M U M'`)
+    ('#base4');
+</script>
+</div>
+<p>因此，基本操作三和基本操作四能够改变特定的四个棱块的色向，并能直接解决箭头的情形。</p>
+<p>“箭头”是最简单的情形。后续所有的情形，都将先转化为“箭头”情形，然后复原。</p>
+<h3 id="2a-2"><a class="header" href="#2a-2">2a-2</a></h3>
+<p>2a-2情形的含义为："2a"代表顶层有2个色向错误的棱块，并且位置相邻(adjoin)；"-2"代表底层有2个色向错误的棱块。后边情形的命名方式都与此类似。</p>
+<div id="case2a-2">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('trtttttrttttttttttttttttttttttrtttrttttttttttttttttttt')
+    ('#case2a-2');
+</script>
+</div>
+<p>和“箭头”相比，2a-2的顶层少了一个色向错误的棱块，而底层多了一个。</p>
+<p>顶层上位于M层的两个棱块中，恰有一个色向错误。如果做<code>M2</code>，将改变M层的四个棱块的上下位置。这样，色向错误的棱块数不变（4个），而底层将恰有一个色向错误的棱块，因此转化为“箭头”情形。</p>
+<div id="case2a-2-1">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('trtttttrttttttttttttttttttttttrtttrttttttttttttttttttt')
+    .alg(`M2`)
+    ('#case2a-2-1');
+</script>
+</div>
+<p>进而可以得出一种完整的复原过程：</p>
+<div id="case2a-2-2">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('trtttttrttttttttttttttttttttttrtttrttttttttttttttttttt')
+    .alg(`M2 U' M' U M'`)
+    ('#case2a-2-2');
+</script>
+</div>
+<h3 id="2o-2"><a class="header" href="#2o-2">2o-2</a></h3>
+<p>2o-2情形下，"2o"代表顶层有2个色向错误的棱块，并且位置相对(opposite)；"-2"代表底层有2个色向错误的棱块。</p>
+<div id="case2o-2">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('trtttttrttttttttttttttttttttttrtrttttttttttttttttttttt')
+    ('#case2o-2');
+</script>
+</div>
+<p>与2a-2情形一样，2o-2中色向错误的棱块数也是4个。对于2a-2，我们使用<code>M2</code>让顶层和底层的四个棱块两两互换，从而将顶层色向错误的棱块数改变为3，转化为“箭头”。这里用同样的办法就不能奏效了。</p>
+<p>我们再引入两类基本操作，以完成上下两个棱块的单独互换，并且不改变所有棱块的色向：</p>
+<h4 id="基本操作五-m-u2-m"><a class="header" href="#基本操作五-m-u2-m">基本操作五：	<code>M' U2 M</code></a></h4>
+<p>将M层与F层（前面）交界的两个棱块（UF位、DF位）位置互换。</p>
+<div id="base5">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('tttttttrtttttttttttttttttrtttttttttttttttttttttttttttt')
+    .alg(`M' U2 M`)
+    ('#base5');
+</script>
+</div>
+<p>可以发现,交换位置的两个棱块的色向都没有改变，即一个正确、一个错误。</p>
+<h4 id="基本操作六-m-u2-m"><a class="header" href="#基本操作六-m-u2-m">基本操作六：	<code>M U2 M'</code></a></h4>
+<p>将M层与B层（后面）交界的两个棱块（UB位、DB位）位置互换。</p>
+<div id="base6">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('trttttttttttttttttttttttttttttttttttttttttttttttttttrt')
+    .alg(`M U2 M'`)
+    ('#base6');
+</script>
+</div>
+<p>因此，当两个互相交换的棱块有不同的色向时，这两类基本操作能将顶层色向错误的棱块数增加或减少一个，同时保证色向错误的棱块总数不变。</p>
+<p>对于2o-2情形，可以做基本操作五：</p>
+<div id="case2o-2-1">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('trtttttrttttttttttttttttttttttrtrttttttttttttttttttttt')
+    .alg(`M' U2 M`)
+    ('#case2o-2-1');
+</script>
+</div>
+<p>在F面上，一个底层色向错误的棱块与一个顶层色向正确的棱块交换，便转化为“箭头”。</p>
+<p>基本操作六同样可行：</p>
+<div id="case2o-2-2">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('trtttttrttttttttttttttttttttttrtrttttttttttttttttttttt')
+    .alg(`M U2 M'`)
+    ('#case2o-2-2');
+</script>
+</div>
+<h3 id="4-0"><a class="header" href="#4-0">4-0</a></h3>
+<p>4-0情形下，顶层有4个色向错误的棱块，而底层没有。</p>
+<div id="case4-0">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('ttttttttttttttttttttttttttttrtrtrtrttttttttttttttttttt')
+    ('#case4-0');
+</script>
+</div>
+<p>可以想象，<code>M2</code>就能将4-0转为2o-2的情形，然后再做<code>M U2 M'</code>转化为“箭头”，因此合并为<code>M' U2 M'</code>：</p>
+<div id="case4-0-1">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('ttttttttttttttttttttttttttttrtrtrtrttttttttttttttttttt')
+    .alg(`M' U2 M'`)
+    ('#case4-0-1');
+</script>
+</div>
+<h2 id="其他情形的复原"><a class="header" href="#其他情形的复原">其他情形的复原</a></h2>
+<p>我们已经展示了恰有4个色向错误的棱块的情形，转化为“箭头”情形的办法。</p>
+<p>色向错误的棱块数不为4的情形，共有5类：</p>
+<h3 id="4-2"><a class="header" href="#4-2">4-2</a></h3>
+<div id="case4-2">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('trtttttrttttttttttttttttttttrtrtrtrttttttttttttttttttt')
+    ('#case4-2');
+</script>
+</div>
+<h3 id="1-1"><a class="header" href="#1-1">1-1</a></h3>
+<div id="case1-1-1">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('trttttttttttttttttttttttttttrttttttttttttttttttttttttt')
+    ('#case1-1-1');
+</script>
+</div>
+<p>或：</p>
+<div id="case1-1-2">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('tttttttrttttttttttttttttttttttttttrttttttttttttttttttt')
+    ('#case1-1-2');
+</script>
+</div>
+<h3 id="2a-0"><a class="header" href="#2a-0">2a-0</a></h3>
+<div id="case2a-0">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('ttttttttttttttttttttttttttttttrtttrttttttttttttttttttt')
+    ('#case2a-0');
+</script>
+</div>
+<h3 id="2o-0"><a class="header" href="#2o-0">2o-0</a></h3>
+<div id="case2o-0">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('ttttttttttttttttttttttttttttrtttttrttttttttttttttttttt')
+    ('#case2o-0');
+</script>
+</div>
+<h3 id="0-2"><a class="header" href="#0-2">0-2</a></h3>
+<div id="case0-2">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('trtttttrtttttttttttttttttttttttttttttttttttttttttttttt')
+    ('#case0-2');
+</script>
+</div>
+<p>其统一的复原步骤如下：</p>
+<ol>
+<li>
+<p>通过至多两次<a href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E4%B8%89-m-ux-mx">基本操作三</a>、<a href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%9B%9B-m-ux-mx">四</a>，将色向错误的棱块总数转为4个。此时可以直接转为“箭头”情况，而不必使用基本操作五、六再做转换。</p>
+</li>
+<li>
+<p>通过基本操作三或四，解决“箭头”情况，完成色向复原。</p>
+</li>
+</ol>
+<blockquote>
+<p>基本操作三或四能够同时改变4个棱块的色向。除非这四个位置恰好有两个色相错误的棱块，否则基本操作三、四一定会改变色向错误的棱块总数。</p>
+</blockquote>
+<h3 id="复原流程图"><a class="header" href="#复原流程图">复原流程图</a></h3>
+<p>直观的复原流程图（作者：甘浩東/Anto Kam）如下，其中也包括了上一节的情形：</p>
+<img src="./EO_flowchart.png">
+<p>在这张图中，红色棱块代表色向错误的棱块。图中无法看到DB位置棱块的色向，但请记住：色向错误的棱块总数一定为偶数。因此从图中就能足够推断它的色向情况。</p>
+<p>不要去硬记每种情形的完整转换公式。应当将复原流程与基本操作三~六的功能联系起来，理解<a href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E4%B8%89-m-ux-mx">基本操作三</a>、<a href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%9B%9B-m-ux-mx">四</a>是如何改变色向错误的棱块总数，<a href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E4%BA%94-m-u2-m">基本操作五</a>、<a href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%85%AD-m-u2-m">六</a>是如何改变色向错误的棱块的分布的。</p>
+<p>注意每次转换完成后，还需要通过<code>Ux</code>，调整为图中相应的朝向。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../入门/lse/lse.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../入门/lse/后六棱归位.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../入门/lse/lse.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../入门/lse/后六棱归位.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>
