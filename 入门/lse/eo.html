@@ -186,7 +186,7 @@
 </style>
 <h1 id="后六棱色向"><a class="header" href="#后六棱色向">后六棱色向</a></h1>
 <blockquote>
-<p>这一步骤是桥式解法中最为困难的部分。如果你感觉理解起来很吃力，可以在学习完“箭头”情形后，直接阅读<a href="#%E5%A4%8D%E5%8E%9F%E6%B5%81%E7%A8%8B%E5%9B%BE">复原流程图</a>：了解具体的流程之后，再理解基本操作三~六的思想。</p>
+<p>这一步骤是桥式解法中最为困难的部分，请合理利用虚拟魔方下方的双箭头以观察单步转动。如果你感觉理解起来很吃力，可以在学习完“箭头”情形后，直接阅读<a href="#%E5%A4%8D%E5%8E%9F%E6%B5%81%E7%A8%8B%E5%9B%BE">复原流程图</a>：了解具体的流程之后，再结合基本操作三~六，理解<a href="#%E8%89%B2%E5%90%91%E8%BD%AC%E6%8D%A2%E5%8E%9F%E7%90%86">色向转换原理</a>的思想。</p>
 </blockquote>
 <h2 id="目标"><a class="header" href="#目标">目标</a></h2>
 <p>这步要将顶层和底层上剩余的块的色向还原正确，主要解决的是剩下6个棱块的色向。这步又叫做EO (Edges Oriented)。</p>
@@ -200,7 +200,7 @@
     ('#eo-eg');
 </script>
 </div>
-<p>在下图中，色向错误的棱块数量为4。</p>
+<p>在下图中，色向错误的棱块数量为4。（注意底层有两个）</p>
 <div id="eo-eg2">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
@@ -209,7 +209,7 @@
     ('#eo-eg2');
 </script>
 </div>
-<p>为了直观，我们只使用红色标出上下两层中，色向错误的棱块面的位置。注意它不代表真正的红色面。</p>
+<p>为了直观，我们只使用红色标出上下两层中，色向错误的棱块面的位置。它不一定代表真正的红色面。</p>
 <div id="eo-eg3">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
@@ -289,9 +289,31 @@
 </script>
 </div>
 <p>因此，基本操作三和基本操作四能够改变特定的四个棱块的色向，并能直接解决箭头的情形。</p>
+<p>箭头一-基本操作三:</p>
+<div id="arrow1-1">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
+    .case(`U' M' U2 M U' M U M2 U M U2 M2 U'`)
+    .alg(`M' U M'`)
+    ('#arrow1-1');
+</script>
+</div>
+<p>箭头二-基本操作四：</p>
+<div id="arrow2-1">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
+    .case(`M U M2 U2 M2 U2 M U2`)
+    .alg(`M U M'`)
+    ('#arrow2-1');
+</script>
+</div>
 <p>“箭头”是最简单的情形。后续所有的情形，都将先转化为“箭头”情形，然后复原。</p>
 <h3 id="2a-2"><a class="header" href="#2a-2">2a-2</a></h3>
-<p>2a-2情形的含义为："2a"代表顶层有2个色向错误的棱块，并且位置相邻(adjoin)；"-2"代表底层有2个色向错误的棱块。后边情形的命名方式都与此类似。</p>
+<p>2a-2情形的含义为："2a"代表顶层有2个色向错误的棱块，并且位置相邻(adjacent)；"-2"代表底层有2个色向错误的棱块。后边情形的命名方式都与此类似。</p>
 <div id="case2a-2">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
@@ -311,12 +333,13 @@
     ('#case2a-2-1');
 </script>
 </div>
-<p>进而可以得出一种完整的复原过程：</p>
+<p>进而可以得出一种可行的解法：</p>
 <div id="case2a-2-2">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
-    .fc('trtttttrttttttttttttttttttttttrtttrttttttttttttttttttt')
+    .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
+    .case(`U2 M U' M2 U2 M U' M' U M' U`)
     .alg(`M2 U' M' U M'`)
     ('#case2a-2-2');
 </script>
@@ -357,29 +380,31 @@
 </script>
 </div>
 <p>因此，当两个互相交换的棱块有不同的色向时，这两类基本操作能将顶层色向错误的棱块数增加或减少一个，同时保证色向错误的棱块总数不变。</p>
-<p>对于2o-2情形，可以做基本操作五：</p>
+<p>对于2o-2情形，可以做基本操作六：</p>
+<p>在F面上，一个底层色向错误的棱块与一个顶层色向正确的棱块交换，便转化为“箭头”。（基本操作五同样可行，原理类似）</p>
 <div id="case2o-2-1">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('trtttttrttttttttttttttttttttttrtrttttttttttttttttttttt')
-    .alg(`M' U2 M`)
+    .alg(`M U2 M'`)
     ('#case2o-2-1');
 </script>
 </div>
-<p>在F面上，一个底层色向错误的棱块与一个顶层色向正确的棱块交换，便转化为“箭头”。</p>
-<p>基本操作六同样可行：</p>
+<p>一种可行的解法如下：</p>
 <div id="case2o-2-2">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
-    .fc('trtttttrttttttttttttttttttttttrtrttttttttttttttttttttt')
-    .alg(`M U2 M'`)
+    .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
+    .case(`M U2 M' U2 M' U' M U2 M2 U M2 U'`)
+    .alg(`M U2 M' U2 M' U M'`)
     ('#case2o-2-2');
 </script>
 </div>
 <h3 id="4-0"><a class="header" href="#4-0">4-0</a></h3>
 <p>4-0情形下，顶层有4个色向错误的棱块，而底层没有。</p>
+<p>可以想象，<code>M2</code>就能将4-0转为2o-2的情形。因此将2o-2解法的第一步由<code>M</code>改为<code>M'</code>，就能解决这类情形。</p>
 <div id="case4-0">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
@@ -388,47 +413,35 @@
     ('#case4-0');
 </script>
 </div>
-<p>可以想象，<code>M2</code>就能将4-0转为2o-2的情形，然后再做<code>M U2 M'</code>转化为“箭头”，因此合并为<code>M' U2 M'</code>：</p>
-<div id="case4-0-1">
+<div id="case4-0">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
-    .fc('ttttttttttttttttttttttttttttrtrtrtrttttttttttttttttttt')
-    .alg(`M' U2 M'`)
-    ('#case4-0-1');
+    .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
+    .case(`M' U2 M' U2 M' U' M U2 M2 U M2 U'`)
+    .alg(`M' U2 M' U2 M' U M'`)
+    ('#case4-0');
 </script>
 </div>
 <h2 id="其他情形的复原"><a class="header" href="#其他情形的复原">其他情形的复原</a></h2>
-<p>我们已经展示了恰有4个色向错误的棱块的情形，转化为“箭头”情形的办法。</p>
-<p>色向错误的棱块数不为4的情形，共有5类：</p>
-<h3 id="4-2"><a class="header" href="#4-2">4-2</a></h3>
-<div id="case4-2">
-<script type="text/javascript">
-  TTk.AlgorithmPuzzle(3)
-    .size({width:300, height:300})
-    .fc('trtttttrttttttttttttttttttttrtrtrtrttttttttttttttttttt')
-    ('#case4-2');
-</script>
-</div>
-<h3 id="1-1"><a class="header" href="#1-1">1-1</a></h3>
-<div id="case1-1-1">
-<script type="text/javascript">
-  TTk.AlgorithmPuzzle(3)
-    .size({width:300, height:300})
-    .fc('trttttttttttttttttttttttttttrttttttttttttttttttttttttt')
-    ('#case1-1-1');
-</script>
-</div>
-<p>或：</p>
-<div id="case1-1-2">
-<script type="text/javascript">
-  TTk.AlgorithmPuzzle(3)
-    .size({width:300, height:300})
-    .fc('tttttttrttttttttttttttttttttttttttrttttttttttttttttttt')
-    ('#case1-1-2');
-</script>
-</div>
+<h3 id="色向转换原理"><a class="header" href="#色向转换原理">色向转换原理</a></h3>
+<p>我们已经展示了恰有4个色向错误的棱块的情形，转化为<a href="#%E7%AE%AD%E5%A4%B4arrow%E6%88%963-1">“箭头”</a>情形的办法，即通过<a href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E4%BA%94m-u2-m">基本操作五</a>、<a href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%85%ADm-u2-m">六</a>或<code>M2</code>来改变上下面中色向错误的棱块的分配。</p>
+<p>对于色向错误的棱块数不为4的情形，其统一的复原步骤如下：</p>
+<ol>
+<li>
+<p>通过至多两次<a href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E4%B8%89-m-ux-mx">基本操作三</a>、<a href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%9B%9B-m-ux-mx">四</a>，将色向错误的棱块总数转为4个。通过精心选择要执行的基本操作，魔方可以直接转为“箭头”情况。如果没能转为“箭头”，则使用基本操作五、六再做转换。</p>
+</li>
+<li>
+<p>通过基本操作三或四，解决“箭头”情况，完成色向复原。</p>
+</li>
+</ol>
+<blockquote>
+<p>基本操作三或四能够同时改变4个棱块的色向。除非这四个位置恰好有两个色相错误的棱块，否则基本操作三、四一定会改变色向错误的棱块总数。例如，如果这四个位置有1个色向错误，那么执行完后这四个棱块变为3个色向错误，总数量加2。</p>
+</blockquote>
+<p>共有5类情况，一一介绍：</p>
 <h3 id="2a-0"><a class="header" href="#2a-0">2a-0</a></h3>
+<p>“2a”代表顶层色向错误的两个棱块位置相邻。</p>
+<p>执行<a href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E4%B8%89-m-ux-mx">基本操作三</a>如<code>M' U M'</code>后，色向正确的棱块总数增加2，转化为“箭头”情形。</p>
 <div id="case2a-0">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
@@ -437,7 +450,19 @@
     ('#case2a-0');
 </script>
 </div>
+<div id="case2a-0">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
+    .case(`U M U2 M U' M U M' U2 M U' M'`)
+    .alg(`M' U M' U2 M' U M'`)
+    ('#case2a-0');
+</script>
+</div>
 <h3 id="2o-0"><a class="header" href="#2o-0">2o-0</a></h3>
+<p>“2o”代表顶层色向错误的两个棱块位置相对。</p>
+<p>可通过<a href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E4%B8%89-m-ux-mx">基本操作三</a>如<code>M' U M</code>转换。</p>
 <div id="case2o-0">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
@@ -446,7 +471,18 @@
     ('#case2o-0');
 </script>
 </div>
+<div id="case2o-0">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
+    .case(`M2 U M U M U' M' U M U M2`)
+    .alg(`M' U M U' M' U M'`)
+    ('#case2o-0');
+</script>
+</div>
 <h3 id="0-2"><a class="header" href="#0-2">0-2</a></h3>
+<p>可通过<a href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E4%B8%89-m-ux-mx">基本操作三</a>如<code>M' U M'</code>转换。</p>
 <div id="case0-2">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
@@ -455,23 +491,94 @@
     ('#case0-2');
 </script>
 </div>
-<p>其统一的复原步骤如下：</p>
-<ol>
-<li>
-<p>通过至多两次<a href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E4%B8%89-m-ux-mx">基本操作三</a>、<a href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%9B%9B-m-ux-mx">四</a>，将色向错误的棱块总数转为4个。此时可以直接转为“箭头”情况，而不必使用基本操作五、六再做转换。</p>
-</li>
-<li>
-<p>通过基本操作三或四，解决“箭头”情况，完成色向复原。</p>
-</li>
-</ol>
-<blockquote>
-<p>基本操作三或四能够同时改变4个棱块的色向。除非这四个位置恰好有两个色相错误的棱块，否则基本操作三、四一定会改变色向错误的棱块总数。</p>
-</blockquote>
-<h3 id="复原流程图"><a class="header" href="#复原流程图">复原流程图</a></h3>
-<p>直观的复原流程图（作者：甘浩東/Anto Kam）如下，其中也包括了上一节的情形：</p>
-<img src="./EO_flowchart.png">
+<div id="case0-2">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
+    .case(`M' U' M' U M U M U M U2 M'`)
+    .alg(`M' U M' U' M U M'`)
+    ('#case0-2');
+</script>
+</div>
+<p>由于0-2与2o-0只差一步<code>M2</code>，也可以将2o-0解法的第一步由<code>M'</code>替换为<code>M</code>。</p>
+<h3 id="1-1"><a class="header" href="#1-1">1-1</a></h3>
+<p>有两种情形。</p>
+<p>以下朝向下，可执行<a href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%9B%9B-m-ux-mx">基本操作四</a>如<code>M' U M</code>转换：</p>
+<div id="case1-1-1">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('trttttttttttttttttttttttttttrttttttttttttttttttttttttt')
+    ('#case1-1-1');
+</script>
+</div>
+<div id="case1-1-1">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
+    .case(`U M' U' M' U2 M U M U`)
+    .alg(`M U M' U M U M'`)
+    ('#case1-1-1');
+</script>
+</div>
+<p>另一种的转化方法类似（<a href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E4%B8%89-m-ux-mx">基本操作三</a>，如<code>M' U M</code>）:</p>
+<div id="case1-1-3">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('tttttttrttttttttttttttttttttttttttrttttttttttttttttttt')
+    ('#case1-1-3');
+</script>
+</div>
+<div id="case1-1-3">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
+    .case(`M' U' M' U2 M U M U M U' M'`)
+    .alg(`M' U M U M' U M'`)
+    ('#case1-1-3');
+</script>
+</div>
+<h3 id="4-2"><a class="header" href="#4-2">4-2</a></h3>
+<p>4-2的所有6个棱块的色向都错误。</p>
+<p>无论是执行<a href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E4%B8%89-m-ux-mx">基本操作三</a>还是<a href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%9B%9B-m-ux-mx">基本操作四</a>，都会导致顶层色向错误的棱块数量减3、底层减1，因此只能先转化为1-1情形，再进一步转化为“箭头”。以下解法首先做基本操作四<code>M U M'</code>。</p>
+<div id="case4-2">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('trtttttrttttttttttttttttttttrtrtrtrttttttttttttttttttt')
+    ('#case4-2');
+</script>
+</div>
+<div id="case4-2">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
+    .case(`U' M' U' M' U2 M U M U M' U' M' U M2 U`)
+    .alg(`M U M' U2 M' U M U M' U M'`)
+    ('#case4-2');
+</script>
+</div>
+<p>另有一种简便解法：<code>R U' r' U' M' U r U r</code>。</p>
+<div id="case4-2-3">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
+    .case(`U' M' U' M' U2 M U M U M' U' M' U M2 U`)
+    .alg(`R U' r' U' M' U r U r'`)
+    ('#case4-2-3');
+</script>
+</div>
+<h2 id="复原流程图"><a class="header" href="#复原流程图">复原流程图</a></h2>
+<p>直观的色向复原流程图（作者：甘浩東/Anto Kam）如下：</p>
+<img src="./images/EO_flowchart.png">
 <p>在这张图中，红色棱块代表色向错误的棱块。图中无法看到DB位置棱块的色向，但请记住：色向错误的棱块总数一定为偶数。因此从图中就能足够推断它的色向情况。</p>
-<p>不要去硬记每种情形的完整转换公式。应当将复原流程与基本操作三~六的功能联系起来，理解<a href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E4%B8%89-m-ux-mx">基本操作三</a>、<a href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%9B%9B-m-ux-mx">四</a>是如何改变色向错误的棱块总数，<a href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E4%BA%94-m-u2-m">基本操作五</a>、<a href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%85%AD-m-u2-m">六</a>是如何改变色向错误的棱块的分布的。</p>
+<p>不要去硬记每种情形的完整转换公式。应当将复原流程与基本操作三~六的功能联系起来，理解<a href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E4%B8%89-m-ux-mx">基本操作三</a>、<a href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%9B%9B-m-ux-mx">四</a>是如何改变色向错误的棱块总数，<a href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E4%BA%94-m-u2-m">基本操作五</a>、<a href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%85%AD-m-u2-m">六</a>是如何改变色向错误的棱块的分布的，如同我们在<a href="#%E8%89%B2%E5%90%91%E8%BD%AC%E6%8D%A2%E5%8E%9F%E7%90%86">色向转换原理</a>中所介绍的那样。</p>
 <p>注意每次转换完成后，还需要通过<code>Ux</code>，调整为图中相应的朝向。</p>
 
                     </main>

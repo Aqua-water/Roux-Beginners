@@ -268,7 +268,7 @@
  </script>
  </div>
 <p>T形态的一步复原公式为：</p>
-<p><strong>进阶公式一</strong> <code>R U R' U' R' F R F'</code></p>
+<p><strong>进阶公式一</strong> <code>(R U R' U') (R' F R F')</code></p>
  <div id="cmll-t">
  <script type="text/javascript">
    TTk.AlgorithmPuzzle(3)
@@ -283,7 +283,7 @@
 <p>   <img src="./images/cmll-u.png" width = "200" height = "200"/></p>
 <p>采用<a href="#2-%E4%B8%A4%E4%B8%AA%E9%BB%84%E8%89%B2%E9%9D%A2%E5%B7%B2%E8%BF%98%E5%8E%9F">叠加法</a>时，上图的朝向满足起手要求。</p>
 <p>U形态的一步复原公式为：</p>
-<p><strong>进阶公式二</strong> <code>F R U R' U' F'</code></p>
+<p><strong>进阶公式二</strong> <code>F (R U R' U') F'</code></p>
  <div id="cmll-u">
  <script type="text/javascript">
    TTk.AlgorithmPuzzle(3)
@@ -299,7 +299,7 @@
 <p>   <img src="./images/cmll-l.png" width = "200" height = "200"/></p>
 <p>采用<a href="#2-%E4%B8%A4%E4%B8%AA%E9%BB%84%E8%89%B2%E9%9D%A2%E5%B7%B2%E8%BF%98%E5%8E%9F">叠加法</a>时，上图的朝向满足起手要求。</p>
 <p>L形态的一步复原公式为：</p>
-<p><strong>进阶公式三</strong> <code>F R' F' R U R U' R'</code></p>
+<p><strong>进阶公式三</strong> <code>(F R' F' R) (U R U' R')</code></p>
  <div id="cmll-l">
  <script type="text/javascript">
    TTk.AlgorithmPuzzle(3)
@@ -329,7 +329,7 @@
  </script>
  </div>
 <p>消步后即为H形态的一步复原公式：</p>
-<p><strong>进阶公式四</strong> <code>R' U' R U' R' U R U' R' U2 R</code></p>
+<p><strong>进阶公式四</strong> <code>(R' U' R U') (R' U R U') R' U2 R</code></p>
  <div id="cmll-h">
  <script type="text/javascript">
    TTk.AlgorithmPuzzle(3)
@@ -344,7 +344,7 @@
 <p>   <img src="./images/cmll-pi.png" width = "200" height = "200"/></p>
 <p>采用<a href="#3-%E9%9B%B6%E4%B8%AA%E9%BB%84%E8%89%B2%E9%9D%A2%E5%B7%B2%E8%BF%98%E5%8E%9F">叠加法</a>时，上图的朝向满足起手要求。</p>
 <p>Pi形态的一步复原公式为：</p>
-<p><strong>进阶公式五</strong> <code>F R U R' U' R U R' U' F'</code></p>
+<p><strong>进阶公式五</strong> <code>F (R U R' U')2 F'</code></p>
  <div id="cmll-pi">
  <script type="text/javascript">
    TTk.AlgorithmPuzzle(3)
@@ -360,7 +360,7 @@
 <p>   <img src="./images/cmll-t.png" width = "200" height = "200"/></p>
 <p>对于As形态，我们要求俯视图的左上角的角块黄色面已复原，然后执行公式一，完成复原。</p>
 <p>   <img src="./images/cmll-as.png" width = "200" height = "200"/></p>
-<p>比较这两个俯视图，可以发现除了左下角的角块黄色面都朝下外，其他三个角块的形态都不同。因此同样执行公式一后，也会有三个角块的形态不同。既然执行结束后，As形态的四个黄色面都复原，那么T形态一定转化为恰有一个黄色面已还原，即As或S。你可以对其他形态所要求的朝向做验证，它们一定恰好有一个角块的形态与As相同。</p>
+<p>比较这两个俯视图，可以发现除了左下角的角块黄色面都朝下外，其他三个角块的形态都不同。因此同样执行公式一后，也会有三个角块的形态不同。既然执行结束后，As形态的四个黄色面都复原，那么T形态一定转化为恰有一个黄色面已还原，即As或S。你可以对<a href="./cmll.html#%E5%8F%A0%E5%8A%A0%E6%B3%95">叠加法</a>图中左边5个形态的朝向做验证，它们一定恰好有一个角块的形态与As相同。</p>
 <p>As形态执行公式一后，不会改变左上角的角块的状态（但会改变位置）。因此T形态执行公式一后，左上角的角块的状态也不会改变，其状态与S形态的三个未复原的角块一致，因此推断出转化为S形态。同理，所有的两个黄色面已还原的情形，都将转化为S形态。</p>
 
                     </main>

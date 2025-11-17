@@ -211,8 +211,8 @@
 </div>
 <p>还原方法如下：</p>
 <p>如果恰好有一个黄蓝或黄绿棱块在顶层：</p>
-<p>先<code>Ux</code>将该棱块放在M层，并且保证其下方不是黄蓝或黄绿棱块。再做<a href="./eo.html#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E4%BA%94-m-u2-m">基本操作五</a>或<a href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%85%AD-m-u2-m">六</a>，完成上下棱块的交换，将其放在底层。</p>
-<p>这个例子通过基本操作六，将黄绿棱块移到DB位。</p>
+<p>先<code>Ux</code>将该棱块放在M层，并且保证其下方不是黄蓝或黄绿棱块。再做<a href="./eo.html#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E4%BA%94-m-u2-m">基本操作五</a>或<a href="./eo.html#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%85%AD-m-u2-m">六</a>，完成上下棱块的交换，将其放在底层。</p>
+<p>这个例子通过基本操作六，将黄绿棱块从UR位移到DB位。</p>
 <div id="ulur-1">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
@@ -224,7 +224,7 @@
 </div>
 <p>如果黄蓝、黄绿棱块都在顶层：</p>
 <p>通过<code>Ux</code>将其中一个棱块放在M层，再<code>M2</code>将其放在底层。这样，至多有一个棱块仍然留在顶层，转化为上一种情形。</p>
-<p>这个例子将黄绿棱块移到DB位，然后再通过基本操作五，将黄蓝棱块移到DF位。</p>
+<p>这个例子将黄绿棱块移到DB位，然后再通过基本操作五，将黄蓝棱块从UR位移到DF位。</p>
 <div id="ulur-2">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
@@ -295,7 +295,10 @@
     ('#L4E-3');
 </script>
 </div>
-<p>你也可以尝试：如何不依赖转体，仅使用<code>U2</code>和M层操作的组合来复原。</p>
+<p>你也可以尝试：如何不依赖转体，仅使用<code>U2</code>和M层操作的组合来复原。不转体的完整公式可参考<a href="./lse.html#%E5%90%8E%E5%9B%9B%E6%A3%B1%E5%85%AC%E5%BC%8F">后四棱公式</a>。</p>
+<blockquote>
+<p>对于后四棱，有经验的桥式玩家不会依赖公式复原，而会通过提前观察相应的块的变化，完成对整个后四棱步骤的预判。这些观察方法包括4c入门观察法、DFDB观察法、BU观察法等。</p>
+</blockquote>
 <h3 id="h"><a class="header" href="#h">"H"</a></h3>
 <p>这种情况下，对齐中心块后，四个面已经复原，而剩余两个相对的面呈“H”型。将一个H型的面放在F面，做<code>U2 M2 U2 M2</code>。</p>
 <div id="L4E-4">
@@ -318,16 +321,9 @@
     ('#L4E-5');
 </script>
 </div>
-<p>之所以笼统地称这类情况为“四心换”，是因为如果做<code>M2</code>，那么除了4个中心块外的所有块都已复原。</p>
-<div id="L4E-6">
-<script type="text/javascript">
-  TTk.AlgorithmPuzzle(3)
-    .size({width:300, height:300})
-    .fc('wwwwywwwwgggggggggrrrrorrrryyyywyyyybbbbbbbbbooooroooo')
-    .case(`M2`)
-    ('#L4E-6');
-</script>
-</div>
+<blockquote>
+<p>之所以笼统地称这类情况为“四心换”，是因为做<code>M2</code>后，除了4个中心块外的所有块都已复原。</p>
+</blockquote>
 <p>至此，魔方的六面都已经复原，大功告成！</p>
 <p>你可以反复练习，直到能够不依赖教程而独立复原。</p>
 

@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>四角归位 - 桥式教程</title>
+        <title>两桥 - 桥式教程</title>
 
 
         <!-- Custom HTML head -->
@@ -177,86 +177,53 @@
 
                 <div id="content" class="content">
                     <main>
-                          <script type="text/javascript" src="/twistysim.js"></script>
+                        <script type="text/javascript" src="/twistysim.js"></script>
 <style type="text/css" rel="stylesheet">
 /* modifies the opacity of the cube wireframe */
 .ttk-shp-poly {
     stroke-opacity: 0.3;
 }
 </style>
-<h1 id="四角归位"><a class="header" href="#四角归位">四角归位</a></h1>
-<p>这步将顶层的四个角块的相对位置也还原正确。</p>
-<div id="CMLL">
+<h1 id="两桥"><a class="header" href="#两桥">两桥</a></h1>
+<p>“两桥”指的是左桥和右桥。“桥”指的是一个1×2×3的块，按照摆放的位置区分为左桥和右桥，位置相对。复原顺序是先左桥，后右桥。</p>
+<p>以下是一个已经复原好的左右桥：</p>
+<div id="inf1">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
-    .fc('wtwwtwwtwgggggggtgrtrrtrrtrytytttytybbbbbbbtbotootooto')
-    ('#CMLL');
+    .fc('wtwwtwwtwggggggtttrtrrtrttttttttttttbbbbbbtttotootottt')
+    ('#inf1');
 </script>
-</div>
-<p>观察顶面的四个侧面，有两种可能的情况：</p>
-<h2 id="1-恰有一侧的角块颜色相同"><a class="header" href="#1-恰有一侧的角块颜色相同">1 恰有一侧的角块颜色相同</a></h2>
-<p>   <img src="./images/cmll-o1.png" width = "200" height = "200"/></p>
-<p>如图所示，一个侧面的角块颜色相同，其余三个侧面的颜色不同。这里画出的是橙色相同。</p>
-<p><code>Ux</code>将角块颜色相同的侧面转向左侧，然后完成公式：</p>
-<p><strong>公式三</strong> <code>(R U R' U') R' F (R2 U' R' U') (R U R' F')</code></p>
- <div id="cmll-o1-1">
-<script type="text/javascript">
-  TTk.AlgorithmPuzzle(3)
-    .size({width:300, height:300})
-    .fc('wtwwtwwtwgggggggtgrtrrtrrtrytytttytybbbbbbbtbotootooto')
-    .case(`R U R' U' R' F R2 U' R' U' R U R' F' U`)
-    .alg(`R U R' U' R' F R2 U' R' U' R U R' F'`)
-    ('#cmll-o1-1');
-</script>
-</div>
-<p>如果你在上一节只记忆了公式〇（<code>R' U L U' R U L'</code>），并不打算记新的公式，那么<code>Ux</code>将角块颜色相同的侧面转向后侧，然后完成：</p>
-<p><code>L F (公式〇) U' F' L'</code></p>
-  <div id="cmll-o1-2">
-<script type="text/javascript">
-  TTk.AlgorithmPuzzle(3)
-    .size({width:300, height:300})
-    .fc('wtwwtwwtwgggggggtgrtrrtrrtrytytttytybbbbbbbtbotootooto')
-    .case(`L F R' U L U' R U L' U' F' L' U`)
-    .alg(`L F R' U L U' R U L' U' F' L'`)
-    ('#cmll-o1-2');
-</script>
-</div>
-<h2 id="2-每侧的角块颜色不同"><a class="header" href="#2-每侧的角块颜色不同">2 每侧的角块颜色不同</a></h2>
-<p>   <img src="./images/cmll-o2.png" width = "200" height = "200"/></p>
-<p>如图所示，任何一侧的角块颜色都不同。此时每一侧都是等价的，因此无需做方向调整。</p>
-<p>可以叠加公式三解决：执行一次公式三（或是<code>L F (公式〇) U' F' L'</code>），使之变为上一种情形。</p>
-   <div id="cmll-o2-1">
-<script type="text/javascript">
-  TTk.AlgorithmPuzzle(3)
-    .size({width:300, height:300})
-    .fc('wtwwtwwtwgggggggtgrtrrtrrtrytytttytybbbbbbbtbotootooto')
-    .case(`F R U' R' U' R U R' F' R U R' U' R' F R F'`)
-    .alg(`R U R' U' R' F R2 U' R' U' R U R' F'`)
-    ('#cmll-o2-1');
-</script>
-</div>
-<p>一步复原公式为：</p>
-<p><strong>进阶公式六</strong> <code>F (R U' R' U') (R U R' F') (R U R' U') (R' F R F')</code></p>
-   <div id="cmll-o2-2">
-<script type="text/javascript">
-  TTk.AlgorithmPuzzle(3)
-    .size({width:300, height:300})
-    .fc('wtwwtwwtwgggggggtgrtrrtrrtrytytttytybbbbbbbtbotootooto')
-    .case(`F R U' R' U' R U R' F' R U R' U' R' F R F' U2`)
-    .alg(`F R U' R' U' R U R' F' R U R' U' R' F R F'`)
-    ('#cmll-o2-2');
-</script>
-</div>
+<h2 id="还原步骤"><a class="header" href="#还原步骤">还原步骤</a></h2>
+<blockquote>
+<p>如<a href="./../../%E7%AE%80%E4%BB%8B.html#%E5%A4%8D%E5%8E%9F%E6%AD%A5%E9%AA%A4%E7%9A%84%E9%98%85%E8%AF%BB">复原步骤的阅读</a>所述，这部分为简略复原指引，大致了解即可。你也可以跳过，在后续的章节中再详细学习。</p>
+</blockquote>
+<h3 id="复原过程"><a class="header" href="#复原过程">复原过程</a></h3>
+<p>左右桥的复原过程非常自由。一种可行的复原过程如下：</p>
+<img src="./images/F2B_flowchart.png"  height = "300"/>
+<p>每个桥的复原都是先完成底层的棱块，再完成两侧的棱块与角块的组合（棱角对）。</p>
+<h3 id="棱角对复原"><a class="header" href="#棱角对复原">棱角对复原</a></h3>
+<p>棱角对的复原是两桥部分的重点，其复原过程也较为自由。一种可行的复原过程如下：</p>
+<img src="./images/pair_flowchart.png" height = "300"/>
+<p>仅作为示意，实际的情形不必与上述图片完全一致。</p>
+<p>左桥棱角对的复原只会比右桥的更简单。对于右桥的另一棱角对，你可以通过镜像的操作来复原。</p>
+<h3 id="基本操作"><a class="header" href="#基本操作">基本操作</a></h3>
+<p>在完成右桥时，两类基本操作<code>R Ux R'</code>与<code>R' Ux R</code>会非常有用：它们涉及与右桥空缺棱角对的位置有关的块的操作。可以将空缺棱角对的位置中的块移出，或是将位于顶层的棱角对放在空缺棱角对的位置中，完成归位。</p>
+<p>它们也可以对UFR位或UBR位的角块做翻转，调整角块的朝向。通过这种方法，可以使待复原角块的白色面不朝上。例如：</p>
+<img src="./images/RUxR&apos;.png"  height = "300"/>
+<blockquote>
+<p>左右桥的具体内容将在以下两节介绍。若上面的简略复原指引已经足以让你理解并复原左右桥，你也可以跳过后面的详细介绍。</p>
+</blockquote>
+
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../../入门/cmll/四角色向.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../../入门/记号.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../../入门/lse/lse.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../../入门/两桥/左桥.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -266,11 +233,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../../入门/cmll/四角色向.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../../入门/记号.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../../入门/lse/lse.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../../入门/两桥/左桥.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
