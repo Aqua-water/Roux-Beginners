@@ -10,3 +10,6 @@ mathjax-support = true
 [output.html.fold]
 enable = true
 level = 2
+
+[output.html.search]
+enable = false
