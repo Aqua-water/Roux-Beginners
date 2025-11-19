@@ -12,21 +12,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="../../favicon.svg">
-        <link rel="shortcut icon" href="../../favicon.png">
-        <link rel="stylesheet" href="../../css/variables.css">
-        <link rel="stylesheet" href="../../css/general.css">
-        <link rel="stylesheet" href="../../css/chrome.css">
-        <link rel="stylesheet" href="../../css/print.css" media="print">
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../css/chrome-9dfbd86b.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="../../fonts/fonts.css">
+        <link rel="stylesheet" href="../../fonts/fonts-9644e21d.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
-        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
-        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
 
@@ -38,10 +37,10 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex.js";
+            window.path_to_searchindex_js = "../../searchindex-ed97568d.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc.js"></script>
+        <script src="../../toc-1902e0a9.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -55,7 +54,7 @@
             </div>
         </div>
     </div>
-    <div id="body-container">
+    <div id="mdbook-body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -84,12 +83,12 @@
             html.classList.add("js");
         </script>
 
-        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
             let sidebar = null;
-            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
@@ -104,39 +103,39 @@
             }
         </script>
 
-        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
             <!-- populated by js -->
             <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
             <noscript>
                 <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
             </noscript>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
             </div>
         </nav>
 
-        <div id="page-wrapper" class="page-wrapper">
+        <div id="mdbook-page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                            <i class="fa fa-bars"></i>
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
                         </label>
-                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                            <i class="fa fa-paint-brush"></i>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
                         </button>
-                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
                         </ul>
-                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
-                            <i class="fa fa-search"></i>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
                         </button>
                     </div>
 
@@ -144,38 +143,38 @@
 
                     <div class="right-buttons">
                         <a href="../../print.html" title="Print this book" aria-label="Print this book">
-                            <i id="print-button" class="fa fa-print"></i>
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
                         </a>
 
                     </div>
                 </div>
 
-                <div id="search-wrapper" class="hidden">
-                    <form id="searchbar-outer" class="searchbar-outer">
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
                         <div class="search-wrapper">
-                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
                             <div class="spinner-wrapper">
-                                <i class="fa fa-spinner fa-spin"></i>
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
                             </div>
                         </div>
                     </form>
-                    <div id="searchresults-outer" class="searchresults-outer hidden">
-                        <div id="searchresults-header" class="searchresults-header"></div>
-                        <ul id="searchresults">
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
                         </ul>
                     </div>
                 </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script>
-                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
                         link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
                     });
                 </script>
 
-                <div id="content" class="content">
+                <div id="mdbook-content" class="content">
                     <main>
                         <script type="text/javascript" src="/twistysim.js"></script>
 <style type="text/css" rel="stylesheet">
@@ -186,7 +185,7 @@
 </style>
 <h1 id="后六棱色向"><a class="header" href="#后六棱色向">后六棱色向</a></h1>
 <blockquote>
-<p>这一步骤是桥式解法中最为困难的部分，请合理利用虚拟魔方下方的双箭头以观察单步转动。如果你感觉理解起来很吃力，可以在学习完“箭头”情形后，直接阅读<a href="#%E5%A4%8D%E5%8E%9F%E6%B5%81%E7%A8%8B%E5%9B%BE">复原流程图</a>：了解具体的流程之后，再结合基本操作三~六，理解<a href="#%E8%89%B2%E5%90%91%E8%BD%AC%E6%8D%A2%E5%8E%9F%E7%90%86">色向转换原理</a>的思想。</p>
+<p>这一步骤是桥式解法中最为困难的部分，请合理利用虚拟魔方下方的双箭头以观察单步转动。如果你感觉理解起来很吃力，可以在学习完“箭头”情形后，直接阅读<a href="#复原流程图">复原流程图</a>：了解具体的流程之后，再结合基本操作三~六，理解<a href="#色向转换原理">色向转换原理</a>的思想。</p>
 </blockquote>
 <h2 id="目标"><a class="header" href="#目标">目标</a></h2>
 <p>这步要将顶层和底层上剩余的块的色向还原正确，主要解决的是剩下6个棱块的色向。这步又叫做EO (Edges Oriented)。</p>
@@ -200,6 +199,7 @@
     ('#eo-eg');
 </script>
 </div>
+
 <p>在下图中，色向错误的棱块数量为4。（注意底层有两个）</p>
 <div id="eo-eg2">
 <script type="text/javascript">
@@ -209,6 +209,7 @@
     ('#eo-eg2');
 </script>
 </div>
+
 <p>为了直观，我们只使用红色标出上下两层中，色向错误的棱块面的位置。它不一定代表真正的红色面。</p>
 <div id="eo-eg3">
 <script type="text/javascript">
@@ -218,6 +219,7 @@
     ('#eo-eg3');
 </script>
 </div>
+
 <p>中心块的色向通过一步<code>Mx</code>就能解决，我们先还原它们，再处理剩下6个棱块的色向。</p>
 <div id="eo-c">
 <script type="text/javascript">
@@ -228,34 +230,14 @@
     ('#eo-c');
 </script>
 </div>
+
 <blockquote>
 <p>在这里，黄色中心块在顶层并不比在底层更好。</p>
 </blockquote>
 <p>下面的介绍中，通过<code>Ux</code>能够相互转换的情形视为同一种情形。</p>
-<h2 id="恰有4个色向错误的棱块的复原"><a class="header" href="#恰有4个色向错误的棱块的复原">恰有4个色向错误的棱块的复原</a></h2>
-<h3 id="箭头arrow或3-1"><a class="header" href="#箭头arrow或3-1">箭头(Arrow,或3-1)</a></h3>
-<p>箭头的顶层有3个色向错误的棱块，底层有1个。通过做<code>Ux</code>可调整其形态如下：</p>
-<p>箭头一：</p>
-<div id="arrow1">
-<script type="text/javascript">
-  TTk.AlgorithmPuzzle(3)
-    .size({width:300, height:300})
-    .fc('tttttttrttttttttttttttttttttrtrtrttttttttttttttttttttt')
-    ('#arrow1');
-</script>
-</div>
-<p>箭头二：</p>
-<div id="arrow2">
-<script type="text/javascript">
-  TTk.AlgorithmPuzzle(3)
-    .size({width:300, height:300})
-    .fc('trttttttttttttttttttttttttttttrtrtrttttttttttttttttttt')
-    ('#arrow2');
-</script>
-</div>
-<p>不管哪种箭头，上面的朝向使得4个色向错误的棱块分为两对：一对左右相对，一对上下相对。</p>
-<p>为了解决箭头的情形，我们引入两类基本操作：</p>
-<h4 id="基本操作三-m-ux-mx"><a class="header" href="#基本操作三-m-ux-mx">基本操作三：	<code>M' Ux Mx</code></a></h4>
+<h2 id="四个棱块色向错误"><a class="header" href="#四个棱块色向错误">四个棱块色向错误</a></h2>
+<p>首先，介绍两类基本操作：</p>
+<h3 id="基本操作三-m-ux-mx"><a class="header" href="#基本操作三-m-ux-mx">基本操作三：	<code>M' Ux Mx</code></a></h3>
 <p>这里，<code>Ux</code>被限制为<code>U</code>或<code>U'</code>，<code>Mx</code>也被限制为<code>M'</code>或<code>M</code>，因此共有4种组合。其作用是改变箭头一中标红位置的棱块的色向，例如：</p>
 <div id="base3">
 <script type="text/javascript">
@@ -266,6 +248,7 @@
     ('#base3');
 </script>
 </div>
+
 <p>或者：</p>
 <div id="base3-2">
 <script type="text/javascript">
@@ -276,8 +259,9 @@
     ('#base3-2');
 </script>
 </div>
+
 <p>等等。可以看到执行完基本操作三后，4个红色面都移向了侧面，意味着其对应棱块的色向已改变。剩余两个棱块虽然没有标出，但它们的移动效果和<code>M0</code>或<code>M2</code>是一样的，因此色向不会变化。</p>
-<h4 id="基本操作四-m-ux-mx"><a class="header" href="#基本操作四-m-ux-mx">基本操作四：	<code>M Ux Mx</code></a></h4>
+<h3 id="基本操作四-m-ux-mx"><a class="header" href="#基本操作四-m-ux-mx">基本操作四：	<code>M Ux Mx</code></a></h3>
 <p>与基本操作三相比，其第一步换成了<code>M</code>，而<code>Ux</code>与<code>Mx</code>同样被限制为90°转动。其作用是改变箭头二中标红位置的棱块的色向，例如：</p>
 <div id="base4">
 <script type="text/javascript">
@@ -288,8 +272,33 @@
     ('#base4');
 </script>
 </div>
-<p>因此，基本操作三和基本操作四能够改变特定的四个棱块的色向，并能直接解决箭头的情形。</p>
-<p>箭头一-基本操作三:</p>
+
+<p>可见，基本操作三和基本操作四能够改变特定的四个棱块的色向：3个位于顶层，1个位于底层。</p>
+<h3 id="3-1箭头"><a class="header" href="#3-1箭头">“3-1”(箭头)</a></h3>
+<p>箭头(Arrow)的顶层有3个色向错误的棱块，底层有1个。通过做<code>Ux</code>可调整其形态如下：</p>
+<p><strong>箭头一</strong></p>
+<div id="arrow1">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('tttttttrttttttttttttttttttttrtrtrttttttttttttttttttttt')
+    ('#arrow1');
+</script>
+</div>
+
+<p><strong>箭头二</strong></p>
+<div id="arrow2">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('trttttttttttttttttttttttttttttrtrtrttttttttttttttttttt')
+    ('#arrow2');
+</script>
+</div>
+
+<p>不管哪种箭头，上面的朝向使得4个色向错误的棱块分为两对：一对左右相对，一对上下相对。</p>
+<p>显然，<a href="#基本操作三m-ux-mx">基本操作三</a>和<a href="#基本操作四m-ux-mx">基本操作四</a>能直接解决箭头的情形。</p>
+<p><strong>箭头一-基本操作三</strong></p>
 <div id="arrow1-1">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
@@ -300,7 +309,8 @@
     ('#arrow1-1');
 </script>
 </div>
-<p>箭头二-基本操作四：</p>
+
+<p><strong>箭头二-基本操作四</strong></p>
 <div id="arrow2-1">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
@@ -311,9 +321,10 @@
     ('#arrow2-1');
 </script>
 </div>
+
 <p>“箭头”是最简单的情形。后续所有的情形，都将先转化为“箭头”情形，然后复原。</p>
-<h3 id="2a-2"><a class="header" href="#2a-2">2a-2</a></h3>
-<p>2a-2情形的含义为："2a"代表顶层有2个色向错误的棱块，并且位置相邻(adjacent)；"-2"代表底层有2个色向错误的棱块。后边情形的命名方式都与此类似。</p>
+<h3 id="2a-2"><a class="header" href="#2a-2">“2a-2”</a></h3>
+<p>2a-2情形的含义为：“2a“代表顶层有2个色向错误的棱块，并且位置相邻(adjacent)；”-2“代表底层有2个色向错误的棱块。后边情形的命名方式都与此类似。</p>
 <div id="case2a-2">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
@@ -322,6 +333,7 @@
     ('#case2a-2');
 </script>
 </div>
+
 <p>和“箭头”相比，2a-2的顶层少了一个色向错误的棱块，而底层多了一个。</p>
 <p>顶层上位于M层的两个棱块中，恰有一个色向错误。如果做<code>M2</code>，将改变M层的四个棱块的上下位置。这样，色向错误的棱块数不变（4个），而底层将恰有一个色向错误的棱块，因此转化为“箭头”情形。</p>
 <div id="case2a-2-1">
@@ -333,6 +345,7 @@
     ('#case2a-2-1');
 </script>
 </div>
+
 <p>进而可以得出一种可行的解法：</p>
 <div id="case2a-2-2">
 <script type="text/javascript">
@@ -344,19 +357,11 @@
     ('#case2a-2-2');
 </script>
 </div>
-<h3 id="2o-2"><a class="header" href="#2o-2">2o-2</a></h3>
-<p>2o-2情形下，"2o"代表顶层有2个色向错误的棱块，并且位置相对(opposite)；"-2"代表底层有2个色向错误的棱块。</p>
-<div id="case2o-2">
-<script type="text/javascript">
-  TTk.AlgorithmPuzzle(3)
-    .size({width:300, height:300})
-    .fc('trtttttrttttttttttttttttttttttrtrttttttttttttttttttttt')
-    ('#case2o-2');
-</script>
-</div>
-<p>与2a-2情形一样，2o-2中色向错误的棱块数也是4个。对于2a-2，我们使用<code>M2</code>让顶层和底层的四个棱块两两互换，从而将顶层色向错误的棱块数改变为3，转化为“箭头”。这里用同样的办法就不能奏效了。</p>
-<p>我们再引入两类基本操作，以完成上下两个棱块的单独互换，并且不改变所有棱块的色向：</p>
-<h4 id="基本操作五-m-u2-m"><a class="header" href="#基本操作五-m-u2-m">基本操作五：	<code>M' U2 M</code></a></h4>
+
+<blockquote>
+<p>下面我们再引入两类基本操作，以完成上下两个棱块的单独互换，并且不改变所有棱块的色向。</p>
+</blockquote>
+<h3 id="基本操作五-m-u2-m"><a class="header" href="#基本操作五-m-u2-m">基本操作五：	<code>M' U2 M</code></a></h3>
 <p>将M层与F层（前面）交界的两个棱块（UF位、DF位）位置互换。</p>
 <div id="base5">
 <script type="text/javascript">
@@ -367,8 +372,9 @@
     ('#base5');
 </script>
 </div>
+
 <p>可以发现,交换位置的两个棱块的色向都没有改变，即一个正确、一个错误。</p>
-<h4 id="基本操作六-m-u2-m"><a class="header" href="#基本操作六-m-u2-m">基本操作六：	<code>M U2 M'</code></a></h4>
+<h3 id="基本操作六-m-u2-m"><a class="header" href="#基本操作六-m-u2-m">基本操作六：	<code>M U2 M'</code></a></h3>
 <p>将M层与B层（后面）交界的两个棱块（UB位、DB位）位置互换。</p>
 <div id="base6">
 <script type="text/javascript">
@@ -379,9 +385,21 @@
     ('#base6');
 </script>
 </div>
+
 <p>因此，当两个互相交换的棱块有不同的色向时，这两类基本操作能将顶层色向错误的棱块数增加或减少一个，同时保证色向错误的棱块总数不变。</p>
-<p>对于2o-2情形，可以做基本操作六：</p>
-<p>在F面上，一个底层色向错误的棱块与一个顶层色向正确的棱块交换，便转化为“箭头”。（基本操作五同样可行，原理类似）</p>
+<h3 id="2o-2"><a class="header" href="#2o-2">“2o-2”</a></h3>
+<p>2o-2情形下，“2o“代表顶层有2个色向错误的棱块，并且位置相对(opposite)；”-2“代表底层有2个色向错误的棱块。</p>
+<div id="case2o-2">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('trtttttrttttttttttttttttttttttrtrttttttttttttttttttttt')
+    ('#case2o-2');
+</script>
+</div>
+
+<p>与2a-2情形一样，2o-2中色向错误的棱块数也是4个。对于2a-2，我们使用<code>M2</code>让顶层和底层的四个棱块两两互换，从而将顶层色向错误的棱块数改变为3，转化为“箭头”。这里用同样的办法就不能奏效了。</p>
+<p>对于2o-2情形，可以做<a href="#基本操作五-m-u2-m">基本操作五</a>或<a href="#基本操作六-m-u2-m">六</a>转换为箭头。下面的演示以基本操作六为例：在B面（后面）上，一个底层色向错误的棱块与一个顶层色向正确的棱块交换，便转化为“箭头”。</p>
 <div id="case2o-2-1">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
@@ -391,6 +409,7 @@
     ('#case2o-2-1');
 </script>
 </div>
+
 <p>一种可行的解法如下：</p>
 <div id="case2o-2-2">
 <script type="text/javascript">
@@ -402,7 +421,8 @@
     ('#case2o-2-2');
 </script>
 </div>
-<h3 id="4-0"><a class="header" href="#4-0">4-0</a></h3>
+
+<h3 id="4-0"><a class="header" href="#4-0">“4-0”</a></h3>
 <p>4-0情形下，顶层有4个色向错误的棱块，而底层没有。</p>
 <p>可以想象，<code>M2</code>就能将4-0转为2o-2的情形。因此将2o-2解法的第一步由<code>M</code>改为<code>M'</code>，就能解决这类情形。</p>
 <div id="case4-0">
@@ -413,6 +433,7 @@
     ('#case4-0');
 </script>
 </div>
+
 <div id="case4-0">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
@@ -423,13 +444,14 @@
     ('#case4-0');
 </script>
 </div>
-<h2 id="其他情形的复原"><a class="header" href="#其他情形的复原">其他情形的复原</a></h2>
+
+<h2 id="两六个棱块色向错误"><a class="header" href="#两六个棱块色向错误">两/六个棱块色向错误</a></h2>
 <h3 id="色向转换原理"><a class="header" href="#色向转换原理">色向转换原理</a></h3>
-<p>我们已经展示了恰有4个色向错误的棱块的情形，转化为<a href="#%E7%AE%AD%E5%A4%B4arrow%E6%88%963-1">“箭头”</a>情形的办法，即通过<a href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E4%BA%94m-u2-m">基本操作五</a>、<a href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%85%ADm-u2-m">六</a>或<code>M2</code>来改变上下面中色向错误的棱块的分配。</p>
+<p>我们已经展示了恰有4个色向错误的棱块的情形，转化为<a href="#3-1箭头">“箭头”</a>情形的办法，即通过<a href="#基本操作五-m-u2-m">基本操作五</a>、<a href="#基本操作六-m-u2-m">六</a>或<code>M2</code>来改变上下面中色向错误的棱块的分配。</p>
 <p>对于色向错误的棱块数不为4的情形，其统一的复原步骤如下：</p>
 <ol>
 <li>
-<p>通过至多两次<a href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E4%B8%89-m-ux-mx">基本操作三</a>、<a href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%9B%9B-m-ux-mx">四</a>，将色向错误的棱块总数转为4个。通过精心选择要执行的基本操作，魔方可以直接转为“箭头”情况。如果没能转为“箭头”，则使用基本操作五、六再做转换。</p>
+<p>通过至多两次<a href="#基本操作三-m-ux-mx">基本操作三</a>、<a href="#基本操作四-m-ux-mx">四</a>，将色向错误的棱块总数转为4个。通过精心选择要执行的基本操作，魔方可以直接转为“箭头”情况。如果没能转为“箭头”，则使用基本操作五、六再做转换。</p>
 </li>
 <li>
 <p>通过基本操作三或四，解决“箭头”情况，完成色向复原。</p>
@@ -439,9 +461,9 @@
 <p>基本操作三或四能够同时改变4个棱块的色向。除非这四个位置恰好有两个色相错误的棱块，否则基本操作三、四一定会改变色向错误的棱块总数。例如，如果这四个位置有1个色向错误，那么执行完后这四个棱块变为3个色向错误，总数量加2。</p>
 </blockquote>
 <p>共有5类情况，一一介绍：</p>
-<h3 id="2a-0"><a class="header" href="#2a-0">2a-0</a></h3>
+<h3 id="2a-0"><a class="header" href="#2a-0">“2a-0”</a></h3>
 <p>“2a”代表顶层色向错误的两个棱块位置相邻。</p>
-<p>执行<a href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E4%B8%89-m-ux-mx">基本操作三</a>如<code>M' U M'</code>后，色向正确的棱块总数增加2，转化为“箭头”情形。</p>
+<p>执行<a href="#基本操作三-m-ux-mx">基本操作三</a>如<code>M' U M'</code>后，色向正确的棱块总数增加2，转化为“箭头”情形。</p>
 <div id="case2a-0">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
@@ -450,6 +472,7 @@
     ('#case2a-0');
 </script>
 </div>
+
 <div id="case2a-0">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
@@ -460,9 +483,10 @@
     ('#case2a-0');
 </script>
 </div>
-<h3 id="2o-0"><a class="header" href="#2o-0">2o-0</a></h3>
+
+<h3 id="2o-0"><a class="header" href="#2o-0">“2o-0”</a></h3>
 <p>“2o”代表顶层色向错误的两个棱块位置相对。</p>
-<p>可通过<a href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E4%B8%89-m-ux-mx">基本操作三</a>如<code>M' U M</code>转换。</p>
+<p>可通过<a href="#基本操作三-m-ux-mx">基本操作三</a>如<code>M' U M</code>转换。</p>
 <div id="case2o-0">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
@@ -471,6 +495,7 @@
     ('#case2o-0');
 </script>
 </div>
+
 <div id="case2o-0">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
@@ -481,8 +506,9 @@
     ('#case2o-0');
 </script>
 </div>
-<h3 id="0-2"><a class="header" href="#0-2">0-2</a></h3>
-<p>可通过<a href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E4%B8%89-m-ux-mx">基本操作三</a>如<code>M' U M'</code>转换。</p>
+
+<h3 id="0-2"><a class="header" href="#0-2">“0-2”</a></h3>
+<p>可通过<a href="#基本操作三-m-ux-mx">基本操作三</a>如<code>M' U M'</code>转换。</p>
 <div id="case0-2">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
@@ -491,6 +517,7 @@
     ('#case0-2');
 </script>
 </div>
+
 <div id="case0-2">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
@@ -501,10 +528,11 @@
     ('#case0-2');
 </script>
 </div>
+
 <p>由于0-2与2o-0只差一步<code>M2</code>，也可以将2o-0解法的第一步由<code>M'</code>替换为<code>M</code>。</p>
-<h3 id="1-1"><a class="header" href="#1-1">1-1</a></h3>
+<h3 id="1-1"><a class="header" href="#1-1">“1-1”</a></h3>
 <p>有两种情形。</p>
-<p>以下朝向下，可执行<a href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%9B%9B-m-ux-mx">基本操作四</a>如<code>M' U M</code>转换：</p>
+<p>以下朝向下，可执行<a href="#基本操作四-m-ux-mx">基本操作四</a>如<code>M' U M</code>转换：</p>
 <div id="case1-1-1">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
@@ -513,6 +541,7 @@
     ('#case1-1-1');
 </script>
 </div>
+
 <div id="case1-1-1">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
@@ -523,7 +552,8 @@
     ('#case1-1-1');
 </script>
 </div>
-<p>另一种的转化方法类似（<a href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E4%B8%89-m-ux-mx">基本操作三</a>，如<code>M' U M</code>）:</p>
+
+<p>另一种的转化方法类似（<a href="#基本操作三-m-ux-mx">基本操作三</a>，如<code>M' U M</code>）:</p>
 <div id="case1-1-3">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
@@ -532,6 +562,7 @@
     ('#case1-1-3');
 </script>
 </div>
+
 <div id="case1-1-3">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
@@ -542,9 +573,10 @@
     ('#case1-1-3');
 </script>
 </div>
-<h3 id="4-2"><a class="header" href="#4-2">4-2</a></h3>
+
+<h3 id="4-2"><a class="header" href="#4-2">“4-2”</a></h3>
 <p>4-2的所有6个棱块的色向都错误。</p>
-<p>无论是执行<a href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E4%B8%89-m-ux-mx">基本操作三</a>还是<a href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%9B%9B-m-ux-mx">基本操作四</a>，都会导致顶层色向错误的棱块数量减3、底层减1，因此只能先转化为1-1情形，再进一步转化为“箭头”。以下解法首先做基本操作四<code>M U M'</code>。</p>
+<p>无论是执行<a href="#基本操作三-m-ux-mx">基本操作三</a>还是<a href="#基本操作四-m-ux-mx">基本操作四</a>，都会导致顶层色向错误的棱块数量减3、底层减1，因此只能先转化为1-1情形，再进一步转化为“箭头”。以下解法首先做基本操作四<code>M U M'</code>。</p>
 <div id="case4-2">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
@@ -553,6 +585,7 @@
     ('#case4-2');
 </script>
 </div>
+
 <div id="case4-2">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
@@ -563,6 +596,7 @@
     ('#case4-2');
 </script>
 </div>
+
 <p>另有一种简便解法：<code>R U' r' U' M' U r U r</code>。</p>
 <div id="case4-2-3">
 <script type="text/javascript">
@@ -574,11 +608,12 @@
     ('#case4-2-3');
 </script>
 </div>
+
 <h2 id="复原流程图"><a class="header" href="#复原流程图">复原流程图</a></h2>
 <p>直观的色向复原流程图（作者：甘浩東/Anto Kam）如下：</p>
 <img src="./images/EO_flowchart.png">
 <p>在这张图中，红色棱块代表色向错误的棱块。图中无法看到DB位置棱块的色向，但请记住：色向错误的棱块总数一定为偶数。因此从图中就能足够推断它的色向情况。</p>
-<p>不要去硬记每种情形的完整转换公式。应当将复原流程与基本操作三~六的功能联系起来，理解<a href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E4%B8%89-m-ux-mx">基本操作三</a>、<a href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%9B%9B-m-ux-mx">四</a>是如何改变色向错误的棱块总数，<a href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E4%BA%94-m-u2-m">基本操作五</a>、<a href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%85%AD-m-u2-m">六</a>是如何改变色向错误的棱块的分布的，如同我们在<a href="#%E8%89%B2%E5%90%91%E8%BD%AC%E6%8D%A2%E5%8E%9F%E7%90%86">色向转换原理</a>中所介绍的那样。</p>
+<p>不要去硬记每种情形的完整转换公式。应当将复原流程与基本操作三~六的功能联系起来，理解<a href="#基本操作三-m-ux-mx">基本操作三</a>、<a href="#基本操作四-m-ux-mx">四</a>是如何改变色向错误的棱块总数，<a href="#基本操作五-m-u2-m">基本操作五</a>、<a href="#基本操作六-m-u2-m">六</a>是如何改变色向错误的棱块的分布的，如同我们在<a href="#色向转换原理">色向转换原理</a>中所介绍的那样。</p>
 <p>注意每次转换完成后，还需要通过<code>Ux</code>，调整为图中相应的朝向。</p>
 
                     </main>
@@ -586,11 +621,11 @@
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                             <a rel="prev" href="../../入门/lse/lse.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                                <i class="fa fa-angle-left"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
                             <a rel="next prefetch" href="../../入门/lse/后六棱归位.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                             </a>
 
                         <div style="clear: both"></div>
@@ -600,16 +635,21 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                     <a rel="prev" href="../../入门/lse/lse.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                        <i class="fa fa-angle-left"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 
                     <a rel="next prefetch" href="../../入门/lse/后六棱归位.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                     </a>
             </nav>
 
         </div>
 
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
 
 
 
@@ -618,13 +658,13 @@
         </script>
 
 
-        <script src="../../elasticlunr.min.js"></script>
-        <script src="../../mark.min.js"></script>
-        <script src="../../searcher.js"></script>
+        <script src="../../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../../mark-09e88c2c.min.js"></script>
+        <script src="../../searcher-c2a407aa.js"></script>
 
-        <script src="../../clipboard.min.js"></script>
-        <script src="../../highlight.js"></script>
-        <script src="../../book.js"></script>
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-a0b12cfe.js"></script>
 
         <!-- Custom JS scripts -->
 
