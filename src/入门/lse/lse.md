@@ -12,12 +12,12 @@
 
 这步的目标是将剩下的6个棱块（以灰色标出）复原，从而复原整个魔方。后六棱又叫做LSE(Last Six Edges)、L6E。
 
-<div id="lse">
+<div id="lse-lse">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('wlwwwwwlwggggggglgrlrrrrrlrylylylylybbbbbbblbolooooolo')
-    ('#lse');
+    ('#lse-lse');
 </script>
 </div>
 
@@ -27,12 +27,12 @@
 
 这步(eo/4a)要将顶层和底层上剩余的块的色向还原正确，也就是白色和黄色一致朝上或朝下。下面是一个色向还原的例子。
 
-<div id="eo">
+<div id="lse-eo">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('wwwwywwywggggggolorlrrrrglgyyywwyyyybbbbbbrlrolooooblb')
-    ('#eo');
+    ('#lse-eo');
 </script>
 </div>
 
@@ -78,12 +78,12 @@
 
 如此就完成了整个魔方的复原。
 
-<div id="done">
+<div id="lse-done">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
-    ('#done');
+    ('#lse-done');
 </script>
 </div>
 

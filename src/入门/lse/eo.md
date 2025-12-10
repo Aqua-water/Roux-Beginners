@@ -18,12 +18,12 @@
 
 以下是一个色向还原正确的具体例子。你可以拖动魔方，查看底层的状态：
 
-<div id="eo-eg">
+<div id="eo-eo-eg">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('wwwwywwywggggggolorlrrrrglgyyywwyyyybbbbbbrlrolooooblb')
-    ('#eo-eg');
+    ('#eo-eo-eg');
 </script>
 </div>
 
@@ -31,33 +31,33 @@
 
 对于这种情形的抽象表示，我们只标出上下两层中，色向错误的棱块面的位置，使用红色表示。它不一定代表真正的红色面。
 
-<div id="eo-eg2">
+<div id="eo-eo-eg2">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('wowwywwowgggggggbgryrrorryryryywyyrybbbbbbbgbowooroowo')
-    ('#eo-eg2');
+    ('#eo-eo-eg2');
 </script>
 </div>
 
-<div id="eo-eg2">
+<div id="eo-eo-eg2">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('trtttttrttttttttttttttttttttrtttttrttttttttttttttttttt')
-    ('#eo-eg2');
+    ('#eo-eo-eg2');
 </script>
 </div>
 
 中心块的色向通过一步`Mx`就能解决，我们先还原它们，再处理剩下6个棱块的色向。
 
-<div id="eo-c">
+<div id="eo-eo-c">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('wlwwywwlwgggggglllrlrrlrlllylylwlylybbbbbbllloloololll')
     .case(`M'`)
-    ('#eo-c');
+    ('#eo-eo-c');
 </script>
 </div>
 
@@ -71,48 +71,48 @@
 
 ### 基本操作三：	`M' Ux Mx`
 
-这里，`Ux`被限制为`U`或`U'`，`Mx`也被限制为`M'`或`M`，因此共有4种组合。其作用是改变除UB、DB两个位置外，其余的棱块的色向：
+这里，`Ux`被限制为`U`或`U'`，`Mx`也被限制为`M'`或`M`，因此共有4种组合。其作用是改变除UB、DB两个位置外，其余的4个棱块的色向：
 
-<div id="base3">
+<div id="eo-base3">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('tttttttrttttttttttttttttttttrtrtrttttttttttttttttttttt')
     .alg(`M' U M'`)
-    ('#base3');
+    ('#eo-base3');
 </script>
 </div>
 
-<div id="base3">
+<div id="eo-base3">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
     .case(`U' M' U2 M U' M U M2 U M U2 M2 U'`)
     .alg(`M' U M'`)
-    ('#base3');
+    ('#eo-base3');
 </script>
 </div>
 
 或者：
 
-<div id="base3-2">
+<div id="eo-base3-2">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('tttttttrttttttttttttttttttttrtrtrttttttttttttttttttttt')
     .alg(`M' U' M`)
-    ('#base3-2');
+    ('#eo-base3-2');
 </script>
 </div>
 
-<div id="base3-2">
+<div id="eo-base3-2">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
     .case(`M' U' M`)
-    ('#base3-2');
+    ('#eo-base3-2');
 </script>
 </div>
 
@@ -120,38 +120,38 @@
 
 以上演示改变的都是色向错误的棱块。相应地，色向正确的棱块也能变化为错误的情形：
 
-<div id="base3-3">
+<div id="eo-base3-3">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
     .alg(`M' U' M`)
-    ('#base3-3');
+    ('#eo-base3-3');
 </script>
 </div>
 
 ### 基本操作四：	`M Ux Mx`
 
-与基本操作三相比，其第一步换成了`M`，而`Ux`与`Mx`同样被限制为90°转动。其作用是改变除UF、DF两个位置外，其余的棱块的色向：
+与基本操作三相比，其第一步换成了`M`，而`Ux`与`Mx`同样被限制为90°转动。其作用是改变除UF、DF两个位置外，其余的4个棱块的色向：
 
-<div id="base4">
+<div id="eo-base4">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('trttttttttttttttttttttttttttttrtrtrttttttttttttttttttt')
     .alg(`M U M'`)
-    ('#base4');
+    ('#eo-base4');
 </script>
 </div>
 
-<div id="base4">
+<div id="eo-base4">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
     .case(`M U M2 U2 M2 U2 M U2`)
     .alg(`M U M'`)
-    ('#base4');
+    ('#eo-base4');
 </script>
 </div>
 
@@ -161,21 +161,21 @@
 
 箭头(Arrow)的顶层有3个色向错误的棱块，底层有1个。通过做`Ux`可调整其形态为以下二者之一：
 
-<div id="arrow">
+<div id="eo-arrow">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('tttttttrttttttttttttttttttttrtrtrttttttttttttttttttttt')
-    ('#arrow');
+    ('#eo-arrow');
 </script>
 </div>
 
-<div id="arrow">
+<div id="eo-arrow">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('trttttttttttttttttttttttttttttrtrtrttttttttttttttttttt')
-    ('#arrow');
+    ('#eo-arrow');
 </script>
 </div>
 
@@ -189,35 +189,35 @@
 
 和“箭头”相比，2a-2的顶层少了一个色向错误的棱块，而底层多了一个。相应解法如下：
 
-<div id="case2a-2">
+<div id="eo-case2a-2">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('trtttttrttttttttttttttttttttttrtttrttttttttttttttttttt')
-    ('#case2a-2');
+    ('#eo-case2a-2');
 </script>
 </div>
 
-<div id="case2a-2">
+<div id="eo-case2a-2">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
     .case(`U2 M U' M2 U2 M U' M' U M' U`)
     .alg(`M2 U' M' U M'`)
-    ('#case2a-2');
+    ('#eo-case2a-2');
 </script>
 </div>
 
 以上解法的原理为：2a-2的顶层上位于M层的两个棱块中，恰有一个色向错误。如果做`M2`，将改变M层的四个棱块的上下位置。这样，色向错误的棱块数不变（4个），而底层将恰有一个色向错误的棱块，因此转化为“箭头”情形。
 
-<div id="case2a-2-1">
+<div id="eo-case2a-2-1">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('trtttttrttttttttttttttttttttttrtttrttttttttttttttttttt')
     .alg(`M2`)
-    ('#case2a-2-1');
+    ('#eo-case2a-2-1');
 </script>
 </div>
 
@@ -227,13 +227,13 @@
 
 将M层与F层（前面）交界的两个棱块（UF位、DF位）位置互换。
 
-<div id="base5">
+<div id="eo-base5">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('tttttttrtttttttttttttttttrtttttttttttttttttttttttttttt')
     .alg(`M' U2 M`)
-    ('#base5');
+    ('#eo-base5');
 </script>
 </div>
 
@@ -243,13 +243,13 @@
 
 将M层与B层（后面）交界的两个棱块（UB位、DB位）位置互换。
 
-<div id="base6">
+<div id="eo-base6">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('trttttttttttttttttttttttttttttttttttttttttttttttttttrt')
     .alg(`M U2 M'`)
-    ('#base6');
+    ('#eo-base6');
 </script>
 </div>
 
@@ -261,23 +261,23 @@
 
 一种可行的解法如下：
 
-<div id="case2o-2">
+<div id="eo-case2o-2">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('trtttttrttttttttttttttttttttttrtrttttttttttttttttttttt')
-    ('#case2o-2');
+    ('#eo-case2o-2');
 </script>
 </div>
 
-<div id="case2o-2">
+<div id="eo-case2o-2">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
     .case(`M U2 M' U2 M' U' M U2 M2 U M2 U'`)
     .alg(`M U2 M' U2 M' U M'`)
-    ('#case2o-2');
+    ('#eo-case2o-2');
 </script>
 </div>
 
@@ -285,13 +285,13 @@
 
 对于2o-2情形，可以做[基本操作五](#基本操作五-m-u2-m)或[六](#基本操作六-m-u2-m)转换为箭头。以基本操作六为例，在B面（后面）上，一个底层色向错误的棱块与一个顶层色向正确的棱块交换，便转化为“箭头”。
 
-<div id="case2o-2-1">
+<div id="eo-case2o-2-1">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('trtttttrttttttttttttttttttttttrtrttttttttttttttttttttt')
     .alg(`M U2 M'`)
-    ('#case2o-2-1');
+    ('#eo-case2o-2-1');
 </script>
 </div>
 
@@ -301,29 +301,27 @@
 
 可以想象，`M2`就能将4-0转为2o-2的情形。因此将2o-2解法的第一步由`M`改为`M'`，就能解决这类情形。
 
-<div id="case4-0">
+<div id="eo-case4-0">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('ttttttttttttttttttttttttttttrtrtrtrttttttttttttttttttt')
-    ('#case4-0');
+    ('#eo-case4-0');
 </script>
 </div>
 
-<div id="case4-0">
+<div id="eo-case4-0">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
     .case(`M' U2 M' U2 M' U' M U2 M2 U M2 U'`)
     .alg(`M' U2 M' U2 M' U M'`)
-    ('#case4-0');
+    ('#eo-case4-0');
 </script>
 </div>
 
-## 两个棱块色向错误
-
-### 色向转换原理
+## 色向转换原理
 
 我们已经展示了恰有4个色向错误的棱块的情形，转化为[“箭头”](#3-1箭头)情形的办法，即通过[基本操作五](#基本操作五-m-u2-m)、[六](#基本操作六-m-u2-m)或`M2`来改变上下面中色向错误的棱块的分配。
 
@@ -333,9 +331,11 @@
 
 2. 通过基本操作三或四，解决“箭头”情况，完成色向复原。
 
-> 基本操作三或四能够同时改变4个棱块的色向。除非这四个位置恰好有两个色相错误的棱块，否则基本操作三、四一定会改变色向错误的棱块总数。例如，如果这四个位置有1个色向错误，那么执行完后这四个棱块变为3个色向错误，总数量加2。
+> 基本操作三或四能够同时改变4个棱块的色向。除非这四个位置恰好有两个色向错误的棱块，否则基本操作三、四一定会改变色向错误的棱块总数。例如，如果这四个位置有1个色向错误，那么执行完后这四个棱块变为3个色向错误，总数量加2。
 
 共有5类情况，一一介绍：
+
+## 两个棱块色向错误
 
 ### "2a-0"
 
@@ -343,23 +343,23 @@
 
 执行[基本操作三](#基本操作三-m-ux-mx)如`M' U M'`后，色向正确的棱块总数增加2，转化为“箭头”情形。
 
-<div id="case2a-0">
+<div id="eo-case2a-0">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('ttttttttttttttttttttttttttttttrtttrttttttttttttttttttt')
-    ('#case2a-0');
+    ('#eo-case2a-0');
 </script>
 </div>
 
-<div id="case2a-0">
+<div id="eo-case2a-0">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
     .case(`U M U2 M U' M U M' U2 M U' M'`)
     .alg(`M' U M' U2 M' U M'`)
-    ('#case2a-0');
+    ('#eo-case2a-0');
 </script>
 </div>
 
@@ -369,23 +369,23 @@
 
 可通过[基本操作三](#基本操作三-m-ux-mx)如`M' U M`转换。
 
-<div id="case2o-0">
+<div id="eo-case2o-0">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('ttttttttttttttttttttttttttttrtttttrttttttttttttttttttt')
-    ('#case2o-0');
+    ('#eo-case2o-0');
 </script>
 </div>
 
-<div id="case2o-0">
+<div id="eo-case2o-0">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
     .case(`M2 U M U M U' M' U M U M2`)
     .alg(`M' U M U' M' U M'`)
-    ('#case2o-0');
+    ('#eo-case2o-0');
 </script>
 </div>
 
@@ -393,23 +393,23 @@
 
 可通过[基本操作三](#基本操作三-m-ux-mx)如`M' U M'`转换。
 
-<div id="case0-2">
+<div id="eo-case0-2">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('trtttttrtttttttttttttttttttttttttttttttttttttttttttttt')
-    ('#case0-2');
+    ('#eo-case0-2');
 </script>
 </div>
 
-<div id="case0-2">
+<div id="eo-case0-2">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
     .case(`M' U' M' U M U M U M U2 M'`)
     .alg(`M' U M' U' M U M'`)
-    ('#case0-2');
+    ('#eo-case0-2');
 </script>
 </div>
 
@@ -421,45 +421,45 @@
 
 以下朝向下，可执行[基本操作四](#基本操作四-m-ux-mx)如`M' U M`转换：
 
-<div id="case1-1-1">
+<div id="eo-case1-1-1">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('trttttttttttttttttttttttttttrttttttttttttttttttttttttt')
-    ('#case1-1-1');
+    ('#eo-case1-1-1');
 </script>
 </div>
 
-<div id="case1-1-1">
+<div id="eo-case1-1-1">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
     .case(`U M' U' M' U2 M U M U`)
     .alg(`M U M' U M U M'`)
-    ('#case1-1-1');
+    ('#eo-case1-1-1');
 </script>
 </div>
 
 另一种的转化方法类似（[基本操作三](#基本操作三-m-ux-mx)，如`M' U M`）:
 
-<div id="case1-1-3">
+<div id="eo-case1-1-3">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('tttttttrttttttttttttttttttttttttttrttttttttttttttttttt')
-    ('#case1-1-3');
+    ('#eo-case1-1-3');
 </script>
 </div>
 
-<div id="case1-1-3">
+<div id="eo-case1-1-3">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
     .case(`M' U' M' U2 M U M U M U' M'`)
     .alg(`M' U M U M' U M'`)
-    ('#case1-1-3');
+    ('#eo-case1-1-3');
 </script>
 </div>
 
@@ -471,36 +471,36 @@
 
 无论是执行[基本操作三](#基本操作三-m-ux-mx)还是[基本操作四](#基本操作四-m-ux-mx)，都会导致顶层色向错误的棱块数量减3、底层减1，因此只能先转化为1-1情形，再进一步转化为“箭头”。以下解法首先做基本操作四`M U M'`。
 
-<div id="case4-2">
+<div id="eo-case4-2">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('trtttttrttttttttttttttttttttrtrtrtrttttttttttttttttttt')
-    ('#case4-2');
+    ('#eo-case4-2');
 </script>
 </div>
 
-<div id="case4-2">
+<div id="eo-case4-2">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
     .case(`U' M' U' M' U2 M U M U M' U' M' U M2 U`)
     .alg(`M U M' U2 M' U M U M' U M'`)
-    ('#case4-2');
+    ('#eo-case4-2');
 </script>
 </div>
 
 另有一种简便解法：`R U' r' U' M' U r U r`。
 
-<div id="case4-2-3">
+<div id="eo-case4-2-3">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
     .case(`U' M' U' M' U2 M U M U M' U' M' U M2 U`)
     .alg(`R U' r' U' M' U r U r'`)
-    ('#case4-2-3');
+    ('#eo-case4-2-3');
 </script>
 </div>
 

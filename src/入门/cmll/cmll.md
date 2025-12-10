@@ -14,12 +14,12 @@
 
 完成后，顶层可以自由旋转，角块不必一定和左右桥对齐。
 
-<div id="CMLL">
+<div id="cmll-CMLL">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('wtwwtwwtwgggggggtgrtrrtrrtrytytttytybbbbbbbtbotootooto')
-    ('#CMLL');
+    ('#cmll-CMLL');
 </script>
 </div>
 
@@ -37,12 +37,12 @@ CMLL步骤中会引入一些**公式**（在本教程中，指的是4步以上�
 
 这步要将顶层的四个角块在顶层上的颜色还原正确，也就是黄色一致朝上。
 
-<div id="CMLL-o">
+<div id="cmll-CMLL-o">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('wtwwtwwtwggggggltlrtrrtrltlytytttytybbbbbbltlotootoltl')
-    ('#CMLL-o');
+    ('#cmll-CMLL-o');
 </script>
 </div>
 
