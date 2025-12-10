@@ -16,7 +16,7 @@
         <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
         <link rel="stylesheet" href="../../css/variables-8adf115d.css">
         <link rel="stylesheet" href="../../css/general-2459343d.css">
-        <link rel="stylesheet" href="../../css/chrome-9dfbd86b.css">
+        <link rel="stylesheet" href="../../css/chrome-ae938929.css">
         <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
@@ -39,7 +39,7 @@
             const default_dark_theme = "navy";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc-def39154.js"></script>
+        <script src="../../toc-da0515f8.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -190,7 +190,7 @@
 </div>
 
 <p>首先调整中心块朝向。旋转魔方，使得蓝色中心块位于左面。相应地，绿色中心块会位于右面。</p>
-<p>此后需要保持这样的朝向不变——始终让蓝色中心块位于左面，直到魔方完全复原。</p>
+<p>此后，始终让蓝色中心块位于左面，直到整个魔方复原。</p>
 <div id="centers">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
@@ -203,19 +203,8 @@
 <blockquote>
 <p>只需调整蓝绿中心块的位置。在桥式的最后一步（后六棱）以前，其他中心块的位置不需要关心。</p>
 </blockquote>
-<p>调整朝向后，将蓝色中心块与蓝白棱块合并。这步至多通过两次转动就能完成，以下是一些实例。</p>
-<p><strong>例1: 改变朝向</strong></p>
-<div id="DL-x2">
-<script type="text/javascript">
-  TTk.AlgorithmPuzzle(3)
-    .size({width:300, height:300})
-    .fc('tttwtttttttttgtttttttttttttttttttttttbttbttttttttttttt')
-    .case('x2')
-    ('#DL-x2');
-</script>
-</div>
-
-<p><strong>例2: D层转动</strong></p>
+<p>调整朝向后，将蓝色中心块与蓝白棱块合并，并使白色面朝下。这步至多通过两次转动就能完成，以下是一些实例。</p>
+<p><strong>例1: D层转动</strong></p>
 <div id="DL">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
@@ -226,7 +215,7 @@
 </script>
 </div>
 
-<p><strong>例3: 未归位，朝向错误</strong></p>
+<p><strong>例2: 未归位，朝向错误</strong></p>
 <div id="DL-weird">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
@@ -237,7 +226,7 @@
 </script>
 </div>
 
-<p><strong>例4：归位，朝向错误</strong></p>
+<p><strong>例3：归位，朝向错误</strong></p>
 <div id="DLflip">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
@@ -248,18 +237,7 @@
 </script>
 </div>
 
-<p>或：</p>
-<div id="DLflip2">
-<script type="text/javascript">
-  TTk.AlgorithmPuzzle(3)
-    .size({width:300, height:300})
-    .fc('tttwtttttttttgtttttttttttttttttttttttbttbttttttttttttt')
-    .case(`D' r D'`)
-    ('#DLflip2');
-</script>
-</div>
-
-<p>(有很多可能的解法，请自行尝试。)</p>
+<p>有很多可能的解法，请自行尝试。</p>
 <p>完成后，为了不改变蓝绿块的位置，此后我们不会轻易转动L层或D层。</p>
 <h2 id="2-复原一对棱角对"><a class="header" href="#2-复原一对棱角对">2 复原一对棱角对</a></h2>
 <p>接下来要完成一个 <code>1x2x2</code> 方块。可以使用<code>蓝红-白</code>或<code>蓝橙-白</code>棱角对，与已有的部分组合起来。</p>
@@ -273,44 +251,24 @@
 </script>
 </div>
 
-<p>棱角对指的是一个棱块和一个复原状态下与之相邻的角块的组合。以下是一些已经组好的棱角对。</p>
-<p><strong>蓝红-白</strong></p>
+<p>棱角对指的是一对正确组对的棱块和角块，其位置任意。<code>AB-C</code>棱角对表示棱块和角块都含有A色和B色，而角块额外含有C色。例如，下面是一对已归位的<strong>蓝白-红</strong>棱角对：</p>
+<p><strong>蓝白-红</strong></p>
 <div id="pair1">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
-    .fc('ttttttwtttttttttttrttrttttttttttttttttbttbtttttttttttt')
+    .fc('tttwttwtttttttttttrttttttttttttttttttbbttttttttttttttt')
     ('#pair1');
 </script>
 </div>
 
-<p><strong>蓝橙-白</strong></p>
-<div id="pair2">
-<script type="text/javascript">
-  TTk.AlgorithmPuzzle(3)
-    .size({width:300, height:300})
-    .fc('wtttttttttttttttttttttttttttttttttttbttbtttttttottottt')
-    ('#pair2');
-</script>
-</div>
-
-<p><strong>蓝白-红</strong></p>
-<div id="pair3">
-<script type="text/javascript">
-  TTk.AlgorithmPuzzle(3)
-    .size({width:300, height:300})
-    .fc('tttwttwtttttttttttrttttttttttttttttttbbttttttttttttttt')
-    ('#pair3');
-</script>
-</div>
-
-<p>可以看出，位于蓝白桥两侧的棱角对，前面的棱角对的侧面颜色是红，而后面的棱角对对应橙。如果在复原过程中不清楚侧面的颜色，可以转动r层(<code>rx</code>)，将白色中心块与已复原的白底棱块对齐，再根据侧面的中心块颜色判断。</p>
-<p>例如，根据中心块颜色可以看出，左桥为橙白桥时，前棱角对的侧面颜色是蓝。</p>
+<p>根据左桥的复原形态，位于蓝白桥两侧的棱角对，前面的棱角对的侧面颜色是红，而后面的棱角对对应橙。如果在复原过程中不清楚侧面的颜色，可以转动r层(<code>rx</code>)，将白色中心块与已复原的白底棱块对齐，再根据侧面的中心块颜色判断。</p>
+<p>例如，根据中心块颜色可以看出，左桥为橙黄桥时，前棱角对的侧面颜色是绿。</p>
 <div id="pair4">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
-    .fc('tttwwtttttttttttttttttbttttttttttttttottottttttttttttt')
+    .fc('tttyytttttttttttttttttgttttttttttttttottottttttttttttt')
     ('#pair4');
 </script>
 </div>
@@ -330,7 +288,7 @@
 </script>
 </div>
 
-<p>这一步的目标是将蓝红棱块放在起始位，不关心其朝向。步骤如下：</p>
+<p>这一步的目标是将蓝红棱块放在起始位，不关心其颜色的朝向。步骤如下：</p>
 <p>通过<code>Ux</code>、<code>Fx</code>或<code>Bx</code>，将蓝红棱块放在M层。随后做<code>rx</code>，将棱块放入起始位。</p>
 <div id="DF-1">
 <script type="text/javascript">
@@ -343,7 +301,7 @@
 </div>
 
 <blockquote>
-<p>如果棱块已经位于M层，显然不需要通过<code>Ux</code>、<code>Fx</code>或<code>Bx</code>调整。<code>Ux</code>的说法包含了这个意思，因为<code>Ux</code>包含<code>U0</code>。随后的<code>rx</code>也同理。这种隐含的“如果已经完成，可直接跳过”的含义，在后面会遇到很多。</p>
+<p>如果棱块已经位于M层，显然不需要通过<code>Ux</code>、<code>Fx</code>或<code>Bx</code>调整。<code>Ux</code>的说法包含了这个意思，因为<code>Ux</code>包含<code>U0</code>。随后的<code>rx</code>也同理。这种隐含的“如果已经完成，可直接跳过”的含义，在后面还会出现很多次，不再单独强调。</p>
 </blockquote>
 <p><strong>特例：棱块处于DR位</strong></p>
 <p>此时无法用上述流程解决，做<code>R F</code>即可。</p>
@@ -444,7 +402,7 @@
 <p>接下来将复原剩余一对棱角对，完成左桥构建。在这里，我们需要复原<code>蓝橙-白</code>棱角对。</p>
 <p>复原第一对棱角对的经验，可以几乎原封不动地用到第二组棱角对的复原中，因为它们只是关于前后做了镜像。通过下面的例子，你会看到如何用相同的办法复原<code>蓝橙-白</code>棱角对。</p>
 <h3 id="3-1-棱块放至起始位"><a class="header" href="#3-1-棱块放至起始位">3-1 棱块放至起始位</a></h3>
-<p>原本的<code>DF位</code>仍然作为起始位，不过这里选择了它的镜像位<code>DB位</code>。</p>
+<p>原本的<code>DF位</code>仍然可以作为起始位。下面的例子中，我们选择它的镜像位<code>DB位</code>。</p>
 <div id="DB">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
@@ -468,7 +426,10 @@
 </div>
 
 <h3 id="3-3-棱角对归位"><a class="header" href="#3-3-棱角对归位">3-3 棱角对归位</a></h3>
-<p>组好棱角对并归位。<code>Ux</code>+<code>rx</code>/<code>Rx</code> +<code>Bx'</code>能够处理大部分情况，与组第一组棱角对时的不同在于，最后的<code>Fx</code>换成了<code>Bx</code>。</p>
+<p>组好棱角对并归位。<code>Ux rx Bx</code>或<code>Ux Rx Bx'</code>能够处理大部分情况。</p>
+<blockquote>
+<p>组第一组棱角对时，这个步骤的最后一步是<code>Fx</code>。作为镜像操作，这里被换成了<code>Bx</code>。</p>
+</blockquote>
 <div id="pair7">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)

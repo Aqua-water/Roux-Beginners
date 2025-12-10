@@ -16,7 +16,7 @@
         <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
         <link rel="stylesheet" href="../../css/variables-8adf115d.css">
         <link rel="stylesheet" href="../../css/general-2459343d.css">
-        <link rel="stylesheet" href="../../css/chrome-9dfbd86b.css">
+        <link rel="stylesheet" href="../../css/chrome-ae938929.css">
         <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
@@ -39,7 +39,7 @@
             const default_dark_theme = "navy";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc-def39154.js"></script>
+        <script src="../../toc-da0515f8.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -179,7 +179,7 @@
 <h2 id="一个黄色面已还原"><a class="header" href="#一个黄色面已还原">一个黄色面已还原</a></h2>
 <h3 id="as"><a class="header" href="#as">As</a></h3>
 <p>   <img src="./images/cmll-as.png" width="200" height="200" /></p>
-<p>上图为As形态的俯视图，特点是3个未复原的黄色面都在顶层侧面的左边。换句话说，将角块逆时针旋转120°，可以把黄色面移动到顶层。通过<code>Ux</code>将已复原的黄色面放在俯视图的左上角位置，然后完成公式：</p>
+<p>上图为As形态的俯视图，特点是3个未复原的黄色面都在对应角块的右侧。换句话说，将角块逆时针旋转120°，可以把黄色面移动到顶层。使用公式前，通过<code>Ux</code>将已复原的黄色面放在俯视图的左上角。</p>
 <p><strong>公式一</strong> <code>R' U' R U' R' U2 R</code></p>
  
 <div id="sune">
@@ -208,7 +208,7 @@
 
 <h3 id="s"><a class="header" href="#s">S</a></h3>
 <p>   <img src="./images/cmll-s.png" width="200" height="200" /></p>
-<p>S形态的特点是3个未复原的黄色面都在顶层侧面的右边。通过<code>U</code>转动将已复原的黄色面放在俯视图的左下角位置。</p>
+<p>S形态的特点是3个未复原的黄色面都在对应角块的左侧。使用公式前，通过<code>Ux</code>将已复原的黄色面放在俯视图的左下角。</p>
 <p><strong>公式二</strong> <code>R U R' U R U2 R'</code></p>
  
 <div id="cmll-s">
@@ -222,7 +222,7 @@
  </div>
 
 <p>这个公式的组成为：<code>(基本操作一) U (基本操作一)</code>。（见<a href="./../两桥/右桥.html#基本操作一r-ux-r">基本操作一</a>）它对右桥的前棱角对完成重新插入。</p>
-<p>如果只使用公式〇解决S形态，将已复原的黄色面放在俯视图的左上角位置，再完成：</p>
+<p>也可以只使用公式〇。将已复原的黄色面放在俯视图的左上角位置，再完成：</p>
 <p><code>(公式〇) U' (公式〇)</code></p>
  
 <div id="cmll-s2">
@@ -237,16 +237,16 @@
 
 <h3 id="叠加法"><a class="header" href="#叠加法">叠加法</a></h3>
 <p>除As与S以外的所有形态，都能通过执行一次公式一转化为As或S形态，因此总能通过叠加前面的公式来解决: <code>Ux (公式一) Ux (公式一/公式二)</code>。<code>Ux</code>用于调整朝向。</p>
-<p>当然也可以只使用公式〇解决。在上面的<code>Ux (公式一) Ux (公式一/公式二)</code>叠加方案中，将公式一替换为公式〇、公式二替换为<code>(公式〇) U' (公式〇)</code>即可。注意用于调整朝向的<code>Ux</code>会有一些变化。</p>
+<p>也可以只使用公式〇，因为公式一可以替换为公式〇、公式二可以替换为<code>(公式〇) U' (公式〇)</code>。注意中途用于调整朝向的<code>Ux</code>可能有一些变化。</p>
 <h2 id="两个黄色面已还原"><a class="header" href="#两个黄色面已还原">两个黄色面已还原</a></h2>
 <p>恰好两个黄色面已还原的情形有3种。其叠加法如下：无论哪种情形，保证俯视图中左上角的角块是黄色朝上的:</p>
 <p>   <img src="./images/cmll-2.png" width="200" height="200" /></p>
-<p>然后使用公式一（或公式〇），就一定转为S形态，从而能够通过公式二（或叠加公式〇）解决。</p>
+<p>然后使用公式一，就一定转为S形态，从而能够通过公式二解决。</p>
+<p>下面的T形态中，给出了叠加法的一个具体例子。</p>
 <h3 id="t"><a class="header" href="#t">T</a></h3>
 <p>T形态中，两个未还原的角块相邻，黄色面方向相对。</p>
 <p>   <img src="./images/cmll-t.png" width="200" height="200" /></p>
-<p>我们为叠加法给出一个具体例子。以T形态为例，首先保证俯视图中左上角的角块黄色朝上，上图已满足要求。</p>
-<p>然后，执行公式一。调整朝向后再做公式二即可。</p>
+<p>采用叠加法时，首先保证俯视图中左上角的角块黄色朝上，上图已满足要求。然后，执行公式一。<code>U2</code>调整朝向后，再做公式二。</p>
  
 <div id="cmll-t2">
  <script type="text/javascript">
@@ -258,7 +258,7 @@
  </script>
  </div>
 
-<p>T形态的一步复原公式为：</p>
+<p>T形态复原公式：</p>
 <p><strong>进阶公式一</strong> <code>(R U R' U') (R' F R F')</code></p>
  
 <div id="cmll-t">
@@ -275,7 +275,7 @@
 <p>U形态中，两个未还原的角块也相邻，但黄色面方向相同。</p>
 <p>   <img src="./images/cmll-u.png" width="200" height="200" /></p>
 <p>采用<a href="#两个黄色面已还原">叠加法</a>时，上图的朝向满足起手要求。</p>
-<p>U形态的一步复原公式为：</p>
+<p>U形态复原公式：</p>
 <p><strong>进阶公式二</strong> <code>F (R U R' U') F'</code></p>
  
 <div id="cmll-u">
@@ -288,12 +288,12 @@
  </script>
  </div>
 
-<p>注意这里改变了初始朝向，使得两个黄色面朝左。</p>
+<p>起手时，两个黄色面朝左，与叠加法的起手是不同的。</p>
 <h3 id="l"><a class="header" href="#l">L</a></h3>
 <p>L形态中，两个未还原的角块相对。</p>
 <p>   <img src="./images/cmll-l.png" width="200" height="200" /></p>
 <p>采用<a href="#两个黄色面已还原">叠加法</a>时，上图的朝向满足起手要求。</p>
-<p>L形态的一步复原公式为：</p>
+<p>L形态复原公式：</p>
 <p><strong>进阶公式三</strong> <code>(F R' F' R) (U R U' R')</code></p>
  
 <div id="cmll-l">
@@ -306,11 +306,11 @@
  </script>
  </div>
 
-<p>注意这里改变了初始朝向，使得俯视图中左下角的黄色面朝前。</p>
+<p>起手时，俯视图中左下角的黄色面朝下。</p>
 <h2 id="零个黄色面已还原"><a class="header" href="#零个黄色面已还原">零个黄色面已还原</a></h2>
-<p>没有任何黄色面已还原的情形有2种。其<a href="#叠加法">叠加法</a>如下：无论哪种情形，保证俯视图中左侧的两个角块是黄色朝左的:</p>
+<p>所有的黄色面都未还原的情形有2种。其<a href="#叠加法">叠加法</a>如下：无论哪种情形，保证俯视图中左侧的两个角块是黄色朝左的:</p>
 <p>   <img src="./images/cmll-0.png" width="200" height="200" /></p>
-<p>然后使用公式一（或公式〇），就一定转为As形态，从而能够再做一次公式一（或公式〇）解决。</p>
+<p>然后使用公式一，就一定转为As形态，从而通过公式一解决。</p>
 <h3 id="h"><a class="header" href="#h">H</a></h3>
 <p>H形态中，四个未还原黄色面朝向两个方向。</p>
 <p>   <img src="./images/cmll-h.png" width="200" height="200" /></p>
@@ -327,7 +327,7 @@
  </script>
  </div>
 
-<p>消步后即为H形态的一步复原公式：</p>
+<p>消步后即为H形态的复原公式：</p>
 <p><strong>进阶公式四</strong> <code>(R' U' R U') (R' U R U') R' U2 R</code></p>
  
 <div id="cmll-h">
@@ -344,7 +344,7 @@
 <p>Pi形态中，四个未还原黄色面朝向三个方向。</p>
 <p>   <img src="./images/cmll-pi.png" width="200" height="200" /></p>
 <p>采用<a href="#零个黄色面已还原">叠加法</a>时，上图的朝向满足起手要求。</p>
-<p>Pi形态的一步复原公式为：</p>
+<p>Pi形态复原公式：</p>
 <p><strong>进阶公式五</strong> <code>F (R U R' U')2 F'</code></p>
  
 <div id="cmll-pi">

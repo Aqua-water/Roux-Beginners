@@ -16,7 +16,7 @@
         <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
         <link rel="stylesheet" href="../../css/variables-8adf115d.css">
         <link rel="stylesheet" href="../../css/general-2459343d.css">
-        <link rel="stylesheet" href="../../css/chrome-9dfbd86b.css">
+        <link rel="stylesheet" href="../../css/chrome-ae938929.css">
         <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
@@ -39,7 +39,7 @@
             const default_dark_theme = "navy";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc-def39154.js"></script>
+        <script src="../../toc-da0515f8.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -165,7 +165,7 @@
 </style>
 <h1 id="右桥"><a class="header" href="#右桥">右桥</a></h1>
 <h2 id="目标"><a class="header" href="#目标">目标</a></h2>
-<p>右桥也是一个1×2×3的块，与左桥相同，而位置与左桥相对。其底色与左桥相同，桥色相反，因此需要完成一个<strong>白底绿色桥</strong>。</p>
+<p>右桥也是一个1×2×3的块，与左桥相同，而位置与左桥相对。其底色与左桥相同，桥色相反，因此需要完成一个<strong>白底绿色桥</strong>，并且不能破坏已经做好的左桥。</p>
 <p>你可以通过下面的已经完成好的右桥，观察它与上节复原的左桥的联系。</p>
 <div id="inf1">
 <script type="text/javascript">
@@ -177,7 +177,7 @@
 </div>
 
 <h2 id="1-复原底棱"><a class="header" href="#1-复原底棱">1 复原底棱</a></h2>
-<p>第一步是将将绿色中心块与绿白棱块合并、归位，并且不能破坏已经做好的左桥。</p>
+<p>第一步是将将绿色中心块与绿白棱块合并、归位。</p>
 <div id="DR">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
@@ -188,7 +188,7 @@
 </div>
 
 <p>如果绿白棱块已经和绿色中心块对齐，或绿白棱块在顶层且白色面朝上，通过 <code>Ux Rx</code>直接归位。</p>
-<p><strong>例1: 直接归位的情形</strong></p>
+<p><strong>例1: 直接归位</strong></p>
 <div id="DR1">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
@@ -252,24 +252,24 @@
 </div>
 
  
-<div id="base1-2">
+<div id="base1">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('ttttttttllttltttttttlttlnntnntttttttttttttttnttttttttt')
     .alg(`R U' R'`)
-    ('#base1-2');
+    ('#base1');
 </script>
 </div>
 
  
-<div id="base1-3">
+<div id="base1">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('ttttttttllttltttttttlttlttttttnttnttttttttnntttttttttn')
     .alg(`R U2 R'`)
-    ('#base1-3');
+    ('#base1');
 </script>
 </div>
 
@@ -287,24 +287,24 @@
 </div>
 
  
-<div id="base2-2">
+<div id="base2">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('ttlttttttttlttlttntttttttnttnttttttntttttttttlttlttntt')
     .alg(`R' U' R`)
-    ('#base2-2');
+    ('#base2');
 </script>
 </div>
 
  
-<div id="base2-3">
+<div id="base2">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('ttlttttttttlttltttttttttnttnttnttttttttttttnnlttlttttt')
     .alg(`R' U2 R`)
-    ('#base2-3');
+    ('#base2');
 </script>
 </div>
 
@@ -351,7 +351,7 @@
 </script>
 </div>
 
-<p>同样的情形下，如果选择<code>U'</code>，将导致白色面朝上，需要额外做翻转。</p>
+<p>同样的情形下，如果选择第二步做<code>U'</code>，将导致白色面朝上，需要额外做翻转。</p>
 <div id="DRF-2">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
@@ -374,29 +374,39 @@
 </script>
 </div>
 
-<div id="DRF-4">
+<div id="DRF-3">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('wttwtwwrttgttgttttrgtrttrttwttttttttbbbbbbttgttottottt')
     .alg(`U' R U2 R'`)
-    ('#DRF-4');
+    ('#DRF-3');
 </script>
 </div>
 
 <p>如果在翻转位UBR位，做基本操作二中的<code>R' U R</code>或<code>R' U2 R</code>。</p>
-<div id="DRF-5">
+<div id="DRF-4">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('wttwtwwrttgttgttttrgtrttrttwttttttttbbbbbbttgttottottt')
     .alg(`U2 R' U R`)
-    ('#DRF-5');
+    ('#DRF-4');
+</script>
+</div>
+
+<div id="DRF-5">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:300, height:300})
+    .fc('wttwtwwrttgttgttttrgtrttrttwttttttttbbbbbbttgttottottt')
+    .alg(`U2 R' U2 R`)
+    ('#DRF-4');
 </script>
 </div>
 
 <blockquote>
-<p>在左桥中，我们曾能够用一步<code>Rx</code>完成角块翻转。在右桥中不再适用。</p>
+<p>在左桥中，我们曾能够用一步<code>Rx</code>完成角块翻转。右桥中，<code>Rx</code>会破坏已复原的底棱。</p>
 </blockquote>
 <h3 id="2-3-棱角对归位"><a class="header" href="#2-3-棱角对归位">2-3 棱角对归位</a></h3>
 <p>这一步的目标是组好棱角对，并和已有的部分合并成方块。</p>
@@ -426,7 +436,7 @@
 </script>
 </div>
 
-<p><strong>例2 双层转动的基本操作一</strong></p>
+<p><strong>例2 基本操作一，但是双层转动</strong></p>
 <div id="pair2">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
@@ -495,7 +505,7 @@
 <p>棱角对正确合并后，这里出现的情形和<a href="#2-3-棱角对归位">第一组棱角对归位</a>中的例2互为镜像，因此解法也是镜像的：<code>r</code>与<code>r'</code>对称，<code>U</code>与<code>U'</code>对称。</p>
 </blockquote>
 <p>更多的情形请自行尝试。</p>
-<p>顺带一提，在后续的“后六棱”步骤中，将要求顶层的中心块为黄色或白色。右桥复原的最后一次转动中，你可以自由选择转<code>Rx</code>还是<code>rx</code>，以归位最后一对棱角对，因此上述目标在右桥最后一步中就可完成，从而避免后续通过<code>Mx</code>再次调整。</p>
+<p>顺带一提，在后续的“后六棱”步骤中，将会要求顶层的中心块为黄色或白色。由于整个右桥的复原总是以<code>Rx</code>或<code>rx</code>结尾，因此恰当地选择做<code>Rx</code>还是<code>rx</code>，就能直接调整好顶层的中心块，从而避免通过<code>Mx</code>再次调整。</p>
 
                     </main>
 

@@ -16,7 +16,7 @@
         <link rel="shortcut icon" href="../favicon-8114d1fc.png">
         <link rel="stylesheet" href="../css/variables-8adf115d.css">
         <link rel="stylesheet" href="../css/general-2459343d.css">
-        <link rel="stylesheet" href="../css/chrome-9dfbd86b.css">
+        <link rel="stylesheet" href="../css/chrome-ae938929.css">
         <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
@@ -39,7 +39,7 @@
             const default_dark_theme = "navy";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc-def39154.js"></script>
+        <script src="../toc-da0515f8.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -168,7 +168,7 @@
 <p>本节的内容多且重要，但这不意味着你需要一次性记住。后续章节中出现记号时，往往伴随着虚拟魔方的转动演示，你可以将动画与记号对应起来。对于桥式解法，最重要的几个转动记号为<a href="#u-转动">U</a>、<a href="#f-转动">F</a>、<a href="#r-转动">R</a>、<a href="#m转动">M</a>与<a href="#r转动">r</a>。</p>
 </blockquote>
 <h2 id="位置"><a class="header" href="#位置">位置</a></h2>
-<p>一般来说，我们在复原中会选一个面对准自己。一旦视野中面积最大的面（称为“前“面）选定，并且魔方姿态正直，那么魔方的朝向也就确定了。视野中至多只能同时看见“前“面周围的两个面。</p>
+<p>一般来说，我们在复原中会选一个面对准自己。一旦视野中面积最大的面（称为“前”面）选定，并且魔方姿态正直，那么魔方的朝向也就确定了。视野中至多只能同时看见“前”面周围的两个面。</p>
 <p>按照视野中各个面的不同朝向，采用以下记号来标记它们：</p>
 <ol>
 <li><code>顶</code>，或<code>U</code>（Up），有时也称为<code>上</code></li>
@@ -178,7 +178,13 @@
 <li><code>左</code>，或<code>L</code>（Left，与<code>R</code>相对）</li>
 <li><code>后</code>，或<code>B</code>（Back，与<code>F</code>相对）</li>
 </ol>
-<p>在下图中的朝向中，中心块黄、红、绿、白、蓝、橙所对应的面，与上面介绍的各个朝向依次对应。注意在本节中，请勿改变所有虚拟魔方的初始朝向，否则记号无法与演示对应。</p>
+<p>在下图中的朝向中，各个面与中心块的对应关系为：U-黄、F-红、R-绿、D-白、L-蓝、B-橙。</p>
+<blockquote>
+<p>务必注意，面的记号代表的是这个面所处的方位，是由魔方的朝向决定的，而不是中心块的颜色。魔方的朝向改变时，面与中心块颜色的对应关系也会改变。在本节中，任何记号都不与某种特定的颜色相对应。</p>
+</blockquote>
+<blockquote>
+<p>因此，请避免改变本节中所有虚拟魔方的初始朝向，否则记号无法与演示相对应。</p>
+</blockquote>
 <div id="faces">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
@@ -300,6 +306,12 @@
 </script>
 </div>
 
+<blockquote>
+<p><code>B</code>层、<code>D</code>层和<code>L</code>层的转动方向也许有些特殊。注意所谓的顺逆时针，都是假定直接面向这个面的来观察的，而不是从你的视角的位置。例如，<code>D’</code>表示你从魔方底部向上看时，底层向逆时针旋转90°。<code>U’</code>和<code>D’</code>都代表逆时针旋转，但从你的角度来看，它们的转动方向是相反的。</p>
+</blockquote>
+<blockquote>
+<p>应当逐步熟悉所有6类转动的手法，而不要先把要转动的面移动到自己面前，再去转这个面。即使这个面在视野之外（如转动<code>B’</code>），也不要改变魔方的朝向。</p>
+</blockquote>
 <h3 id="转动序列"><a class="header" href="#转动序列">转动序列</a></h3>
 <p>形如<code>R U R' U'</code>的转动记号组合，代表依次进行对应的转动操作。</p>
 <div id="RUR’U’">
@@ -329,8 +341,8 @@
 <p>括号有时是为了方便记忆而设置的。</p>
 </blockquote>
 <h3 id="逆转动"><a class="header" href="#逆转动">逆转动</a></h3>
-<p><code>R U R' U'</code>的反向操作，对应的转动是<code>U R U' R'</code>。逆转动是这样得到的：先将<code>R U R' U'</code>的记号倒过来，得到<code>U' R' U R</code>，再改变每个记号的顺逆时针。当然，如果是<code>U2</code>改变为<code>U'2</code>，可以不改变写法。</p>
-<p>本教程中的演示，通常从一个特定的情形(case)出发，通过一系列转动完成复原。你可以从已复原的状态出发，通过对教程提供的解法进行反向操作，得到这个特定情形。</p>
+<p>将<code>R U R' U'</code>倒过来做，对应的转动是<code>U R U' R'</code>。逆转动是这样得到的：先将<code>R U R' U'</code>的记号倒过来，得到<code>U' R' U R</code>，再改变每个记号的顺逆时针。当然，如果是<code>U2</code>改变为<code>U'2</code>，可以不改变写法。</p>
+<p>本教程中出现的转动序列，都是用于将打乱状态转为复原状态。你可以从已复原的状态出发，通过逆转动得到对应的初始情形(case)。</p>
 <div id="RUR’U’rev">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
@@ -342,18 +354,9 @@
 </script>
 </div>
 
-<blockquote>
-<p><code>B</code>层、<code>D</code>层和<code>L</code>层的转动方向也许有些特殊。注意所谓的顺逆时针，都是假定直接面向这个面的来观察的，而不是从你的视角的位置。例如，<code>D’</code>表示你从魔方底部向上看时，底层向逆时针旋转90°。<code>U’</code>和<code>D’</code>都代表逆时针旋转，但从你的角度来看，它们的转动方向是相反的。</p>
-</blockquote>
-<blockquote>
-<p>注意转动记号取决于魔方当前的朝向，而不是对应中心块的颜色。如果红色中心块不在F面（前面），那么此时转动红色中心块所在面的记号就不再是<code>F</code>，而是由视野中它所在的面的朝向决定。它若在左边，那转动记号就是<code>L</code>。</p>
-</blockquote>
-<blockquote>
-<p>应当逐步熟悉所有6类转动的手法，而不要依赖于先把要转动的面移动到自己面前，再去转这个面。即使这个面在视野之外（如转动<code>B’</code>），也不要改变魔方的朝向。</p>
-</blockquote>
 <h2 id="转体"><a class="header" href="#转体">转体</a></h2>
 <p>转体就是魔方的整体转动。魔方可以通过三个基本的维度进行转体，因此使用所围绕的坐标轴来表示不同的转体。注意下面的<code>y</code>与<code>z</code>转动，与右手坐标系的y、z轴是相反的。</p>
-<p>更简单的记忆方法是记住对应的面： <code>x</code>, <code>y</code>和 <code>z</code> 分别对应 <code>R</code>, <code>U</code>和 <code>F</code> 的方向。  例如，转体<code>x'</code> 和转动 <code>R'</code>类似，但是是所有的层都做相应转动，而不是只有R层转动。</p>
+<p>更简单的记忆方法是记住对应的面： <code>x</code>, <code>y</code>和 <code>z</code> 分别对应 <code>R</code>, <code>U</code>和 <code>F</code> 的方向。例如，转体<code>x'</code> 和转动 <code>R'</code>类似，与R面平行的每个层都向同样的方向转动。</p>
 <h3 id="x-转体"><a class="header" href="#x-转体">x 转体</a></h3>
 <div id="x">
 <script type="text/javascript">
@@ -394,7 +397,7 @@
 <h2 id="其他有用的记号"><a class="header" href="#其他有用的记号">其他有用的记号</a></h2>
 <p>使用转动和转体记号的组合，就足以表示所有的转动了。但也有一些组合转动，在桥式解法中会非常有用：<code>M</code>、<code>r</code>。<code>E</code>、<code>S</code>在特定情形下也许也会用到。</p>
 <h3 id="m转动"><a class="header" href="#m转动">M转动</a></h3>
-<p><code>M</code>层指的是L、R层中间的夹层，而<code>M</code>指的是将M层转动，而保持两边的层不动。<code>M</code>层转动非常能代表桥式解法的特色。<code>M</code>层的顺逆时针的方向判断与<code>L</code>一致，较为反直觉。你也可以这样记忆：<code>M</code>字母中间的“V”指向下，这就是<code>M</code>转动的顺时针方向。</p>
+<p><code>M</code>层指的是L、R层中间的夹层，而<code>M</code>指的是将M层转动，而保持两边的层不动。<code>M</code>层转动可以作为桥式解法的一大特色。<code>M</code>层的顺逆时针的方向判断与<code>L</code>一致。你可以这样记忆：<code>M</code>字母中间的“V”指向下，这就是<code>M</code>转动的顺时针方向。</p>
 <div id="M">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
@@ -408,6 +411,9 @@
 
 <blockquote>
 <p>应当逐步练习一次性完成对<code>M'</code>或<code>M</code>的转动，不能用两次转动来代替。你可以使用左手无名指，从魔方下方推动<code>M'</code>。转动<code>M</code>也可通过左手无名指从魔方下方反推来完成。如果觉得比较困难，可以先用其他手指，从魔方上方将M层“压下去”。（为了<code>M</code>层转动的顺畅，建议使用一个好一些的魔方！）</p>
+</blockquote>
+<blockquote>
+<p>虚拟魔方对<code>M2</code>和<code>M'2</code>未做区分。实际转动时，做<code>M'2</code>，即做两次<code>M'</code>，会更加方便。</p>
 </blockquote>
 <h3 id="r转动"><a class="header" href="#r转动">r转动</a></h3>
 <p><code>r</code>转动指的是在转动R层时，连带将M层转动。因此其顺逆时针的方向判断与<code>R</code>一致，但采用小写表示双层转动。注意<code>r</code>等价于转动<code>L</code>和转体<code>x</code>的叠加，不要混淆<code>r</code>与<code>L</code>。</p>
