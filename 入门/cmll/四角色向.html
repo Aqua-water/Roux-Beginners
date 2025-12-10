@@ -166,12 +166,12 @@
 <h1 id="四角色向"><a class="header" href="#四角色向">四角色向</a></h1>
 <p>这步要将顶层的四个角块在顶层上的颜色还原正确，也就是黄色一致朝上。</p>
  
-<div id="CMLL-o">
+<div id="cmll-1-CMLL-o">
  <script type="text/javascript">
    TTk.AlgorithmPuzzle(3)
      .size({width:300, height:300})
      .fc('wtwwtwwtwggggggltlrtrrtrltlytytttytybbbbbbltlotootoltl')
-     ('#CMLL-o');
+     ('#cmll-1-CMLL-o');
  </script>
  </div>
 
@@ -182,13 +182,13 @@
 <p>上图为As形态的俯视图，特点是3个未复原的黄色面都在对应角块的右侧。换句话说，将角块逆时针旋转120°，可以把黄色面移动到顶层。使用公式前，通过<code>Ux</code>将已复原的黄色面放在俯视图的左上角。</p>
 <p><strong>公式一</strong> <code>R' U' R U' R' U2 R</code></p>
  
-<div id="sune">
+<div id="cmll-1-sune">
  <script type="text/javascript">
    TTk.AlgorithmPuzzle(3)
      .size({width:300, height:300})
      .fc('wtwwtwwtwggggggltlrtrrtrltlytytttytybbbbbbltlotootoltl')
      .case(`R' U' R U' R' U2 R`)
-     ('#sune');
+     ('#cmll-1-sune');
  </script>
  </div>
 
@@ -196,13 +196,13 @@
 <p>如果你只想为整个CMLL步骤记忆一条公式，那么记忆下面的公式：</p>
 <p><strong>公式〇</strong> <code>R' U L U' R U L'</code></p>
  
-<div id="cmll-as">
+<div id="cmll-1-cmll-as">
  <script type="text/javascript">
    TTk.AlgorithmPuzzle(3)
      .size({width:300, height:300})
      .fc('wtwwtwwtwggggggltlrtrrtrltlytytttytybbbbbbltlotootoltl')
      .case(`R' U L U' R U L'`)
-     ('#cmll-as');
+     ('#cmll-1-cmll-as');
  </script>
  </div>
 
@@ -211,13 +211,13 @@
 <p>S形态的特点是3个未复原的黄色面都在对应角块的左侧。使用公式前，通过<code>Ux</code>将已复原的黄色面放在俯视图的左下角。</p>
 <p><strong>公式二</strong> <code>R U R' U R U2 R'</code></p>
  
-<div id="cmll-s">
+<div id="cmll-1-cmll-s">
  <script type="text/javascript">
    TTk.AlgorithmPuzzle(3)
      .size({width:300, height:300})
      .fc('wtwwtwwtwggggggltlrtrrtrltlytytttytybbbbbbltlotootoltl')
      .case(`R U R' U R U2 R'`)
-     ('#cmll-s');
+     ('#cmll-1-cmll-s');
  </script>
  </div>
 
@@ -225,13 +225,13 @@
 <p>也可以只使用公式〇。将已复原的黄色面放在俯视图的左上角位置，再完成：</p>
 <p><code>(公式〇) U' (公式〇)</code></p>
  
-<div id="cmll-s2">
+<div id="cmll-1-cmll-s2">
  <script type="text/javascript">
    TTk.AlgorithmPuzzle(3)
      .size({width:300, height:300})
      .fc('wtwwtwwtwggggggltlrtrrtrltlytytttytybbbbbbltlotootoltl')
      .case(`R' U L U' R U L' U' R' U L U' R U L'`)
-     ('#cmll-s2');
+     ('#cmll-1-cmll-s2');
  </script>
  </div>
 
@@ -248,26 +248,26 @@
 <p>   <img src="./images/cmll-t.png" width="200" height="200" /></p>
 <p>采用叠加法时，首先保证俯视图中左上角的角块黄色朝上，上图已满足要求。然后，执行公式一。<code>U2</code>调整朝向后，再做公式二。</p>
  
-<div id="cmll-t2">
+<div id="cmll-1-cmll-t2">
  <script type="text/javascript">
    TTk.AlgorithmPuzzle(3)
      .size({width:300, height:300})
      .fc('wtwwtwwtwggggggltlrtrrtrltlytytttytybbbbbbltlotootoltl')
      .case(`R' U' R U' R' U2 R U2 R U R' U R U2 R'`)
-     ('#cmll-t2');
+     ('#cmll-1-cmll-t2');
  </script>
  </div>
 
 <p>T形态复原公式：</p>
 <p><strong>进阶公式一</strong> <code>(R U R' U') (R' F R F')</code></p>
  
-<div id="cmll-t">
+<div id="cmll-1-cmll-t">
  <script type="text/javascript">
    TTk.AlgorithmPuzzle(3)
      .size({width:300, height:300})
      .fc('wtwwtwwtwggggggltlrtrrtrltlytytttytybbbbbbltlotootoltl')
      .case(`R U R' U' R' F R F'`)
-     ('#cmll-t');
+     ('#cmll-1-cmll-t');
  </script>
  </div>
 
@@ -278,13 +278,13 @@
 <p>U形态复原公式：</p>
 <p><strong>进阶公式二</strong> <code>F (R U R' U') F'</code></p>
  
-<div id="cmll-u">
+<div id="cmll-1-cmll-u">
  <script type="text/javascript">
    TTk.AlgorithmPuzzle(3)
      .size({width:300, height:300})
      .fc('wtwwtwwtwggggggltlrtrrtrltlytytttytybbbbbbltlotootoltl')
      .case(`U' F R U R' U' F'`)
-     ('#cmll-u');
+     ('#cmll-1-cmll-u');
  </script>
  </div>
 
@@ -296,13 +296,13 @@
 <p>L形态复原公式：</p>
 <p><strong>进阶公式三</strong> <code>(F R' F' R) (U R U' R')</code></p>
  
-<div id="cmll-l">
+<div id="cmll-1-cmll-l">
  <script type="text/javascript">
    TTk.AlgorithmPuzzle(3)
      .size({width:300, height:300})
      .fc('wtwwtwwtwggggggltlrtrrtrltlytytttytybbbbbbltlotootoltl')
      .case(`U F R' F' R U R U' R'`)
-     ('#cmll-l');
+     ('#cmll-1-cmll-l');
  </script>
  </div>
 
@@ -317,26 +317,26 @@
 <p>对于叠加法，首先保证俯视图中左上角的角块黄色朝上，上图已满足要求。</p>
 <p>然后，执行两次公式一。这里，中途不需要转动U层调整朝向。</p>
  
-<div id="cmll-h2">
+<div id="cmll-1-cmll-h2">
  <script type="text/javascript">
    TTk.AlgorithmPuzzle(3)
      .size({width:300, height:300})
      .fc('wtwwtwwtwggggggltlrtrrtrltlytytttytybbbbbbltlotootoltl')
      .case(`R' U' R U' R' U2 R R' U' R U' R' U2 R`)
-     ('#cmll-h2');
+     ('#cmll-1-cmll-h2');
  </script>
  </div>
 
 <p>消步后即为H形态的复原公式：</p>
 <p><strong>进阶公式四</strong> <code>(R' U' R U') (R' U R U') R' U2 R</code></p>
  
-<div id="cmll-h">
+<div id="cmll-1-cmll-h">
  <script type="text/javascript">
    TTk.AlgorithmPuzzle(3)
      .size({width:300, height:300})
      .fc('wtwwtwwtwggggggltlrtrrtrltlytytttytybbbbbbltlotootoltl')
      .case(`R' U' R U' R' U R U' R' U2 R`)
-     ('#cmll-h');
+     ('#cmll-1-cmll-h');
  </script>
  </div>
 
@@ -347,13 +347,13 @@
 <p>Pi形态复原公式：</p>
 <p><strong>进阶公式五</strong> <code>F (R U R' U')2 F'</code></p>
  
-<div id="cmll-pi">
+<div id="cmll-1-cmll-pi">
  <script type="text/javascript">
    TTk.AlgorithmPuzzle(3)
      .size({width:300, height:300})
      .fc('wtwwtwwtwggggggltlrtrrtrltlytytttytybbbbbbltlotootoltl')
      .case(`F R U R' U' R U R' U' F'`)
-     ('#cmll-pi');
+     ('#cmll-1-cmll-pi');
  </script>
  </div>
 

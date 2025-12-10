@@ -185,42 +185,42 @@
 <blockquote>
 <p>因此，请避免改变本节中所有虚拟魔方的初始朝向，否则记号无法与演示相对应。</p>
 </blockquote>
-<div id="faces">
+<div id="notation-faces">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('ttttwttttttttgttttttttrttttttttyttttttttbttttttttotttt')
-    ('#faces');
+    ('#notation-faces');
 </script>
 </div>
 
 <p>由于棱块存在于两个面的交界处，因此使用两个面的记号也可以唯一表示棱块的位置。<code>UR位</code>指的是U面与R面交界的位置，在下图中为橙绿棱块。这里只表示块的位置而不表示朝向，因此字母之间的顺序是随意的。</p>
-<div id="edge-faces">
+<div id="notation-edge-faces">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('ttttttttttttttttgtttttttttttttttottttttttttttttttttttt')
-    ('#edge-faces');
+    ('#notation-edge-faces');
 </script>
 </div>
 
 <p>处于同一位置的棱块，有两种不同的朝向可能。</p>
-<div id="orientation">
+<div id="notation-orientation">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('ttttttttttttttttotttttttttttttttgttttttttttttttttttttt')
-    ('#orientation');
+    ('#notation-orientation');
 </script>
 </div>
 
 <p>角块的位置也可同理表示。下图中的黄红绿棱块位于<code>URF位</code>。</p>
-<div id="corner-faces">
+<div id="notation-corner-faces">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('tttttttttttttttrttttttttttyttgttttttttttttttttttttttt')
-    ('#corner-faces');
+    ('#notation-corner-faces');
 </script>
 </div>
 
@@ -235,74 +235,74 @@
 <p>例如，<code>U</code>不仅表示顶面，也表示顶面按照顺时针旋转90°。<code>U'</code>则表示将顶面按照逆时针旋转90°。<code>U2</code>和<code>U'2</code>的效果相同，都是将顶面旋转180°。</p>
 <p>使用下面的动画，点击中间的运行按键来熟悉每个转动记号，并且同时试着与你手中魔方的转动联系起来。</p>
 <h3 id="u-转动"><a class="header" href="#u-转动">U 转动</a></h3>
-<div id="U">
+<div id="notation-U">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
     .movePeriod(1000)
     .alg(`U U' U2`)
-    ('#U');
+    ('#notation-U');
 </script>
 </div>
 
 <h3 id="l-转动"><a class="header" href="#l-转动">L 转动</a></h3>
-<div id="L">
+<div id="notation-L">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
     .movePeriod(1000)
     .alg(`L L' L2`)
-    ('#L');
+    ('#notation-L');
 </script>
 </div>
 
 <h3 id="f-转动"><a class="header" href="#f-转动">F 转动</a></h3>
-<div id="F">
+<div id="notation-F">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
     .movePeriod(1000)
     .alg(`F F' F2`)
-    ('#F');
+    ('#notation-F');
 </script>
 </div>
 
 <h3 id="r-转动"><a class="header" href="#r-转动">R 转动</a></h3>
-<div id="R">
+<div id="notation-R">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
     .movePeriod(1000)
     .alg(`R R' R2`)
-    ('#R');
+    ('#notation-R');
 </script>
 </div>
 
 <h3 id="b-转动"><a class="header" href="#b-转动">B 转动</a></h3>
-<div id="B">
+<div id="notation-B">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
     .movePeriod(1000)
     .alg(`B B' B2`)
-    ('#B');
+    ('#notation-B');
 </script>
 </div>
 
 <h3 id="d-转动"><a class="header" href="#d-转动">D 转动</a></h3>
-<div id="D">
+<div id="notation-D">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
     .movePeriod(1000)
     .alg(`D D' D2`)
-    ('#D');
+    ('#notation-D');
 </script>
 </div>
 
@@ -314,26 +314,26 @@
 </blockquote>
 <h3 id="转动序列"><a class="header" href="#转动序列">转动序列</a></h3>
 <p>形如<code>R U R' U'</code>的转动记号组合，代表依次进行对应的转动操作。</p>
-<div id="RUR’U’">
+<div id="notation-RUR’U’">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
     .movePeriod(1000)
     .alg(`R U R' U'`)
-    ('#RUR’U’');
+    ('#notation-RUR’U’');
 </script>
 </div>
 
 <p><code>(R U R' U')2</code>则代表将括号中的转动序列执行2次。它等价于<code>(R U R' U') (R U R' U')</code>或是<code>R U R' U' R U R' U'</code>。</p>
-<div id="RUR’U’2">
+<div id="notation-RUR’U’2">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
     .movePeriod(1000)
     .alg(`R U R' U' R U R' U'`)
-    ('#RUR’U’2');
+    ('#notation-RUR’U’2');
 </script>
 </div>
 
@@ -343,14 +343,14 @@
 <h3 id="逆转动"><a class="header" href="#逆转动">逆转动</a></h3>
 <p>将<code>R U R' U'</code>倒过来做，对应的转动是<code>U R U' R'</code>。逆转动是这样得到的：先将<code>R U R' U'</code>的记号倒过来，得到<code>U' R' U R</code>，再改变每个记号的顺逆时针。当然，如果是<code>U2</code>改变为<code>U'2</code>，可以不改变写法。</p>
 <p>本教程中出现的转动序列，都是用于将打乱状态转为复原状态。你可以从已复原的状态出发，通过逆转动得到对应的初始情形(case)。</p>
-<div id="RUR’U’rev">
+<div id="notation-RUR’U’rev">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
     .movePeriod(1000)
     .case(`U R U' R'`)
-    ('#RUR’U’rev');
+    ('#notation-RUR’U’rev');
 </script>
 </div>
 
@@ -358,38 +358,38 @@
 <p>转体就是魔方的整体转动。魔方可以通过三个基本的维度进行转体，因此使用所围绕的坐标轴来表示不同的转体。注意下面的<code>y</code>与<code>z</code>转动，与右手坐标系的y、z轴是相反的。</p>
 <p>更简单的记忆方法是记住对应的面： <code>x</code>, <code>y</code>和 <code>z</code> 分别对应 <code>R</code>, <code>U</code>和 <code>F</code> 的方向。例如，转体<code>x'</code> 和转动 <code>R'</code>类似，与R面平行的每个层都向同样的方向转动。</p>
 <h3 id="x-转体"><a class="header" href="#x-转体">x 转体</a></h3>
-<div id="x">
+<div id="notation-x">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
     .movePeriod(1000)
     .alg(`x x' x2`)
-    ('#x');
+    ('#notation-x');
 </script>
 </div>
 
 <h3 id="y-转体"><a class="header" href="#y-转体">y 转体</a></h3>
-<div id="y">
+<div id="notation-y">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
     .movePeriod(1000)
     .alg(`y y' y2`)
-    ('#y');
+    ('#notation-y');
 </script>
 </div>
 
 <h3 id="z-转体"><a class="header" href="#z-转体">z 转体</a></h3>
-<div id="z">
+<div id="notation-z">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
     .movePeriod(1000)
     .alg(`z z' z2`)
-    ('#z');
+    ('#notation-z');
 </script>
 </div>
 
@@ -398,14 +398,14 @@
 <p>使用转动和转体记号的组合，就足以表示所有的转动了。但也有一些组合转动，在桥式解法中会非常有用：<code>M</code>、<code>r</code>。<code>E</code>、<code>S</code>在特定情形下也许也会用到。</p>
 <h3 id="m转动"><a class="header" href="#m转动">M转动</a></h3>
 <p><code>M</code>层指的是L、R层中间的夹层，而<code>M</code>指的是将M层转动，而保持两边的层不动。<code>M</code>层转动可以作为桥式解法的一大特色。<code>M</code>层的顺逆时针的方向判断与<code>L</code>一致。你可以这样记忆：<code>M</code>字母中间的“V”指向下，这就是<code>M</code>转动的顺时针方向。</p>
-<div id="M">
+<div id="notation-M">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
     .movePeriod(1000)
     .alg(`M M' M2`)
-    ('#M');
+    ('#notation-M');
 </script>
 </div>
 
@@ -417,14 +417,14 @@
 </blockquote>
 <h3 id="r转动"><a class="header" href="#r转动">r转动</a></h3>
 <p><code>r</code>转动指的是在转动R层时，连带将M层转动。因此其顺逆时针的方向判断与<code>R</code>一致，但采用小写表示双层转动。注意<code>r</code>等价于转动<code>L</code>和转体<code>x</code>的叠加，不要混淆<code>r</code>与<code>L</code>。</p>
-<div id="Rw">
+<div id="notation-Rw">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
     .movePeriod(1000)
     .alg(`r r' r2`)
-    ('#Rw');
+    ('#notation-Rw');
 </script>
 </div>
 
@@ -436,27 +436,27 @@
 <h2 id="冷门记号"><a class="header" href="#冷门记号">冷门记号</a></h2>
 <h3 id="e转动"><a class="header" href="#e转动">E转动</a></h3>
 <p><code>E</code>层指的是U、D层中间的夹层，对应的转动为<code>E</code>转动，其顺时针转动方向与<code>U</code>一致（也和字母“E”的开口方向一致）。在桥式解法的最后一步中，有的玩家会使用双手<code>E</code>转动，处理一种称为“四心换”的情形。</p>
-<div id="E">
+<div id="notation-E">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
     .movePeriod(1000)
     .alg(`E E' E2`)
-    ('#E');
+    ('#notation-E');
 </script>
 </div>
 
 <h3 id="s转动"><a class="header" href="#s转动">S转动</a></h3>
 <p><code>S</code>层指的是F、B层中间的夹层，对应的转动为<code>S</code>转动，其顺时针转动方向与<code>F</code>一致。在单手处理“四心换”情形时，有的玩家会使用<code>S</code>转动代替<code>E</code>转动。</p>
-<div id="S">
+<div id="notation-S">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
     .movePeriod(1000)
     .alg(`S S' S2`)
-    ('#S');
+    ('#notation-S');
 </script>
 </div>
 

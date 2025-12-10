@@ -167,12 +167,12 @@
 <h2 id="目标"><a class="header" href="#目标">目标</a></h2>
 <p>这步要<strong>在色向还原的基础上</strong>，将剩下的6个棱块彻底复原，从而完成整个魔方的复原。分为两个阶段：</p>
 <p>先将左右面位于顶层的2个棱块复原，并将M层的中心块对齐，剩下最后M层的4个棱块。</p>
-<div id="l4e">
+<div id="l6e-l4e">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('wlwwwwwlwgggggggggrlrrrrrlrylyyyyylybbbbbbbbbolooooolo')
-    ('#l4e');
+    ('#l6e-l4e');
 </script>
 </div>
 
@@ -181,12 +181,12 @@
 <h3 id="1-1-左右棱置底"><a class="header" href="#1-1-左右棱置底">1-1 左右棱置底</a></h3>
 <p>为了复原左右面位于顶层的2个棱块(ULUR)，我们先将要归位的黄蓝、黄绿棱块都放到底层。</p>
 <p>以下是一个具体例子。你可以拖动魔方，主要查看底层的状态：</p>
-<div id="ulur">
+<div id="l6e-ulur">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('wywwwwwywggggggglgrbrrrrrlrylylylylybbbbbbblbogooooolo')
-    ('#ulur');
+    ('#l6e-ulur');
 </script>
 </div>
 
@@ -194,39 +194,39 @@
 <p>如果恰好有一个黄蓝或黄绿棱块在顶层：</p>
 <p>先<code>Ux</code>将该棱块放在M层，并且保证其下方不是黄蓝或黄绿棱块。再做<a href="./eo.html#基本操作五-m-u2-m">基本操作五</a>或<a href="./eo.html#基本操作六-m-u2-m">六</a>，完成上下棱块的交换，将其放在底层。</p>
 <p>这个例子通过基本操作六，将黄绿棱块从UR位移到DB位。</p>
-<div id="ulur-1">
+<div id="l6e-ulur-1">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('wywwwwwywggggggglgrbrrrrrlrylylylylybbbbbbblbogooooolo')
     .case(`U' M U2 M'`)
-    ('#ulur-1');
+    ('#l6e-ulur-1');
 </script>
 </div>
 
 <p>如果黄蓝、黄绿棱块都在顶层：</p>
 <p>通过<code>Ux</code>将其中一个棱块放在M层，再<code>M2</code>将其放在底层。这样，至多有一个棱块仍然留在顶层，转化为上一种情形。</p>
 <p>这个例子将黄绿棱块移到DB位，然后再通过基本操作五，将黄蓝棱块从UR位移到DF位。</p>
-<div id="ulur-2">
+<div id="l6e-ulur-2">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('wlwwwwwlwgggggggbgrlrrrrrgryyylyyylybbbbbbblbolooooolo')
     .alg(`M2 U M' U2 M`)
-    ('#ulur-2');
+    ('#l6e-ulur-2');
 </script>
 </div>
 
 <p>这样就将两个棱块都放在底层了，两个棱块谁在前并不重要，但色向必须正确。</p>
 <h3 id="1-2-左右棱归位"><a class="header" href="#1-2-左右棱归位">1-2 左右棱归位</a></h3>
 <p>左右棱都放到底层后，做<code>Ux</code>调整顶层角块的姿态，然后做<code>M2</code>，将黄蓝、黄绿棱块分别与对应的角块合并。最后做<code>Ux</code>，将左右棱块彻底归位。</p>
-<div id="ulur-3">
+<div id="l6e-ulur-3">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('wywwwwwywggggggglgrbrrrrrlrylylylylybbbbbbblbogooooolo')
     .alg(`U M2 U'`)
-    ('#ulur-3');
+    ('#l6e-ulur-3');
 </script>
 </div>
 
@@ -241,36 +241,36 @@
 <p>这种方法不依赖于转体，也不需要提前对齐黄白中心块。使用<code>Mx</code>与<code>U2</code>交替的转动序列，将魔方复原。</p>
 <p>我们引入<strong>连色对</strong>的概念，以确定每一步应该如何转动：对于F面或B面中位于M层的三个颜色，如果两侧有一个颜色与中心块的颜色相同，那么它们就组成一个连色对。</p>
 <p>首先判断<code>U2</code>是否会破坏位于F面和B面的连色对。在下面的例子中，B面的红色连色对被保留，但F面的橙色连色对被破坏。</p>
-<div id="pair">
+<div id="l6e-pair">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('tttttttttttttttttttrttottottttttttttttttttttttrttrttot')
     .alg(`U2`)
-    ('#pair');
+    ('#l6e-pair');
 </script>
 </div>
 
 <p>如果不会破坏连色对，那么直接转<code>U2</code>；否则转动M层，直到不会破坏F面和B面的连色对后，再转<code>U2</code>。</p>
 <p>下面的例子中，做<code>M'</code>后F面出现黄色连色对，不会被<code>U2</code>破坏。B面的白色连色对同理。</p>
-<div id="pair-2">
+<div id="l6e-pair-2">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('tyttyttwtttttttttttrttottottyttwttwtttttttttttrttrttot')
     .alg(`M' U2`)
-    ('#pair-2');
+    ('#l6e-pair-2');
 </script>
 </div>
 
 <p><code>U2</code>后，继续转动M层，寻找另一个不会破坏连色对的状态，然后继续做<code>U2</code>。至多5步，就能完成复原。</p>
-<div id="pair-3">
+<div id="l6e-pair-3">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('tyttyttwtttttttttttrttottottyttwttwtttttttttttrttrttot')
     .alg(`M' U2 M U2 M2`)
-    ('#pair-3');
+    ('#l6e-pair-3');
 </script>
 </div>
 
@@ -278,49 +278,49 @@
 <h4 id="x转体"><a class="header" href="#x转体">x转体</a></h4>
 <p>依赖转体的方法如下。对齐中心块后做x转体，使复原的棱块位于DF位上。</p>
 <p>下图中，我们将已复原的黄红棱块转到DF位上。</p>
-<div id="L4E">
+<div id="l6e-L4E">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('wywwwwwwwgggggggggrorrrrrrryyyyyyywybbbbbbbbboooooooro')
     .alg(`x'`)
-    ('#L4E');
+    ('#l6e-L4E');
 </script>
 </div>
 
 <p>进一步观察：</p>
 <p>如果UF位的棱块颜色与两侧中心块的颜色都相反，做<code>U2 M U2 M'</code>（即<code>U2</code>+ 基本操作六）。</p>
 <p>如图，UF位的白红棱块，两侧的中心块分别为黄、橙，满足要求。</p>
-<div id="L4E-2">
+<div id="l6e-L4E-2">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('rrrrrrrrrgggggggggyyyyyyyyyooooooooobbbbbbbbbwwwwwwwww')
     .case(`U2 M U2 M'`)
-    ('#L4E-2');
+    ('#l6e-L4E-2');
 </script>
 </div>
 
 <p>如果UF位的棱块颜色仅与前面中心块的颜色相反，做<code>M U2 M' U2</code>（即基本操作六+<code>U2</code>）。</p>
-<div id="L4E-3">
+<div id="l6e-L4E-3">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('rrrrrrrrrgggggggggyyyyyyyyyooooooooobbbbbbbbbwwwwwwwww')
     .case(`M U2 M' U2`)
-    ('#L4E-3');
+    ('#l6e-L4E-3');
 </script>
 </div>
 
 <h3 id="四心换"><a class="header" href="#四心换">四心换</a></h3>
 <p>这种情况下，对齐中心块后，有四个面呈“H”型。做<code>E2 M' E2 M'</code>。</p>
-<div id="L4E-5">
+<div id="l6e-L4E-5">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
     .case(`E2 M' E2 M'`)
-    ('#L4E-5');
+    ('#l6e-L4E-5');
 </script>
 </div>
 
@@ -330,23 +330,23 @@
 <h3 id="h"><a class="header" href="#h">“H”</a></h3>
 <p>这种情况下，对齐中心块后，四个面已经复原，而剩余两个相对的面呈“H”型。</p>
 <p>可以将一个H型的面放在F面，做<code>U2 M2 U2 M2</code>；如果不在F面，也可以不转体，做<code>M' U2 M2 U2 M'</code>。</p>
-<div id="L4E-4">
+<div id="l6e-L4E-4">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('rrrrrrrrrgggggggggyyyyyyyyyooooooooobbbbbbbbbwwwwwwwww')
     .case(`x' U2 M2 U2 M2`)
-    ('#L4E-4');
+    ('#l6e-L4E-4');
 </script>
 </div>
 
-<div id="L4E-4">
+<div id="l6e-L4E-4">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
     .case(`M' U2 M2 U2 M'`)
-    ('#L4E-4');
+    ('#l6e-L4E-4');
 </script>
 </div>
 

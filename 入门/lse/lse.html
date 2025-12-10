@@ -166,24 +166,24 @@
 <h1 id="后六棱"><a class="header" href="#后六棱">后六棱</a></h1>
 <h2 id="目标"><a class="header" href="#目标">目标</a></h2>
 <p>这步的目标是将剩下的6个棱块（以灰色标出）复原，从而复原整个魔方。后六棱又叫做LSE(Last Six Edges)、L6E。</p>
-<div id="lse">
+<div id="lse-lse">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('wlwwwwwlwggggggglgrlrrrrrlrylylylylybbbbbbblbolooooolo')
-    ('#lse');
+    ('#lse-lse');
 </script>
 </div>
 
 <p>与CMLL类似，我们将后六棱分为两个步骤：</p>
 <h2 id="一-后六棱色向"><a class="header" href="#一-后六棱色向">一. 后六棱色向</a></h2>
 <p>这步(eo/4a)要将顶层和底层上剩余的块的色向还原正确，也就是白色和黄色一致朝上或朝下。下面是一个色向还原的例子。</p>
-<div id="eo">
+<div id="lse-eo">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('wwwwywwywggggggolorlrrrrglgyyywwyyyybbbbbbrlrolooooblb')
-    ('#eo');
+    ('#lse-eo');
 </script>
 </div>
 
@@ -208,12 +208,12 @@
 <p>后八类情形都属于三个棱块未复原（三棱换）的情形。仅通过观察U层和F层不足以确定其形态，还需要观察D层的形态（图片左侧）。</p>
 <p>三棱换的公式不必全部记忆，在对应小节中将介绍一种不依赖转体的理解性的复原方法。另外，利用<a href="./../记号.html#x-转体">x转体</a>可以将三棱换归为两种情形，即顺时针和逆时针三棱换。</p>
 <p>如此就完成了整个魔方的复原。</p>
-<div id="done">
+<div id="lse-done">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('wwwwwwwwwgggggggggrrrrrrrrryyyyyyyyybbbbbbbbbooooooooo')
-    ('#done');
+    ('#lse-done');
 </script>
 </div>
 

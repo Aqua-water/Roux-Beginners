@@ -165,12 +165,12 @@
 </style>
 <h1 id="四角归位"><a class="header" href="#四角归位">四角归位</a></h1>
 <p>这步将顶层的四个角块的相对位置也还原正确。</p>
-<div id="CMLL">
+<div id="cmll-2-CMLL">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('wtwwtwwtwgggggggtgrtrrtrrtrytytttytybbbbbbbtbotootooto')
-    ('#CMLL');
+    ('#cmll-2-CMLL');
 </script>
 </div>
 
@@ -181,28 +181,28 @@
 <p><code>Ux</code>将角块颜色相同的侧面转向左侧，然后完成公式：</p>
 <p><strong>公式三</strong> <code>(R U R' U') R' F (R2 U' R' U') (R U R' F')</code></p>
  
-<div id="cmll-o1-1">
+<div id="cmll-2-cmll-o1-1">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('wtwwtwwtwgggggggtgrtrrtrrtrytytttytybbbbbbbtbotootooto')
     .case(`R U R' U' R' F R2 U' R' U' R U R' F' U`)
     .alg(`R U R' U' R' F R2 U' R' U' R U R' F'`)
-    ('#cmll-o1-1');
+    ('#cmll-2-cmll-o1-1');
 </script>
 </div>
 
 <p>如果你在上一节只记忆了公式〇（<code>R' U L U' R U L'</code>），并不打算记新的公式，那么<code>Ux</code>将角块颜色相同的侧面转向后侧，然后完成：</p>
 <p><code>L F (公式〇) U' F' L'</code></p>
   
-<div id="cmll-o1-2">
+<div id="cmll-2-cmll-o1-2">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('wtwwtwwtwgggggggtgrtrrtrrtrytytttytybbbbbbbtbotootooto')
     .case(`L F R' U L U' R U L' U' F' L' U`)
     .alg(`L F R' U L U' R U L' U' F' L'`)
-    ('#cmll-o1-2');
+    ('#cmll-2-cmll-o1-2');
 </script>
 </div>
 
@@ -211,28 +211,28 @@
 <p>如图所示，任何一侧的角块颜色都不同。此时每一侧都是等价的，因此无需做方向调整。</p>
 <p>可以叠加公式三解决：执行一次公式三（或是<code>L F (公式〇) U' F' L'</code>），使之变为上一种情形。</p>
    
-<div id="cmll-o2-1">
+<div id="cmll-2-cmll-o2-1">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('wtwwtwwtwgggggggtgrtrrtrrtrytytttytybbbbbbbtbotootooto')
     .case(`F R U' R' U' R U R' F' R U R' U' R' F R F'`)
-    .alg(`R U R' U' R' F R2 U' R' U' R U R' F U2'`)
-    ('#cmll-o2-1');
+    .alg(`R U R' U' R' F R2 U' R' U' R U R' F' U2'`)
+    ('#cmll-2-cmll-o2-1');
 </script>
 </div>
 
 <p>一步复原公式为：</p>
 <p><strong>进阶公式六</strong> <code>F (R U' R' U') (R U R' F') (R U R' U') (R' F R F')</code></p>
    
-<div id="cmll-o2-2">
+<div id="cmll-2-cmll-o2-2">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:300, height:300})
     .fc('wtwwtwwtwgggggggtgrtrrtrrtrytytttytybbbbbbbtbotootooto')
     .case(`F R U' R' U' R U R' F' R U R' U' R' F R F' U2`)
     .alg(`F R U' R' U' R U R' F' R U R' U' R' F R F'`)
-    ('#cmll-o2-2');
+    ('#cmll-2-cmll-o2-2');
 </script>
 </div>
 
